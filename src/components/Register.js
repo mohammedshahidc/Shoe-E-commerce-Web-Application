@@ -28,7 +28,10 @@ body:JSON.stringify(todb) })
 .then((res)=>{
     alert("registered successfully")
     navigate('/login')
-    // localStorage.setItem('userdata', JSON.stringify(todb));
+    if(res.ok){
+      localStorage.setItem('NewUser', JSON.stringify(todb));
+    }
+    
 })
 .catch((err)=>{
     alert("failed"+err)
