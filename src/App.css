@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+
+span{
+  display: none;
+}
+input:invalid~span{
+  display: block;
+}
+/* .mainlog{
+  background-color: aqua;
+  width: 100%;
+  height: 571px;
+}
+.logform{
+  background-color: black;
+  width: fit-content;
+  height: fit-content;
+
+} */
