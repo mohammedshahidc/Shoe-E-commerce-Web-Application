@@ -11,6 +11,7 @@ import ProductDetailes from './components/ProductDetailes';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
 import Cart from './components/Cart';
+import User from './components/User';
 function App() {
   return (
     <div className="App">
@@ -22,11 +23,12 @@ function App() {
           <Route path='/login' element={<Login/>}/>
           <Route path='/mens' element={<Mens/>} />
           <Route path='/women' element={<Women/>}/>
-          <Route path=':id' element={ <ProductDetailes/>}/>
+          <Route path='/:id' element={<ProductDetailes/>}/>
           <Route path='mens/:id' element={ <ProductDetailes/>}/>
           <Route path='women/:id' element={ <ProductDetailes/>}/>
           <Route  path='/contact' element={<Contact />} />
           <Route  path='/cart' element={<Cart />} />
+          <Route path='/user' element={<User/>}/>
         </Routes>
       
       <Footer/>

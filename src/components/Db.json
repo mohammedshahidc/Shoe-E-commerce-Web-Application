@@ -1,52 +1,13 @@
 {
   "users": [
     {
-      "id": "username"
-    },
-    {
-      "id": "296d",
+      "id": "034d",
       "input": {
-        "username": "mohammed shahid",
-        "email": "ms4811879@gmail.com",
-        "password": "Msc@1234",
-        "cpassword": "Msc@1234"
-        
-      }
-    },
-    {
-      "id": "ef71",
-      "input": {
-        "username": "mohammed shahid",
-        "email": "ms4811879@gmail.cil",
-        "password": "Msc@1234",
-        "cpassword": "Msc@1234"
-      }
-    },
-    {
-      "id": "d446",
-      "input": {
-        "username": "mohammed shahid",
-        "email": "ms4811879@gmail.cil",
-        "password": "Msc@1234",
-        "cpassword": "Msc@1234"
-      }
-    },
-    {
-      "id": "5f7e",
-      "input": {
-        "username": "mohammed shahid",
-        "email": "muhammednihalk4@gmail",
-        "password": "Msc@1234",
-        "cpassword": "Msc@1234"
-      }
-    },
-    {
-      "id": "f225",
-      "input": {
-        "username": "mohammed shahid",
-        "email": "muhammednihalk4@gmail",
-        "password": "Msc@1234",
-        "cpassword": "Msc@1234"
+        "username": "mohammed_shahid_c",
+        "email": "sad@gajk",
+        "password": "Anu@1234",
+        "cpassword": "Anu@1234",
+        "cart": []
       }
     }
   ],

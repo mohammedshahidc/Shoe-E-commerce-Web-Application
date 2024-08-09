@@ -12,7 +12,8 @@ const Register = () => {
         username: '',
         email: '',
         password: '',
-        cpassword: ''
+        cpassword: '',
+        cart:[]
     });
     
 
@@ -28,9 +29,7 @@ body:JSON.stringify(todb) })
 .then((res)=>{
     alert("registered successfully")
     navigate('/login')
-    if(res.ok){
-      localStorage.setItem('NewUser', JSON.stringify(todb));
-    }
+   
     
 })
 .catch((err)=>{

@@ -1,56 +1,12 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useContext} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios'
+import { Usercont } from '../Apiservices/UserContext';
 
 const Login = () => {
-    const navigate=useNavigate()
-    const [login, setLogin] = useState({
-        userName: '',
-        userPassword: ''
-    });
     
-    const handlelogChange = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
-        setLogin({ ...login, [name]: value });
-    };
-    const handlelogSubmit =async (e) => {
-        e.preventDefault();
-        try{
-            const response=await axios.get('http://localhost:3000/users')
-            const users=response.data
-            console.log(users);
-           const user=users.find((user)=>(user.username===login.userName && user.password===login.userPassword))
-            if(user){
-                navigate('/')
-               localStorage.setItem("logindt",JSON.stringfy(user))}
-               
-            }     
-             
-        catch(error){
-            console.error(error,'err');
-        }
-        
-        // const storeduser=localStorage.getItem('userdata')
-        // localStorage.setItem("LoginData",login)
-        // const storedUserr = JSON.parse(storeduser);
-
-        
-        // const storedusername=storedUserr.input.username
-        // const storedpassword=storedUserr.input.password
-        // console.log(storedusername);
-        // console.log(storedpassword);
-
-        // if(login.userName==storedusername&&login.userPassword==storedpassword){
-        //     navigate('/Home')
-        // }else{
-        //     alert('enter correct username or password')
-        // }
-
-     
-    };
-        
+    const{login,handlelogChange,handlelogSubmit}=useContext(Usercont)
+   
    
     
     return (
@@ -102,7 +58,7 @@ const Login = () => {
             </form>
         </div>
     );
-    // storeduserr.map((user)=><div><h1>{user.username}</h1></div>)
+    
 };
 
 export default Login;

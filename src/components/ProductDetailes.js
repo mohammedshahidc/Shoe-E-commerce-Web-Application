@@ -1,14 +1,22 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { context } from '../Apiservices/Productcontext'
 import { useParams } from 'react-router-dom'
+import { cartcontext } from '../Apiservices/Cartproduct'
+
+
 
 const ProductDetailes = () => {
     const {id}=useParams()
  const {products}=useContext(context)
+ const {addtoCart}=useContext(cartcontext)
  const [filt,setFilt]=useState([])
  useEffect(()=>{
     setFilt(products.filter((product)=>(product.id==id)))
  },[products])
+
+ const handlecart=(produt)=>{
+    addtoCart(produt)
+ }
   return (
     <div className='flex flex-col items-center bg-neutral-300 p-4 mt-8 md:mt-16'>
             {filt.map((product) => (
@@ -27,7 +35,7 @@ const ProductDetailes = () => {
                             Brand: {product.brand} <br />
                             Reviews: {product.reviews}
                         </p>
-                        <button className='bg-blue-950 text-white rounded-md py-2 px-4 hover:bg-black'>
+                        <button className='bg-blue-950 text-white rounded-md py-2 px-4 hover:bg-black' onClick={()=>{handlecart(product)}}>
                             Add to cart
                         </button>
                     </div>

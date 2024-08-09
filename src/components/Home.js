@@ -34,7 +34,7 @@ const Home = () => {
               <h5 className="text-xl font-semibold text-gray-900 mb-2">{product.name}</h5>
               <h5 className="text-xl font-semibold text-gray-900 mb-2">₹ {product.price}</h5>
               <p className="text-gray-700 mb-4">{product.description}</p>
-              <Link to={`/product/${product.id}`}>
+              <Link to={`${product.id}`}>
                 <button className="bg-blue-950 text-white rounded-md py-2 px-4 w-full hover:bg-black">
                   Product Details
                 </button>

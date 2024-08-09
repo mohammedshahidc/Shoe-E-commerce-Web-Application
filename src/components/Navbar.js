@@ -25,8 +25,8 @@ const Header = () => {
                             <Link to="/women">Women</Link>
                             <Link to="/contact">Contact</Link>
                             <Link to="/cart">  <FaShoppingCart /> </Link>
-                            <button>Login</button>
-                            <button>Sign Up</button>
+                           <Link to="/login"> <button>Login</button> </Link> 
+                            <Link to="register"> <button>Sign Up</button>  </Link>
                         </div>
                     </div>
 
@@ -39,8 +39,8 @@ const Header = () => {
                     </div>
 
                     <div className="hidden w-1/5 items-center justify-evenly font-semibold md:flex">
-                        <button>Login</button>
-                        <button>Sign Up</button>
+                    <Link to="/login"> <button>Login</button> </Link> 
+                    <Link to="register"> <button>Sign Up</button>  </Link>
                     </div>
 
                     <button 
