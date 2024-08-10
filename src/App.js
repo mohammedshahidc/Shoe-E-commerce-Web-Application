@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import Contact from './components/Contact';
 import Cart from './components/Cart';
 import User from './components/User';
+import Payment from './components/Payment';
 function App() {
   return (
     <div className="App">
@@ -29,6 +30,7 @@ function App() {
           <Route  path='/contact' element={<Contact />} />
           <Route  path='/cart' element={<Cart />} />
           <Route path='/user' element={<User/>}/>
+          <Route path='/payment' element={<Payment />} />
         </Routes>
       
       <Footer/>

@@ -60,7 +60,7 @@ const UserContext = ({children}) => {
         
             localStorage.removeItem("logindt")
             setCuruser(null)
-            navigate("/login")
+            // navigate("/login")
         } catch (error) {
             
         }

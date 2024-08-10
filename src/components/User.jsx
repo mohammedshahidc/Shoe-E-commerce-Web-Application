@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 
 const User = () => {
+    
     const { curuser,handlelogout } = useContext(Usercont)
     const username=curuser?.input?.username
     const userid=curuser?.id
@@ -14,33 +15,51 @@ const User = () => {
         return(
             <div>
                 <h1>user is not available</h1>
-                <Link to="/login"><button>Log in</button></Link>
+                <Link to="/login"><button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-black">Log in</button></Link>
             </div>
         )
     }
     
+    
 
     return (
+        
+        <div className="container mt-10">
+        <div className="flex justify-center">
+          <div className="w-full max-w-md">
+            <div className="bg-white p-3 py-4 rounded-lg shadow-md">
+              <div className="text-center">
+              <FaUser className="w-32 h-32 mx-auto rounded dark:bg-gray-500 aspect-square" />
 
-        <div className='flex items-center justify-center min-h-[100px] p-8 mt-10 bg-gray-500'>
-            <div className="w-full max-w-md p-8 bg-gray-500 shadow-md rounded-lg">
-                <FaUser className="w-32 h-32 mx-auto rounded dark:bg-gray-500 aspect-square" />
-                <div className="space-y-4 text-center divide-y dark:divide-gray-500">
-                    <div className="my-2 space-y-1">
-                        <h2 className="text-xl font-semibold sm:text-2xl text-gray-500">{username}</h2>
-                        <p className="px-5 text-xs sm:text-base dark:text-gray-600"> an active user</p>
-                        <p>id:{userid}</p>
-                        <button className='bg-red-300 rounded-sm p-1 font-semibold m-2' onClick={handlelogout}>Log out</button>
-                        <Link to={'/login'}>
-                            <button className='bg-blue-800 text-white rounded-sm p-1 font-semibold'>Log into another Account</button>
-                        </Link>
 
-                    </div>
-                </div>
+              </div>
+              <div className="text-center mt-3">
+                <span className="bg-gray-600 p-1 px-4 rounded text-white">Pro</span>
+                <h5 className="mt-2 mb-0 text-lg font-semibold">{username}</h5>
+                <span className="text-gray-600">UI/UX Designer</span>
+                <div className="px-4 mt-1">
+                  <p className="text-gray-700">
+                    is an user
+                  </p>
+                  <h1>user id : {userid}</h1>
+                  <div>
+                
+                 <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-black" onClick={handlelogout} >Log out</button>
+  
+                  <Link>
+                 <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-black" >Add new account</button>
+                  </Link>
+                  </div>
+
+                
+              </div>
             </div>
+          </div>
         </div>
-    )
-}
+      </div>
+      </div>
+    );
+  }
 
 export default User
 

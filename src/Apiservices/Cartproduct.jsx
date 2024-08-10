@@ -22,10 +22,10 @@ const Cartproduct =({ children }) => {
   const addtoCart = async (items) => {
     if(curuser){
       try {
-
+        const itemquantity={...items,quantity:1}
         const response= await axios.get(`http://localhost:3000/users/${curuser.id}`)
         const activeuser=response.data
-        const updatecart=[...activeuser.input.cart,items]
+        const updatecart=[...activeuser.input.cart,itemquantity]
 
           await axios.put(`http://localhost:3000/users/${curuser.id}`,{
             ...activeuser,input:{...activeuser.input,cart:updatecart}
