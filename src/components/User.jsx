@@ -44,11 +44,9 @@ const User = () => {
                   <h1>user id : {userid}</h1>
                   <div>
                 
-                 <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-black" onClick={handlelogout} >Log out</button>
-  
-                  <Link>
-                 <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-black" >Add new account</button>
-                  </Link>
+                
+                  <button onClick={handlelogout} className='bg-blue-500 text-white pr-2 px-4 py-2 rounded-md hover:bg-black mr-2 '>Log out</button>
+                  <Link to="/login"><button className='bg-blue-500 text-white ml-2 pl-2 px-4 py-2 rounded-md hover:bg-black'>Add new account</button></Link>
                   </div>
 
                 

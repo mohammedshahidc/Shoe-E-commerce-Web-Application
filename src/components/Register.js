@@ -47,9 +47,9 @@ body:JSON.stringify(todb) })
 
 
     return (
-        <div className="bg-gray-400 min-h-screen flex items-center justify-center p-4">
+        <div className="bg-gray-300 min-h-screen flex items-center justify-center p-4">
             <form onSubmit={handleSubmit} className="w-full max-w-md">
-                <div className="bg-blue-600 w-full p-8 rounded-lg shadow-lg">
+                <div className="bg-gray-500 w-full p-8 rounded-lg shadow-lg">
                     <h1 className="text-3xl mb-4 text-center text-white">Register</h1>
                     <div className="p-2">
                         <label htmlFor="username" className="block text-white">Username:</label>
@@ -64,7 +64,7 @@ body:JSON.stringify(todb) })
                             onChange={handleChange}
                             required
                         />
-                        <span className="text-sm text-red-900">Username must be 3-16 characters long</span>
+                        <span className="text-[12px] text-red-900">Username must be 3-16 characters long</span>
                     </div>
                     <div className="p-2">
                         <label htmlFor="email" className="block text-white">Email:</label>
@@ -78,7 +78,7 @@ body:JSON.stringify(todb) })
                             onChange={handleChange}
                             required
                         />
-                        <span className="text-sm text-red-900">Enter a valid email</span>
+                        <span className="text-[12px] text-red-900">Enter a valid email</span>
                     </div>
                     <div className="p-2">
                         <label htmlFor="password" className="block text-white">Password:</label>
@@ -93,7 +93,7 @@ body:JSON.stringify(todb) })
                             onChange={handleChange}
                             required
                         />
-                        <span className="text-sm text-red-900">Password must have 8-16 characters and include at least 1 uppercase, 1 digit, and 1 special character</span>
+                        <span className="text-[12px] text-red-900">Password must have 8-16 characters and include at least 1 uppercase, 1 digit, and 1 special character</span>
                     </div>
                     <div className="p-2">
                         <label htmlFor="cpassword" className="block text-white">Confirm Password:</label>
@@ -108,7 +108,7 @@ body:JSON.stringify(todb) })
                             onChange={handleChange}
                             required
                         />
-                        <span className="text-sm text-red-900">Passwords do not match</span>
+                        <span className="text-[12px] text-red-900">Passwords do not match</span>
                     </div>
                     <div className="p-2">
                         <button

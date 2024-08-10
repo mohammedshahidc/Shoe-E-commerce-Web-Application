@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Usercont } from '../Apiservices/UserContext'
 
 const Payment = () => {
+  const {curuser}=useContext(Usercont)
+  const username=curuser?.input?.username
     const payment=(e)=>{
         alert("payment suceccfull")
     }
@@ -18,6 +21,7 @@ const Payment = () => {
                   className="form-input mb-3 p-2 border border-gray-300 rounded"
                   type="text"
                   placeholder="Enter Name"
+                  defaultValue={username}
                   required
                 />
               </div>
@@ -57,7 +61,7 @@ const Payment = () => {
             </div>
             <div className="w-full">
               <button
-                className="bg-blue-500 text-white py-2 px-4 rounded flex items-center justify-center w-48 h-24 hover:bg-black"
+                className="bg-blue-500 text-white py-2 px-4 rounded flex items-center justify-center w-48 h-24 hover:bg-black mt-5"
                  type='submit'
               >
                 Pay
