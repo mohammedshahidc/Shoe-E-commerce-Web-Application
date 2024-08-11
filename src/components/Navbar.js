@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,NavLink } from 'react-router-dom';
 import { FaShoppingCart,FaUser } from 'react-icons/fa';
 
 
@@ -19,34 +19,32 @@ const Header = () => {
                     <div 
                         className={`flex flex-col w-full h-auto md:hidden transition ease-in-out duration-300 ${open ? '' : 'hidden'}`}
                     >
-                        <div className="flex flex-col items-center justify-center gap-2">
-                            <Link to="/">Home</Link>
-                            <Link to="/mens">Men</Link>
-                            <Link to="/women">Women</Link>
-                            <Link to="/contact">Contact</Link>
-                            <Link to="/cart">  <FaShoppingCart /> </Link>
-                           {/* <Link to="/login"> <button>Login</button> </Link> 
-                            <Link to="register"> <button>Sign Up</button>  </Link> */}
-                            <Link to="/user"><button><FaUser className="w-5 h-32 mx-auto rounded pt-3 aspect-square" />
-
-                            </button></Link>
+                         <div className="flex flex-col items-center justify-center gap-2">
+                            <NavLink to="/" className={({isActive})=>isActive ?"text-blue-600":""}>Home</NavLink>
+                            <NavLink to="/mens" className={({isActive})=>isActive ?"text-blue-600":""}>Men</NavLink>
+                            <NavLink to="/women" className={({isActive})=>isActive ?"text-blue-600":""}>Women</NavLink>
+                            <NavLink to="/contact" className={({isActive})=>isActive ?"text-blue-600":""}>Contact</NavLink>
+                            <NavLink to="/cart" className={({isActive})=>isActive ?"text-blue-600":""}><FaShoppingCart /></NavLink>
+                            {/* <NavLink to="/login"> <button>Login</button> </NavLink> 
+                            <NavLink to="register"> <button>Sign Up</button> </NavLink> */}
+                            <NavLink to="/user"  className={({isActive})=>isActive ?"text-blue-600":""}><button><FaUser className="w-5 h-32 mx-auto rounded pt-3 aspect-square" /></button></NavLink>
                         </div>
                     </div>
 
                     <div className="hidden w-3/5 items-center justify-evenly font-semibold md:flex">
-                        <Link to="/">Home</Link>
-                        <Link to="/mens">Men</Link>
-                        <Link to="/women">Women</Link>
-                        <Link to="/contact">Contact</Link>
-                        <Link to="/cart"> <FaShoppingCart className='text-xl'/> </Link>
-                    </div>
+                    <NavLink to="/" className={({isActive})=>isActive ?"text-blue-600":""}>Home</NavLink>
+                            <NavLink to="/mens" className={({isActive})=>isActive ?"text-blue-600":""}>Men</NavLink>
+                            <NavLink to="/women" className={({isActive})=>isActive ?"text-blue-600":""}>Women</NavLink>
+                            <NavLink to="/contact" className={({isActive})=>isActive ?"text-blue-600":""}>Contact</NavLink>
+                            <NavLink to="/cart" className={({isActive})=>isActive ?"text-blue-600":""}><FaShoppingCart /></NavLink>
+                            {/* <NavLink to="/login"> <button>Login</button> </NavLink> 
+                            <NavLink to="register"> <button>Sign Up</button> </NavLink> */}
+                            <NavLink to="/user" className={({isActive})=>isActive ?"text-blue-600":""}><button><FaUser className="w-5 h-32 mx-auto rounded pt-3 aspect-square" /></button></NavLink></div>
 
                     <div className="hidden w-1/5 items-center justify-evenly font-semibold md:flex">
                     {/* <Link to="/login"> <button>Login</button> </Link> 
                     <Link to="register"> <button>Sign Up</button>  </Link> */}
-                    <Link to="/user"><button><FaUser className="w-5 h-32 mx-auto rounded pt-3 aspect-square" />
-
-                    </button></Link>
+                   
                     </div>
 
                     <button 

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { context } from '../Apiservices/Productcontext'
 import { useParams } from 'react-router-dom'
 import { cartcontext } from '../Apiservices/Cartproduct'
+import { Link } from 'react-router-dom'
 
 
 
@@ -35,9 +36,13 @@ const ProductDetailes = () => {
                             Brand: {product.brand} <br />
                             Reviews: {product.reviews}
                         </p>
+                        <div className='flex'>
                         <button className='bg-blue-950 text-white rounded-md py-2 px-4 hover:bg-black' onClick={()=>{handlecart(product)}}>
                             Add to cart
                         </button>
+                        <Link to="/"> <button className='bg-blue-950 text-white rounded-md py-2 px-4 hover:bg-black ml-3 w-28'>Back</button> </Link>
+                        </div>
+                        
                     </div>
                 </div>
             ))}

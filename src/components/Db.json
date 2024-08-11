@@ -7,32 +7,7 @@
         "email": "sad@gajk",
         "password": "Anu@1234",
         "cpassword": "Anu@1234",
-        "cart": [
-          {
-            "id": "9",
-            "name": "Women’s Blue Training",
-            "type": "women",
-            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-003-600x600.jpg",
-            "price": 660,
-            "description": "Blue training shoes designed for women.",
-            "brand": "Recycled Shoes",
-            "rating": 4.2,
-            "reviews": 14,
-            "quantity": 1
-          },
-          {
-            "id": "10",
-            "name": "Women’s Candy City Run",
-            "type": "women",
-            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-014-600x600.jpg",
-            "price": 549,
-            "description": "Colorful running shoes perfect for urban environments.",
-            "brand": "Recycled Shoes",
-            "rating": 4.3,
-            "reviews": 12,
-            "quantity": 1
-          }
-        ]
+        "cart": []
       }
     },
     {
