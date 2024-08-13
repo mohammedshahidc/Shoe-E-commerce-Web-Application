@@ -8,21 +8,28 @@ const Cartproduct = ({ children }) => {
   const { curuser, userID } = useContext(Usercont)
   const [cart, setCart] = useState([])
   const navigate = useNavigate()
-  const [notificationCount, setNotificationCount] = useState(()=>{
-    const savedCount = localStorage.getItem('notificationCount');
-    return savedCount ? parseInt(savedCount, 10) : 0;
-  });
+  const [notificationCount, setNotificationCount] = useState(0);
+
 
   useEffect(() => {
     const func = async () => {
-      const respons = await axios.get(`http://localhost:3000/users/${curuser.id}`)
-      setCart(respons.data.input.cart)
-    }
-    func()
-  }, [curuser.id])
-  useEffect(()=>{
-    localStorage.setItem('notificationCount', notificationCount);
-  }, [notificationCount]);
+      if (curuser && curuser.id) {
+        try {
+          const response = await axios.get(`http://localhost:3000/users/${curuser.id}`);
+          setCart(response.data.input.cart);
+        } catch (error) {
+          console.error('Error fetching user data:', error);
+        }
+      } else {
+        console.warn('curuser or curuser.id is not available');
+      }
+    };
+    func();
+  }, [curuser]); 
+ 
+
+
+  
 
   const addtoCart = async (items) => {
     if (curuser) {
@@ -40,7 +47,10 @@ const Cartproduct = ({ children }) => {
             ...activeuser, input: { ...activeuser.input, cart: updatecart }
           })
           setCart(updatecart)
-          setNotificationCount((prevCount) => prevCount + 1);
+          
+            setNotificationCount(updatecart.length);
+       
+          
         }
 
       } catch (error) {
@@ -68,7 +78,10 @@ const Cartproduct = ({ children }) => {
       const newcartitem = [...cart]
       newcartitem.splice(index, 1)
       setCart(newcartitem)
-      setNotificationCount((prevCount) => prevCount - 1);
+    
+        setNotificationCount(updatedcart.length);
+      
+      
     } catch (error) {
 
     }

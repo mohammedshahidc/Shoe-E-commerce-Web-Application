@@ -1,4 +1,5 @@
 import './App.css';
+import './index.css'
 import Login from './components/Login';
 import Register from './components/Register';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -14,12 +15,20 @@ import Cart from './components/Cart';
 import User from './components/User';
 import Payment from './components/Payment';
 import Protectedrouter from './components/Protectedrouter';
+import { Usercont } from './Apiservices/UserContext';
+import { useContext } from 'react';
+import Adminhome from './components/Admin/Adminhome'
+import Sidebar from './components/Admin/Sidebar';
+
 function App() {
+  const{admin}=useContext(Usercont)
   return (
     <div className="App">
-      <Navbar/>
+      {!admin?(
+        <div>
+ <Navbar/>
       
-      <Routes>
+      <Routes >
           <Route  path='/' element={<Home />} />
           <Route  path='/register' element={
             <Protectedrouter><Register /></Protectedrouter>} />
@@ -37,6 +46,17 @@ function App() {
         </Routes>
       
       <Footer/>
+        </div>
+      ):(
+        <div>
+       
+        <Routes>
+          <Route path='/admin' element={<Adminhome/>}/>
+        </Routes>
+        <Sidebar/>
+        </div>
+      )}
+     
        
     </div>
   );

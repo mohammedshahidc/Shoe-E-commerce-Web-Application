@@ -34,6 +34,8 @@ const Header = () => {
                                 {notificationCount > 0 && (
                                     <span className="absolute top-0 right-0 w-5 h-5 flex items-center justify-center text-white bg-red-500 rounded-full text-xs">
                                         {notificationCount}
+                                        
+
                                     </span>
                                 )}
                             </div>
