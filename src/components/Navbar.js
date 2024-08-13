@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link,NavLink } from 'react-router-dom';
 import { FaShoppingCart,FaUser } from 'react-icons/fa';
+import { cartcontext } from '../Apiservices/Cartproduct';
 
 
 const Header = () => {
     const [open, setOpen] = useState(false);
+
+    const{ notificationCount}=useContext(cartcontext)
 
     return (
         <header className='sticky top-0'>
@@ -24,9 +27,19 @@ const Header = () => {
                             <NavLink to="/mens" className={({isActive})=>isActive ?"text-blue-600":""}>Men</NavLink>
                             <NavLink to="/women" className={({isActive})=>isActive ?"text-blue-600":""}>Women</NavLink>
                             <NavLink to="/contact" className={({isActive})=>isActive ?"text-blue-600":""}>Contact</NavLink>
-                            <NavLink to="/cart" className={({isActive})=>isActive ?"text-blue-600":""}><FaShoppingCart /></NavLink>
-                            {/* <NavLink to="/login"> <button>Login</button> </NavLink> 
-                            <NavLink to="register"> <button>Sign Up</button> </NavLink> */}
+                           
+                            
+                            <div className="relative">
+                                <FaShoppingCart />
+                                {notificationCount > 0 && (
+                                    <span className="absolute top-0 right-0 w-5 h-5 flex items-center justify-center text-white bg-red-500 rounded-full text-xs">
+                                        {notificationCount}
+                                    </span>
+                                )}
+                            </div>
+                            
+
+                            
                             <NavLink to="/user"  className={({isActive})=>isActive ?"text-blue-600":""}><button><FaUser className="w-5 h-32 mx-auto rounded pt-3 aspect-square" /></button></NavLink>
                         </div>
                     </div>
@@ -36,14 +49,21 @@ const Header = () => {
                             <NavLink to="/mens" className={({isActive})=>isActive ?"text-blue-600":""}>Men</NavLink>
                             <NavLink to="/women" className={({isActive})=>isActive ?"text-blue-600":""}>Women</NavLink>
                             <NavLink to="/contact" className={({isActive})=>isActive ?"text-blue-600":""}>Contact</NavLink>
-                            <NavLink to="/cart" className={({isActive})=>isActive ?"text-blue-600":""}><FaShoppingCart /></NavLink>
-                            {/* <NavLink to="/login"> <button>Login</button> </NavLink> 
-                            <NavLink to="register"> <button>Sign Up</button> </NavLink> */}
+                            
+                          < NavLink to="/cart" className={({isActive})=>isActive ?"text-blue-600":""}><div className="relative">
+                                <FaShoppingCart />
+                                {notificationCount > 0 && (
+                                    <span className="absolute bottom-3 left-4 w-5 h-5 flex items-center justify-center text-white bg-red-500 rounded-full text-xs">
+                                        {notificationCount}
+                                    </span>
+                                )}
+                            </div>
+                            </NavLink>
+                          
                             <NavLink to="/user" className={({isActive})=>isActive ?"text-blue-600":""}><button><FaUser className="w-5 h-32 mx-auto rounded pt-3 aspect-square" /></button></NavLink></div>
 
                     <div className="hidden w-1/5 items-center justify-evenly font-semibold md:flex">
-                    {/* <Link to="/login"> <button>Login</button> </Link> 
-                    <Link to="register"> <button>Sign Up</button>  </Link> */}
+                   
                    
                     </div>
 

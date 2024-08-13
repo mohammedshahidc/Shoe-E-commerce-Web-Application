@@ -18,12 +18,14 @@ const Home = () => {
   return (
     <div className="bg-cover bg-center h-full w-full bg-white">
       <img src={image} alt="Background" className="w-full h-[400px] mt-10" />
-
       <div className="flex flex-wrap justify-center gap-6 p-6">
         {products.map((product) => (
-          <div
-            className="w-[300px] bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden"
+          <div>
+            <Link to={product.id}>
+            <div
+            className="w-[300px] bg-gray-200 border border-gray-200 rounded-lg shadow-md overflow-hidden hover:transition-transform transform scale-100 hover:scale-110"
             key={product.id}
+            
           >
             <img
               src={product.image}
@@ -34,13 +36,18 @@ const Home = () => {
               <h5 className="text-xl font-semibold text-gray-900 mb-2">{product.name}</h5>
               <h5 className="text-xl font-semibold text-gray-900 mb-2">₹ {product.price}</h5>
               <p className="text-gray-700 mb-4">{product.description}</p>
-              <Link to={`${product.id}`}>
+              {/* <Link to={`/product/${product.id}`}>
                 <button className="bg-blue-950 text-white rounded-md py-2 px-4 w-full hover:bg-black">
                   Product Details
                 </button>
-              </Link>
+              </Link> */}
             </div>
           </div>
+            
+            </Link>
+
+          </div>
+          
         ))}
       </div>
     </div>

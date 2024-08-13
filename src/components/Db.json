@@ -7,7 +7,56 @@
         "email": "sad@gajk",
         "password": "Anu@1234",
         "cpassword": "Anu@1234",
-        "cart": []
+        "cart": [
+          {
+            "id": "18",
+            "name": "Women’s Pink Training",
+            "type": "women",
+            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-002-600x600.jpg",
+            "price": 549.9,
+            "description": "Bright pink training shoes for women.",
+            "brand": "Recycled Shoes",
+            "rating": 4.5,
+            "reviews": 7,
+            "quantity": 2
+          },
+          {
+            "id": "3",
+            "name": "Men’s Classic Mint",
+            "type": "men",
+            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-020-600x600.jpg",
+            "price": 1799,
+            "description": "Mint-colored sneakers for a stylish look.",
+            "brand": "Recycled Shoes",
+            "rating": 4.6,
+            "reviews": 10,
+            "quantity": 1
+          },
+          {
+            "id": "4",
+            "name": "Men’s Earth-Tone Sneaker",
+            "type": "men",
+            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-017-600x600.jpg",
+            "price": 749,
+            "description": "Earth-tone sneakers with excellent comfort.",
+            "brand": "Recycled Shoes",
+            "rating": 4.3,
+            "reviews": 15,
+            "quantity": 1
+          },
+          {
+            "id": "2",
+            "name": "Men’s Classic Blue",
+            "type": "men",
+            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-019-600x600.jpg",
+            "price": 1699,
+            "description": "Classic blue sneakers perfect for everyday wear.",
+            "brand": "Recycled Shoes",
+            "rating": 4.7,
+            "reviews": 8,
+            "quantity": 1
+          }
+        ]
       }
     },
     {
@@ -18,6 +67,85 @@
       "confirmPassword": "1111",
       "termsAccepted": true,
       "cart": {}
+    },
+    {
+      "id": "a236",
+      "input": {
+        "username": "shahid c",
+        "email": "ms4811879@gmail.cil",
+        "password": "Shahid@1234",
+        "cpassword": "Shahid@1234",
+        "cart": []
+      }
+    },
+    {
+      "id": "b02f",
+      "input": {
+        "username": "shahid",
+        "email": "ms4811879@gmail.cil",
+        "password": "Msc@1234",
+        "cpassword": "Msc@1234",
+        "cart": []
+      }
+    },
+    {
+      "id": "c767",
+      "input": {
+        "username": "nihal",
+        "email": "sad@gajk",
+        "password": "Ms@12345",
+        "cpassword": "Ms@12345",
+        "cart": [
+          {
+            "id": "20",
+            "name": "Women’s Tosca City Run",
+            "type": "women",
+            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-012-600x600.jpg",
+            "price": 649,
+            "description": "Tosca-colored city running shoes.",
+            "brand": "Recycled Shoes",
+            "rating": 4.4,
+            "reviews": 9,
+            "quantity": 1
+          },
+          {
+            "id": "7",
+            "name": "Men’s Navy Running",
+            "type": "men",
+            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-008-600x600.jpg",
+            "price": 1049.9,
+            "description": "Navy running shoes with superior cushioning.",
+            "brand": "Recycled Shoes",
+            "rating": 4.6,
+            "reviews": 10,
+            "quantity": 1
+          },
+          {
+            "id": "19",
+            "name": "Women’s Tan Sneaker",
+            "type": "women",
+            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-011-600x600.jpg",
+            "price": 899,
+            "description": "Stylish tan sneakers for women.",
+            "brand": "Recycled Shoes",
+            "rating": 4.6,
+            "reviews": 12,
+            "quantity": 1
+          },
+          {
+            "id": "1",
+            "name": "Men’s Black Running",
+            "type": "men",
+            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-005-400x400.jpg",
+            "price": 799,
+            "description": "Comfortable and durable black running shoes for men.",
+            "brand": "Recycled Shoes",
+            "rating": 4.5,
+            "reviews": 12,
+            "quantity": 1
+          }
+        ]
+      }
     }
   ],
   "ProductData": [

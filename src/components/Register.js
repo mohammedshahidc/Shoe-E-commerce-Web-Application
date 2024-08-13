@@ -7,37 +7,38 @@ import { Link, useNavigate } from 'react-router-dom';
 
 
 const Register = () => {
-    const navigate=useNavigate()
+    const navigate = useNavigate()
     const [input, setInput] = useState({
         username: '',
         email: '',
         password: '',
         cpassword: '',
-        cart:[]
+        cart: []
     });
-    
+
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
-       const todb={input};
-    //    console.log(todb);
-    fetch("http://localhost:3000/users",{
-        method:"post",
-headers:{"content-type":"application/json"},
-body:JSON.stringify(todb) })
-.then((res)=>{
-    alert("registered successfully")
-    navigate('/login')
-   
-    
-})
-.catch((err)=>{
-    alert("failed"+err)
-})
+        const todb = { input };
+        //    console.log(todb);
+        fetch("http://localhost:3000/users", {
+            method: "post",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(todb)
+        })
+            .then((res) => {
+                alert("registered successfully")
+                navigate('/login')
 
-    
-       
+
+            })
+            .catch((err) => {
+                alert("failed" + err)
+            })
+
+
+
     };
 
     const handleChange = (e) => {

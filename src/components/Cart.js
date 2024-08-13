@@ -11,6 +11,7 @@ const Cart = () => {
 
     const [quantities, setQuantities] = useState({});
     const [totalprice, setTotalprice] = useState(0);
+    
 
     useEffect(() => {
         const initialQuantities = cart.reduce((acc, item) => {

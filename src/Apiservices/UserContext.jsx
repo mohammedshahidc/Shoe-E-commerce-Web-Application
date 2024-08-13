@@ -1,4 +1,4 @@
-import React, { createContext,useState,useEffect } from 'react'
+import React, { createContext,useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
@@ -28,7 +28,7 @@ const UserContext = ({children}) => {
         try{
             const response=await axios.get('http://localhost:3000/users')
             const users=response.data
-           const user=users.find((user)=>(user?.input.username===login.userName && user?.input.password===login.userPassword))
+           const user=users.find((user)=>(user?.input?.username===login?.userName && user?.input?.password===login?.userPassword))
            console.log(user)
             if(user){
                 localStorage.setItem("logindt",JSON.stringify(user));
@@ -47,20 +47,16 @@ const UserContext = ({children}) => {
        
      
     };
-    // useEffect(()=>{
-    //     const curentUser=localStorage.getItem("logindt")
-    //     if(curentUser){
-    //         setCuruser(JSON.parse(curentUser))
-    //     }
-    //    },[]) 
+    
        
 
        const handlelogout=async()=>{
         try {
         
             localStorage.removeItem("logindt")
+            
             setCuruser(null)
-            // navigate("/login")
+            
         } catch (error) {
             
         }

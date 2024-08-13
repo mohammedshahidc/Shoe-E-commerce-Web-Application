@@ -13,6 +13,7 @@ import Contact from './components/Contact';
 import Cart from './components/Cart';
 import User from './components/User';
 import Payment from './components/Payment';
+import Protectedrouter from './components/Protectedrouter';
 function App() {
   return (
     <div className="App">
@@ -20,8 +21,10 @@ function App() {
       
       <Routes>
           <Route  path='/' element={<Home />} />
-          <Route  path='/register' element={<Register />} />
-          <Route path='/login' element={<Login/>}/>
+          <Route  path='/register' element={
+            <Protectedrouter><Register /></Protectedrouter>} />
+          <Route path='/login' element={
+            <Protectedrouter><Login/></Protectedrouter>}/>
           <Route path='/mens' element={<Mens/>} />
           <Route path='/women' element={<Women/>}/>
           <Route path='/:id' element={<ProductDetailes/>}/>
