@@ -11,8 +11,9 @@ const UserContext = ({children}) => {
 
     const curentUser=localStorage.getItem("logindt")
     const[curuser,setCuruser]=useState(curentUser? JSON.parse(curentUser):null)
-    const storedAdmin=localStorage.getItem("admindt")
-    const[admin,setAdmin]=useState(storedAdmin?JSON.parse(storedAdmin):null)
+    // const storedAdmin=localStorage.getItem("admindt")
+    // const[admin,setAdmin]=useState(storedAdmin?JSON.parse(storedAdmin):null)
+    const [admin,setAdmin]=useState(null)
     
     console.log(curuser);
     const [login, setLogin] = useState({

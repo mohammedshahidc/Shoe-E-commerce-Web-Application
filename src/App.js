@@ -19,6 +19,9 @@ import { Usercont } from './Apiservices/UserContext';
 import { useContext } from 'react';
 import Adminhome from './components/Admin/Adminhome'
 import Sidebar from './components/Admin/Sidebar';
+import ProductsA from './components/Admin/ProductsA';
+import UserA from './components/Admin/UserA';
+
 
 function App() {
   const{admin}=useContext(Usercont)
@@ -43,17 +46,20 @@ function App() {
           <Route  path='/cart' element={<Cart />} />
           <Route path='/user' element={<User/>}/>
           <Route path='/payment' element={<Payment />} />
+          
         </Routes>
       
       <Footer/>
         </div>
       ):(
-        <div>
-       
+        <div className='flex  overflow-scroll bg-stone-200'>
+       <Sidebar/>
         <Routes>
           <Route path='/admin' element={<Adminhome/>}/>
+          <Route path='/admin/productsa' element={<ProductsA />} />
+          <Route path='/admin/usera' element={<UserA/>}/>
         </Routes>
-        <Sidebar/>
+        
         </div>
       )}
      

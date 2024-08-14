@@ -1,12 +1,70 @@
 import React from 'react'
+import { FaBoxOpen } from 'react-icons/fa';
+import { FaUsers } from 'react-icons/fa';
+import { FaShoppingCart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
+
 
 const Adminhome = () => {
   return (
-    <div className='bg-gray-500 p-4'>
-      <h1 className='text-blue-950 text-2xl mb-4 bg-blue-700'>This is my admin page</h1>
-      <button className='bg-blue-800 text-white px-4 py-2 rounded'>Log out</button>
+    <div>
+      <div className=' justify-items-center mr-32 mt-32 '>
+        <div className='flex justify-center justify-items-center '>
+          <Link to={'/admin/productsa'}>
+            <div className='bg-stone-400 w-[400px] h-[180px] mr-14 rounded-md shadow-2xl hover:transition-transform transform scale-100 hover:scale-110 '>
+              <div className='flex'>
+                <div>
+                  <h1 className='text-gray-700 text-3xl font-bold mr-64 mt-2 '>Products</h1><br />
+                  <h1 className='text-gray-700 font-bold text-4xl mr-52'>20</h1>
+                </div>
+                <div className='ml-[-200px] mt-14'>
+                  <h1 className="text-gray-700 font-bold "><FaBoxOpen size={150} /></h1>
+                </div>
+              </div>
+            </div>
+          </Link>
+          <Link to={'/admin/usera'}>
+            <div className='bg-stone-400 w-[400px] h-[180px] rounded-md hover:transition-transform transform scale-100 hover:scale-110 shadow-2xl'>
+              <div className='flex'>
+                <div>
+                  <h1 className='text-gray-700 text-3xl font-bold mr-64 mt-2 '>Users</h1><br />
+                  <h1 className='text-gray-700 font-bold text-4xl mr-52'>20</h1>
+                </div>
+                <div className='relative mt-10'>
+                  <div className='absolute -left-[160px]'>
+                    <h1 className="text-gray-700 font-bold"><FaUsers size={150} /></h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+
+        <div className='flex justify-center justify-items-center pt-10'>
+          <Link>
+            <div className='bg-stone-400 w-[400px] h-[180px] pt-4 rounded-md tran hover:transition-transform transform scale-100 hover:scale-110 shadow-2xl'>
+              <div className='flex'>
+                <div>
+                  <h1 className='text-gray-700 text-3xl font-bold mr-64 mt-2 '>Orders</h1><br />
+                  <h1 className='text-gray-700 font-bold text-4xl mr-52'>20</h1>
+                </div>
+                <div className='ml-[-150px] mt-5'>
+                  <h1 className="text-gray-700 font-bold "> <FaShoppingCart size={150} /></h1>
+                </div>
+              </div>
+            </div>
+          </Link>
+
+
+
+        </div>
+
+
+      </div>
     </div>
+
   )
-}
+};
 
 export default Adminhome;
