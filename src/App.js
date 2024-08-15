@@ -21,7 +21,7 @@ import Adminhome from './components/Admin/Adminhome'
 import Sidebar from './components/Admin/Sidebar';
 import ProductsA from './components/Admin/ProductsA';
 import UserA from './components/Admin/UserA';
-
+import Order from './components/Admin/Order';
 
 function App() {
   const{admin}=useContext(Usercont)
@@ -52,12 +52,13 @@ function App() {
       <Footer/>
         </div>
       ):(
-        <div className='flex  overflow-scroll bg-stone-200'>
+        <div className='flex  overflow-scroll bg-gray-50'>
        <Sidebar/>
         <Routes>
           <Route path='/admin' element={<Adminhome/>}/>
           <Route path='/admin/productsa' element={<ProductsA />} />
           <Route path='/admin/usera' element={<UserA/>}/>
+          <Route path='/admin/order' element={<Order/>} />
         </Routes>
         
         </div>

@@ -5,7 +5,7 @@ const ProductsA = () => {
     const{products}=useContext(context)
     
     return (
-        <div className='relative right-[-250px] justify-center justify-items-center'>
+        <div className='relative right-[-250px] justify-center justify-items-center bg-white'>
             {products.map((product)=>(
             <div>
 <table className="mt-5 table-auto w-[1050px] border-collapse border-solid border-2 border border-gray-900">

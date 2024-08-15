@@ -1,8 +1,5 @@
 {
   "users": [
-    
-    
-    
     {
       "id": "b02f",
       "input": {
@@ -14,7 +11,6 @@
         "cart": []
       }
     },
-    
     {
       "id": "7ba9",
       "input": {
@@ -22,6 +18,61 @@
         "email": "ms4811879@gmail.cil",
         "password": "Anu@1234",
         "cpassword": "Anu@1234",
+        "admin": false,
+        "cart": []
+      }
+    },
+    {
+      "id": "3516",
+      "input": {
+        "username": "mohammed shahid",
+        "email": "shahidmohammed4083@gmail.com",
+        "password": "M@123456",
+        "cpassword": "M@123456",
+        "admin": false,
+        "cart": []
+      }
+    },
+    {
+      "id": "4bf0",
+      "input": {
+        "username": "afna",
+        "email": "afna@gmail.com",
+        "password": "Afna@123",
+        "cpassword": "Afna@123",
+        "admin": false,
+        "cart": []
+      }
+    },
+    {
+      "id": "eff4",
+      "input": {
+        "username": "shamil",
+        "email": "shamil@gmail.com",
+        "password": "Shamil@123",
+        "cpassword": "Shamil@123",
+        "admin": false,
+        "cart": []
+      }
+    },
+    {
+      "id": "0c60",
+      "input": {
+        "username": "nihal",
+        "email": "muhammednihalk4@gmail",
+        "password": "Nihal@123",
+        "cpassword": "Nihal@123",
+        "admin": false,
+        "cart": []
+      }
+    },
+    {
+      "id": "a94d",
+      "input": {
+        "username": "lamhan",
+        "email": "lamhan@gmail.com",
+        "password": "Lamhan@123",
+        "cpassword": "Lamhan@123",
         "admin": false,
         "cart": []
       }

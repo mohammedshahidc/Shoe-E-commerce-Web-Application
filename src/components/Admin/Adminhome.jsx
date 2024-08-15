@@ -8,11 +8,11 @@ import { Link } from 'react-router-dom';
 
 const Adminhome = () => {
   return (
-    <div>
-      <div className=' justify-items-center mr-32 mt-32 '>
-        <div className='flex justify-center justify-items-center '>
+    <div className='ml-[300px] mt-[230px]'>
+      <div className=' justify-items-center mr-32 '>
+        <div className='flex justify-center justify-items-center h-[330px] ml-[50px]  '>
           <Link to={'/admin/productsa'}>
-            <div className='bg-stone-400 w-[400px] h-[180px] mr-14 rounded-md shadow-2xl hover:transition-transform transform scale-100 hover:scale-110 '>
+            <div className='bg-stone-400 w-[400px] h-[180px] mr-14 mt-[-120px] rounded-md shadow-2xl hover:transition-transform transform scale-100 hover:scale-110 '>
               <div className='flex'>
                 <div>
                   <h1 className='text-gray-700 text-3xl font-bold mr-64 mt-2 '>Products</h1><br />
@@ -25,7 +25,7 @@ const Adminhome = () => {
             </div>
           </Link>
           <Link to={'/admin/usera'}>
-            <div className='bg-stone-400 w-[400px] h-[180px] rounded-md hover:transition-transform transform scale-100 hover:scale-110 shadow-2xl'>
+            <div className='bg-stone-400 w-[400px] h-[180px] mt-[-120px] rounded-md hover:transition-transform transform scale-100 hover:scale-110 shadow-2xl'>
               <div className='flex'>
                 <div>
                   <h1 className='text-gray-700 text-3xl font-bold mr-64 mt-2 '>Users</h1><br />
@@ -42,8 +42,8 @@ const Adminhome = () => {
         </div>
 
         <div className='flex justify-center justify-items-center pt-10'>
-          <Link>
-            <div className='bg-stone-400 w-[400px] h-[180px] pt-4 rounded-md tran hover:transition-transform transform scale-100 hover:scale-110 shadow-2xl'>
+          <Link to={'/admin/order'}>
+            <div className='bg-stone-400 w-[400px] h-[180px] pt-4 mt-[-250px] rounded-md tran hover:transition-transform transform scale-100 hover:scale-110 shadow-2xl'>
               <div className='flex'>
                 <div>
                   <h1 className='text-gray-700 text-3xl font-bold mr-64 mt-2 '>Orders</h1><br />
