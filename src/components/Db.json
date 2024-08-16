@@ -19,7 +19,56 @@
         "password": "Anu@1234",
         "cpassword": "Anu@1234",
         "admin": false,
-        "cart": []
+        "cart": [
+          {
+            "id": "2",
+            "name": "Men’s Classic Blue",
+            "type": "men",
+            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-019-600x600.jpg",
+            "price": 1699,
+            "description": "Classic blue sneakers perfect for everyday wear.",
+            "brand": "Recycled Shoes",
+            "rating": 4.7,
+            "reviews": 8,
+            "quantity": 1
+          },
+          {
+            "id": "3",
+            "name": "Men’s Classic Mint",
+            "type": "men",
+            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-020-600x600.jpg",
+            "price": 1799,
+            "description": "Mint-colored sneakers for a stylish look.",
+            "brand": "Recycled Shoes",
+            "rating": 4.6,
+            "reviews": 10,
+            "quantity": 1
+          },
+          {
+            "id": "6",
+            "name": "Men’s Moonstone Sneaker",
+            "type": "men",
+            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-018-600x600.jpg",
+            "price": 749,
+            "description": "Moonstone sneakers with a modern design.",
+            "brand": "Recycled Shoes",
+            "rating": 4.5,
+            "reviews": 11,
+            "quantity": 1
+          },
+          {
+            "id": "17",
+            "name": "Women’s Pink Suede",
+            "type": "women",
+            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-016-600x600.jpg",
+            "price": 599.9,
+            "description": "Soft pink suede shoes for a chic look.",
+            "brand": "Recycled Shoes",
+            "rating": 4.4,
+            "reviews": 8,
+            "quantity": 1
+          }
+        ]
       }
     },
     {
@@ -41,7 +90,56 @@
         "password": "Afna@123",
         "cpassword": "Afna@123",
         "admin": false,
-        "cart": []
+        "cart": [
+          {
+            "id": "1",
+            "name": "Men’s Black Running",
+            "type": "men",
+            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-005-400x400.jpg",
+            "price": 799,
+            "description": "Comfortable and durable black running shoes for men.",
+            "brand": "Recycled Shoes",
+            "rating": 4.5,
+            "reviews": 12,
+            "quantity": 1
+          },
+          {
+            "id": "19",
+            "name": "Women’s Tan Sneaker",
+            "type": "women",
+            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-011-600x600.jpg",
+            "price": 899,
+            "description": "Stylish tan sneakers for women.",
+            "brand": "Recycled Shoes",
+            "rating": 4.6,
+            "reviews": 12,
+            "quantity": 1
+          },
+          {
+            "id": "15",
+            "name": "Women’s Orange Sneaker",
+            "type": "women",
+            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-009-600x600.jpg",
+            "price": 899.9,
+            "description": "Vibrant orange sneakers for women.",
+            "brand": "Recycled Shoes",
+            "rating": 4.6,
+            "reviews": 9,
+            "quantity": 1
+          },
+          {
+            "id": "17",
+            "name": "Women’s Pink Suede",
+            "type": "women",
+            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-016-600x600.jpg",
+            "price": 599.9,
+            "description": "Soft pink suede shoes for a chic look.",
+            "brand": "Recycled Shoes",
+            "rating": 4.4,
+            "reviews": 8,
+            "quantity": 1
+          }
+        ]
       }
     },
     {

@@ -22,6 +22,9 @@ import Sidebar from './components/Admin/Sidebar';
 import ProductsA from './components/Admin/ProductsA';
 import UserA from './components/Admin/UserA';
 import Order from './components/Admin/Order';
+import Usercartdetailes from './components/Admin/Usercartdetailes';
+import ProductdtA from './components/Admin/ProductdtA';
+import Userdta from './components/Admin/Userdta';
 
 function App() {
   const{admin}=useContext(Usercont)
@@ -59,6 +62,9 @@ function App() {
           <Route path='/admin/productsa' element={<ProductsA />} />
           <Route path='/admin/usera' element={<UserA/>}/>
           <Route path='/admin/order' element={<Order/>} />
+          <Route path='/admin/usera/usercartdetailes' element={<Usercartdetailes/>}/>
+          <Route path='/admin/productsa/:id' element={<ProductdtA/>}/>
+          <Route path='/admin/usera/:id' element={<Userdta/>} />
         </Routes>
         
         </div>
