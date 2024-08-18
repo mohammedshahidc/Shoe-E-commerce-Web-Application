@@ -25,6 +25,7 @@ import Order from './components/Admin/Order';
 import Usercartdetailes from './components/Admin/Usercartdetailes';
 import ProductdtA from './components/Admin/ProductdtA';
 import Userdta from './components/Admin/Userdta';
+import AddProdect from './components/Admin/AddProdect';
 
 function App() {
   const{admin}=useContext(Usercont)
@@ -65,6 +66,8 @@ function App() {
           <Route path='/admin/usera/usercartdetailes' element={<Usercartdetailes/>}/>
           <Route path='/admin/productsa/:id' element={<ProductdtA/>}/>
           <Route path='/admin/usera/:id' element={<Userdta/>} />
+          <Route path='/admin/productsa/AddProduct' element={<AddProdect/>} />
+         
         </Routes>
         
         </div>

@@ -30,7 +30,7 @@ const ProductsA = () => {
                             </td>
                             <td className="border border-gray-300 px-4 py-2">{product.price}</td>
                             <td className="border border-gray-300 px-4 py-2">
-                                <Link to={product.id}>
+                                <Link to={`/admin/productsa/${product.id}`}>
                                     <button className='bg-blue-700 rounded-md w-[100px] h-[30px] text-white hover:bg-black cursor-pointer'>Details</button>
                                 </Link>
                             </td>
@@ -38,6 +38,7 @@ const ProductsA = () => {
                     ))}
                 </tbody>
             </table>
+            <Link to={'/admin/productsa/AddProduct'}><button className='w-[120px] h-[30px] bg-blue-700 text-white rounded-md hover:bg-black cursor-pointer'>Add Product</button></Link>
         </div>
     );
 };
