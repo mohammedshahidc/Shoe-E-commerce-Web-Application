@@ -24,7 +24,7 @@ const ProductContext = ({ children }) => {
 
     return (
         <div>
-        <context.Provider value={{products}}>
+        <context.Provider value={{products,setProducts}}>
             {children}
         </context.Provider>
 

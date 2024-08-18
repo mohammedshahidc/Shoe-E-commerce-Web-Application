@@ -95,7 +95,7 @@ const UserA = () => {
                             <td className="border border-gray-300 px-4 py-2">{user.input.email}</td>
                             <td className="border border-gray-300 px-4 py-2">{user.input.password}</td>
                             <td className="border border-gray-300 px-4 py-2">
-                               <Link to={user.id}><button className='bg-blue-700 text-white w-[100px] h-[30px] rounded-md hover:bg-black cursor-pointer'>Detailes</button></Link>
+                               <Link to={`/admin/usera/${user.id}`}><button className='bg-blue-700 text-white w-[100px] h-[30px] rounded-md hover:bg-black cursor-pointer'>Detailes</button></Link>
                             </td>
                         </tr>
                     ))}
