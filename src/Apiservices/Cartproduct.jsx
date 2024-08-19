@@ -48,7 +48,7 @@ const Cartproduct = ({ children }) => {
           })
           setCart(updatecart)
           
-            setNotificationCount(cart.length);
+            setNotificationCount(cart.length +1);
        
           
         }
@@ -79,7 +79,7 @@ const Cartproduct = ({ children }) => {
       newcartitem.splice(index, 1)
       setCart(newcartitem)
     
-        setNotificationCount(cart.length);
+        setNotificationCount(cart.length -1);
       
       
     } catch (error) {

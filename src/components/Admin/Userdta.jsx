@@ -43,7 +43,9 @@ const Userdta = () => {
              </div>
               
               <div className="date bg-gray-300 px-2 rounded mt-4">
-                <h1>cart items : {user.input.cart}</h1>
+                <h1>cart items : {user.input.cart.map((items)=>(
+                  <div>Product: {items.name}, price : ₹{items.price},  Quantity : {items.quantity}</div>
+                ))}</h1>
               </div>
             </div>
           </div>

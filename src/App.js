@@ -26,6 +26,7 @@ import Usercartdetailes from './components/Admin/Usercartdetailes';
 import ProductdtA from './components/Admin/ProductdtA';
 import Userdta from './components/Admin/Userdta';
 import AddProdect from './components/Admin/AddProdect';
+import Editproduct from './components/Admin/Editproduct';
 
 function App() {
   const{admin}=useContext(Usercont)
@@ -56,6 +57,7 @@ function App() {
       <Footer/>
         </div>
       ):(
+        
         <div className='flex  overflow-scroll bg-gray-50'>
        <Sidebar/>
         <Routes>
@@ -67,6 +69,7 @@ function App() {
           <Route path='/admin/productsa/:id' element={<ProductdtA/>}/>
           <Route path='/admin/usera/:id' element={<Userdta/>} />
           <Route path='/admin/productsa/AddProduct' element={<AddProdect/>} />
+          <Route path='/admin/productsa/:id/editproduct' element={<Editproduct/>} />
          
         </Routes>
         

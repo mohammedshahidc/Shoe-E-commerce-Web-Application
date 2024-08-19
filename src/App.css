@@ -12,25 +12,81 @@ input:invalid~span{
   background-color: blue;
   color: white;
   width: 100px;
-  height: 30px;
-  border-radius: 50px;
+  height: 40px;
+  border-radius: 10px;
   
 }
 .btn:hover{
   background-color: black;
   cursor: pointer;
 }
-/* #di{
-  max-width: 500px;
-  height: 800px;
-  overflow-y: hidden;
-  overflow-x: hidden;
-} */
+
 #bt{
   position: relative;
   right: 5px;
 }
+#edit{
+  position: relative;
+  right: 5px;
+}
+#dlt{
+  position: relative;
+  right: 5px;
+}
+.inp{
+  width: 1000px;
+  height: 30px;
+  background-color: white;
+  border: solid 1px black;
+  margin: 5px;
 
+}
+.label{
+  font-weight: bold;
+}
+#in{
+  position: relative;
+  right: 5px;
+}
+#add{
+  position: relative;
+  right: 5px;
+}
+#prdname{
+  position: relative;
+  right: 5px;
+}
+#prdtype{
+  position: relative;
+  right: 5px;
+}
+#prdurl{
+  position: relative;
+  right: 5px;
+}
+#prdprice{
+  position: relative;
+  right: 5px;
+}
+#prddescription{
+  position: relative;
+  right: 5px;
+}
+#prdbrand{
+  position: relative;
+  right: 5px;
+}
+#prdrating{
+  position: relative;
+  right: 5px;
+}
+#prdreviews{
+  position: relative;
+  right: 5px;
+}
+#edit{
+  width: 130px;
+}
 /* .mainlog{
   background-color: aqua;
   width: 100%;

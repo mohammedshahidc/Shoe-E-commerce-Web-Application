@@ -4,16 +4,23 @@ import { useNavigate } from 'react-router-dom'
 import Dashboard from '../components/Admin/Adminhome'
 
 
+
 export const Usercont=createContext()
 
 
 const UserContext = ({children}) => {
 
+    
     const curentUser=localStorage.getItem("logindt")
     const[curuser,setCuruser]=useState(curentUser? JSON.parse(curentUser):null)
-    // const storedAdmin=localStorage.getItem("admindt")
-    // const[admin,setAdmin]=useState(storedAdmin?JSON.parse(storedAdmin):null)
-    const [admin,setAdmin]=useState(null)
+    const storedAdmin=localStorage.getItem("admindt")
+    const[admin,setAdmin]=useState(storedAdmin?JSON.parse(storedAdmin):null)
+   const handleLogout=()=>{
+    localStorage.removeItem("admindt")
+    setAdmin(null)
+    navigate("/")
+    
+   }
     
     console.log(curuser);
     const [login, setLogin] = useState({
@@ -75,7 +82,7 @@ const UserContext = ({children}) => {
 
   return (
     <div>
-        <Usercont.Provider value={{login,handlelogChange,handlelogSubmit,curuser,handlelogout,userID:curuser?.id,admin}}>
+        <Usercont.Provider value={{login,handlelogChange,handlelogSubmit,curuser,handlelogout,userID:curuser?.id,admin,handleLogout}}>
             {children}
         </Usercont.Provider>
       

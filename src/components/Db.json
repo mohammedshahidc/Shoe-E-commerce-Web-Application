@@ -161,7 +161,44 @@
         "password": "Nihal@123",
         "cpassword": "Nihal@123",
         "admin": false,
-        "cart": []
+        "cart": [
+          {
+            "id": "3",
+            "name": "Men’s Classic Mint",
+            "type": "men",
+            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-020-600x600.jpg",
+            "price": "2000",
+            "description": "Mint-colored sneakers for a stylish look.",
+            "brand": "Recycled Shoes",
+            "rating": 4.6,
+            "reviews": 10,
+            "quantity": 1
+          },
+          {
+            "id": "20",
+            "name": "Women’s Tosca City Run",
+            "type": "women",
+            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-012-600x600.jpg",
+            "price": 649,
+            "description": "Tosca-colored city running shoes.",
+            "brand": "Recycled Shoes",
+            "rating": 4.4,
+            "reviews": 9,
+            "quantity": 1
+          },
+          {
+            "id": "1",
+            "name": "Men’s Black Running",
+            "type": "men",
+            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-005-400x400.jpg",
+            "price": 799,
+            "description": "Comfortable and durable black running shoes for men.",
+            "brand": "Recycled Shoes",
+            "rating": 4.5,
+            "reviews": 12,
+            "quantity": 1
+          }
+        ]
       }
     },
     {
@@ -204,7 +241,7 @@
       "name": "Men’s Classic Mint",
       "type": "men",
       "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-020-600x600.jpg",
-      "price": 1799,
+      "price": "2000",
       "description": "Mint-colored sneakers for a stylish look.",
       "brand": "Recycled Shoes",
       "rating": 4.6,
