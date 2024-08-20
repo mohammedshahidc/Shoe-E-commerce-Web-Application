@@ -5,7 +5,7 @@ const Contact = () => {
         alert("successfully send your message")
     }
     return (
-        <div className="max-w-lg mx-auto p-4 bg-white border border-gray-300 rounded-lg shadow-md bg-slate-300">
+        <div className="max-w-lg mx-auto p-4  border border-gray-300 rounded-lg shadow-md bg-slate-300">
       <h2 className="text-2xl font-bold mb-4 text-gray-800">Contact Us</h2>
       <form  className="space-y-4" onSubmit={handlesunbmit}>
         <div>

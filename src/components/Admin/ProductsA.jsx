@@ -7,13 +7,15 @@ const ProductsA = () => {
     
     return (
         <div className='relative right-[-250px] justify-center justify-items-center bg-white'>
+            <Link to={'/admin/productsa/AddProduct'}><button className='w-[120px] h-[30px] bg-blue-700 text-white rounded-md hover:bg-black cursor-pointer mt-10' >Add Product</button></Link>
+
             <table className="mt-5 table-auto w-[1050px] border-collapse border-solid border-2 border border-gray-900">
                 <thead>
                     <tr>
-                        {/* Add table headers here */}
+                       
                         <th className="border border-gray-300 px-4 py-2">Image</th>
                         <th className="border border-gray-300 px-4 py-2">Product Name</th>
-                        <th className="border border-gray-300 px-4 py-2">Product Details</th>
+                        <th className="border border-gray-300 px-4 py-2">Product category</th>
                         <th className="border border-gray-300 px-4 py-2">Price</th>
                         <th className="border border-gray-300 px-4 py-2"></th>
                     </tr>
@@ -26,7 +28,7 @@ const ProductsA = () => {
                             </td>
                             <td className="border border-gray-300 px-4 py-2">{product.name}</td>
                             <td className="border border-gray-300 px-4 py-2">
-                                {product.description}<br />Type: {product.type}<br />Brand: {product.brand}<br />Rating: {product.rating}
+                                {product.type}
                             </td>
                             <td className="border border-gray-300 px-4 py-2">{product.price}</td>
                             <td className="border border-gray-300 px-4 py-2">
@@ -38,7 +40,6 @@ const ProductsA = () => {
                     ))}
                 </tbody>
             </table>
-            <Link to={'/admin/productsa/AddProduct'}><button className='w-[120px] h-[30px] bg-blue-700 text-white rounded-md hover:bg-black cursor-pointer'>Add Product</button></Link>
         </div>
     );
 };

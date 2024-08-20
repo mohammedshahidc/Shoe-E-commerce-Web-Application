@@ -16,7 +16,7 @@ const Adminhome = () => {
               <div className='flex'>
                 <div>
                   <h1 className='text-gray-700 text-3xl font-bold mr-64 mt-2 '>Products</h1><br />
-                  <h1 className='text-gray-700 font-bold text-4xl mr-52'>20</h1>
+                  {/* <h1 className='text-gray-700 font-bold text-4xl mr-52'>20</h1> */}
                 </div>
                 <div className='ml-[-200px] mt-14'>
                   <h1 className="text-gray-700 font-bold "><FaBoxOpen size={150} /></h1>
@@ -29,7 +29,7 @@ const Adminhome = () => {
               <div className='flex'>
                 <div>
                   <h1 className='text-gray-700 text-3xl font-bold mr-64 mt-2 '>Users</h1><br />
-                  <h1 className='text-gray-700 font-bold text-4xl mr-52'>20</h1>
+                  {/* <h1 className='text-gray-700 font-bold text-4xl mr-52'>20</h1> */}
                 </div>
                 <div className='relative mt-10'>
                   <div className='absolute -left-[160px]'>
@@ -47,7 +47,7 @@ const Adminhome = () => {
               <div className='flex'>
                 <div>
                   <h1 className='text-gray-700 text-3xl font-bold mr-64 mt-2 '>Orders</h1><br />
-                  <h1 className='text-gray-700 font-bold text-4xl mr-52'>20</h1>
+                  {/* <h1 className='text-gray-700 font-bold text-4xl mr-52'>20</h1> */}
                 </div>
                 <div className='ml-[-150px] mt-5'>
                   <h1 className="text-gray-700 font-bold "> <FaShoppingCart size={150} /></h1>

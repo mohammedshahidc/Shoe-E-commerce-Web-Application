@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 const Mens = () => {
   const { products } = useContext(context);
 
-  // Filter products for type "men"
+  
   const filter = products.filter((product) => product.type === "men");
 
   return (

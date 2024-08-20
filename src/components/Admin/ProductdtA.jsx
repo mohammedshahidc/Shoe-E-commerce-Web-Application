@@ -11,7 +11,7 @@ const ProductdtA = () => {
     const [filt, setFilt] = useState([])
     useEffect(() => {
         setFilt(products.filter((product) => (product.id == id)))
-    }, [ id])
+    }, [products])
     const navigate = useNavigate()
     const deleetproduct =  (item) => {
         
@@ -51,7 +51,7 @@ const ProductdtA = () => {
                                <Link to={`/admin/productsa/${product.id}/editproduct`}>
                                <button class='btn' id='edit'>Edit</button>
                                </Link>
-                                <button class='btn' id='dlt' onClick={() => deleetproduct(product)}>Delete</button>
+                                <button class='btn' id='dlt' type='button' onClick={() => deleetproduct(product)}>Delete</button>
                             </div>
                         </div>
 

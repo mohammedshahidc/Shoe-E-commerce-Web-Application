@@ -1,16 +1,16 @@
 
-import React, { useContext} from 'react';
+import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Usercont } from '../Apiservices/UserContext';
 
 const Login = () => {
-    
-    const{login,handlelogChange,handlelogSubmit}=useContext(Usercont)
-   
-   
-    
+
+    const { login, handlelogChange, handlelogSubmit } = useContext(Usercont)
+
+
+
     return (
-    
+
         <div className="bg-gray-300 min-h-screen flex items-center justify-center p-4">
             <form
                 className="bg-gray-500 text-white w-full max-w-md p-8 rounded-lg shadow-lg space-y-4"
@@ -58,7 +58,7 @@ const Login = () => {
             </form>
         </div>
     );
-    
+
 };
 
 export default Login;

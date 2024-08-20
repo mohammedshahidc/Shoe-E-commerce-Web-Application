@@ -211,12 +211,71 @@
         "admin": false,
         "cart": []
       }
+    },
+    {
+      "id": "866d",
+      "input": {
+        "username": "ruvais",
+        "email": "ruvais@gmail.com",
+        "password": "Monu@123",
+        "cpassword": "Monu@123",
+        "admin": false,
+        "cart": [
+          {
+            "id": "3",
+            "name": "Men’s Classic Mint",
+            "type": "men",
+            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-020-600x600.jpg",
+            "price": "2000",
+            "description": "Mint-colored sneakers for a stylish look.",
+            "brand": "Recycled Shoes",
+            "rating": 4.6,
+            "reviews": 10,
+            "quantity": 1
+          },
+          {
+            "id": "6",
+            "name": "Men’s Moonstone Sneaker",
+            "type": "men",
+            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-018-600x600.jpg",
+            "price": 749,
+            "description": "Moonstone sneakers with a modern design.",
+            "brand": "Recycled Shoes",
+            "rating": 4.5,
+            "reviews": 11,
+            "quantity": 1
+          },
+          {
+            "id": "20",
+            "name": "Women’s Tosca City Run",
+            "type": "women",
+            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-012-600x600.jpg",
+            "price": 649,
+            "description": "Tosca-colored city running shoes.",
+            "brand": "Recycled Shoes",
+            "rating": 4.4,
+            "reviews": 9,
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "87a6",
+      "input": {
+        "username": "KKK",
+        "email": "KKK@GMAIL.COM",
+        "password": "Kk@12345",
+        "cpassword": "Kk@12345",
+        "admin": false,
+        "cart": []
+      }
     }
   ],
   "ProductData": [
     {
       "id": "1",
-      "name": "Men’s Black Running",
+      "name": "Men’s Black Runnings",
       "type": "men",
       "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-005-400x400.jpg",
       "price": 799,

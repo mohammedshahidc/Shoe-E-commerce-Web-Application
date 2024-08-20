@@ -13,7 +13,7 @@ const Register = () => {
         email: '',
         password: '',
         cpassword: '',
-        admin:false,
+        admin: false,
         cart: []
     });
 
@@ -22,7 +22,7 @@ const Register = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const todb = { input };
-        //    console.log(todb);
+
         fetch("http://localhost:3000/users", {
             method: "post",
             headers: { "content-type": "application/json" },

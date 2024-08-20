@@ -22,32 +22,28 @@ const Home = () => {
         {products.map((product) => (
           <div>
             <Link to={product.id}>
-            <div
-            className="w-[300px] bg-gray-200 border border-gray-200 rounded-lg shadow-md overflow-hidden hover:transition-transform transform scale-100 hover:scale-110"
-            key={product.id}
-            
-          >
-            <img
-              src={product.image}
-              alt={product.name}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h5 className="text-xl font-semibold text-gray-900 mb-2">{product.name}</h5>
-              <h5 className="text-xl font-semibold text-gray-900 mb-2">₹ {product.price}</h5>
-              <p className="text-gray-700 mb-4">{product.description}</p>
-              {/* <Link to={`/product/${product.id}`}>
-                <button className="bg-blue-950 text-white rounded-md py-2 px-4 w-full hover:bg-black">
-                  Product Details
-                </button>
-              </Link> */}
-            </div>
-          </div>
-            
+              <div
+                className="w-[300px] bg-gray-200 border border-gray-200 rounded-lg shadow-md overflow-hidden hover:transition-transform transform scale-100 hover:scale-110"
+                key={product.id}
+
+              >
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-4">
+                  <h5 className="text-xl font-semibold text-gray-900 mb-2">{product.name}</h5>
+                  <h5 className="text-xl font-semibold text-gray-900 mb-2">₹ {product.price}</h5>
+                  <p className="text-gray-700 mb-4">{product.description}</p>
+
+                </div>
+              </div>
+
             </Link>
 
           </div>
-          
+
         ))}
       </div>
     </div>

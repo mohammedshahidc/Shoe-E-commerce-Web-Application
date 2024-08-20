@@ -13,7 +13,7 @@ const Userdta = () => {
       try {
         const resp = await axios.get("http://localhost:3000/users");
         setUserdt(resp.data);
-        console.log(resp.data); // Move the console log here
+        console.log(resp.data);
       } catch (error) {
         console.error("fetching error: " + error);
       }
@@ -23,31 +23,48 @@ const Userdta = () => {
 
   useEffect(() => {
     setFilt(userdt.filter((user) => user.id == id));
-  }, [userdt, id]); // Include userdt and id in the dependency array
+  }, [userdt, id]);
 
-  console.log(id); // Logging id if needed
+  
 
   return (
     <div className='w-screen h-screen'>
       {filt.map((user) => (
-        <div className="container mt-4 mb-4 p-3 flex justify-center" key={user.id} >
-          <div >
-            <div className="image flex flex-col justify-center items-center mt-20 w-[550px] h-[400px] bg-gray-200 ml-[300px]">
-              
-          <h1 className='pb-6'><FaUser size={60}/></h1>
-            <h1 className="idd1 text-sm">User id : {user.id}</h1>
-              <h1 className="name mt-3 text-2xl font-bold">Name : {user.input.username}</h1>
-              <h1 className="idd text-lg font-semibold">Email : {user.input.email}</h1>
-              <h1>Password : {user.input.password}</h1>
-              <div className="flex justify-center items-center gap-2 mt-2">
-             </div>
-              
-              <div className="date bg-gray-300 px-2 rounded mt-4">
-                <h1>cart items : {user.input.cart.map((items)=>(
-                  <div>Product: {items.name}, price : ₹{items.price},  Quantity : {items.quantity}</div>
-                ))}</h1>
+
+        <div className="flex min-h-screen items-center justify-center ml-[230px]">
+          <div className="relative flex w-full max-w-[48rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md h-[350px]">
+            <div className="relative m-0 w-2/5 shrink-0 overflow-hidden rounded-xl rounded-r-none bg-gray-300 bg-clip-border text-gray-700">
+              <div className="pb-6 ml-[10px] mt-8 rounded-full border-2 border-black inline-flex items-center justify-center p-4">
+                <FaUser size={60} />
+
               </div>
+              <div className='p-4 text-black'>
+                Name : {user.input.username}<br />
+                Email : {user.input.email}<br />
+                id : {user.id}
+              </div>
+              <button class='btn' >Block</button>
             </div>
+
+            <div className="p-6 overflow-scroll w-[480px]">
+              <h6 className="mb-4 block font-sans text-base font-semibold uppercase leading-relaxed tracking-normal text-pink-500 antialiased">
+                Cart
+              </h6>
+
+              <p className="mb-8 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
+                {user.input.cart.map((item) => (
+                  <div>
+                    Product : {item.name}<br />
+                    price : {item.price}<br />
+                    Quantity : {item.quantity}<br />
+                  </div>
+                ))}
+              </p>
+
+            </div>
+          </div>
+          <div className="flex items-center justify-center">
+
           </div>
         </div>
       ))}

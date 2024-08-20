@@ -20,7 +20,7 @@ const ProductContext = ({ children }) => {
         fetch();
     }, []);
 
-    console.log(products);
+   
 
     return (
         <div>

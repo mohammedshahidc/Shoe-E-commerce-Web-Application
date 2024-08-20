@@ -4,20 +4,20 @@ import { Usercont } from '../Apiservices/UserContext'
 
 
 
-const Protectedrouter = ({children}) => {
-    
-    const{curuser}=useContext(Usercont)
-    if( curuser ){
-        return <Navigate to={"/"}/>
-    
+const Protectedrouter = ({ children }) => {
+
+    const { curuser } = useContext(Usercont)
+    if (curuser) {
+        return <Navigate to={"/"} />
+
     }
 
-    
-  return (
-    
-      children
-    
-  )
+
+    return (
+
+        children
+
+    )
 }
 
 export default Protectedrouter

@@ -13,8 +13,11 @@ const UserContext = ({children}) => {
     
     const curentUser=localStorage.getItem("logindt")
     const[curuser,setCuruser]=useState(curentUser? JSON.parse(curentUser):null)
+
     const storedAdmin=localStorage.getItem("admindt")
     const[admin,setAdmin]=useState(storedAdmin?JSON.parse(storedAdmin):null)
+
+    
    const handleLogout=()=>{
     localStorage.removeItem("admindt")
     setAdmin(null)
@@ -22,7 +25,7 @@ const UserContext = ({children}) => {
     
    }
     
-    console.log(curuser);
+    
     const [login, setLogin] = useState({
         userName: '',
         userPassword: ''
@@ -41,7 +44,7 @@ const UserContext = ({children}) => {
             const users=response.data
            const user=users.find((user)=>(user?.input?.username===login?.userName && user?.input?.password===login?.userPassword && user ?.input.admin==false))
             const admin=users.find((admin)=>(admin?.input?.username===login?.userName && admin ?.input ?.password===login?.userPassword && admin ?.input.admin==true))    
-           console.log(user)
+          
             if(user){
                 localStorage.setItem("logindt",JSON.stringify(user));
                 setCuruser(user)
