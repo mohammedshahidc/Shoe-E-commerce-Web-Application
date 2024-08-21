@@ -15,7 +15,8 @@ const Order = () => {
     }
     fetch()
   }, [])
-  const filter = user.filter(user => user.cart.length >= 1);
+  const filter = user.filter(user => Array.isArray(user.cart) && user.cart.length >= 1)
+
   return (
     <div className='relative right-[-250px] justify-center justify-items-center bg-white w-[800px] h-screen'>
       <div>
