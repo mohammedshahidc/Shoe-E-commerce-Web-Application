@@ -42,8 +42,8 @@ const UserContext = ({children}) => {
         try{
             const response=await axios.get('http://localhost:3000/users')
             const users=response.data
-           const user=users.find((user)=>(user?.input?.username===login?.userName && user?.input?.password===login?.userPassword && user ?.input.admin==false))
-            const admin=users.find((admin)=>(admin?.input?.username===login?.userName && admin ?.input ?.password===login?.userPassword && admin ?.input.admin==true))    
+           const user=users.find((user)=>(user?.username===login?.userName && user?.password===login?.userPassword && user ?.admin==false && user.block==false))
+            const admin=users.find((admin)=>(admin?.username===login?.userName && admin ?.password===login?.userPassword && admin ?.admin==true))    
           
             if(user){
                 localStorage.setItem("logindt",JSON.stringify(user));

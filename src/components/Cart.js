@@ -37,12 +37,12 @@ const Cart = () => {
         setQuantities({ ...quantities, [item.id]: newCount });
         try {
             const resp = await axios.get(`http://localhost:3000/users/${userID}`);
-            const input = resp.data.input;
-            const cart = resp.data.input.cart;
+            const activeuser = resp.data
+            const cart = resp.data.cart;
             const index = cart.findIndex((cartItem) => cartItem.id === item.id);
             cart[index].quantity += 1;
-            await axios.patch(`http://localhost:3000/users/${curuser?.id}`, {
-                input: { ...input, cart: cart }
+            await axios.patch(`http://localhost:3000/users/${userID}`, {
+                ...activeuser,cart: activeuser.cart 
             });
         } catch (error) {
             console.error('Error updating quantity:', error);
@@ -56,12 +56,12 @@ const Cart = () => {
             setQuantities({ ...quantities, [item.id]: newCount });
             try {
                 const resp = await axios.get(`http://localhost:3000/users/${userID}`);
-                const input = resp.data.input;
-                const cart = resp.data.input.cart;
+                const activeuser = resp.data
+                const cart = resp.data.cart;
                 const index = cart.findIndex((cartItem) => cartItem.id === item.id);
                 cart[index].quantity -= 1;
                 await axios.patch(`http://localhost:3000/users/${curuser?.id}`, {
-                    input: { ...input, cart: cart }
+                    ...activeuser,cart: activeuser.cart 
                 });
             } catch (error) {
                 console.error('Error updating quantity:', error);

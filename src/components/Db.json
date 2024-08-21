@@ -2,280 +2,251 @@
   "users": [
     {
       "id": "b02f",
-      "input": {
-        "username": "shahid",
-        "email": "ms4811879@gmail.cil",
-        "password": "Msc@1234",
-        "cpassword": "Msc@1234",
-        "admin": true,
-        "cart": []
-      }
-    },
-    {
-      "id": "7ba9",
-      "input": {
-        "username": "mohammed shahid",
-        "email": "ms4811879@gmail.cil",
-        "password": "Anu@1234",
-        "cpassword": "Anu@1234",
-        "admin": false,
-        "cart": [
-          {
-            "id": "2",
-            "name": "Men’s Classic Blue",
-            "type": "men",
-            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-019-600x600.jpg",
-            "price": 1699,
-            "description": "Classic blue sneakers perfect for everyday wear.",
-            "brand": "Recycled Shoes",
-            "rating": 4.7,
-            "reviews": 8,
-            "quantity": 1
-          },
-          {
-            "id": "3",
-            "name": "Men’s Classic Mint",
-            "type": "men",
-            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-020-600x600.jpg",
-            "price": 1799,
-            "description": "Mint-colored sneakers for a stylish look.",
-            "brand": "Recycled Shoes",
-            "rating": 4.6,
-            "reviews": 10,
-            "quantity": 1
-          },
-          {
-            "id": "6",
-            "name": "Men’s Moonstone Sneaker",
-            "type": "men",
-            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-018-600x600.jpg",
-            "price": 749,
-            "description": "Moonstone sneakers with a modern design.",
-            "brand": "Recycled Shoes",
-            "rating": 4.5,
-            "reviews": 11,
-            "quantity": 1
-          },
-          {
-            "id": "17",
-            "name": "Women’s Pink Suede",
-            "type": "women",
-            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-016-600x600.jpg",
-            "price": 599.9,
-            "description": "Soft pink suede shoes for a chic look.",
-            "brand": "Recycled Shoes",
-            "rating": 4.4,
-            "reviews": 8,
-            "quantity": 1
-          }
-        ]
-      }
+      "username": "shahid",
+      "email": "ms4811879@gmail.cil",
+      "password": "Msc@1234",
+      "cpassword": "Msc@1234",
+      "admin": true,
+      "cart": []
     },
     {
       "id": "3516",
-      "input": {
-        "username": "mohammed shahid",
-        "email": "shahidmohammed4083@gmail.com",
-        "password": "M@123456",
-        "cpassword": "M@123456",
-        "admin": false,
-        "cart": []
-      }
+      "username": "mohammed shahid",
+      "email": "shahidmohammed4083@gmail.com",
+      "password": "M@123456",
+      "cpassword": "M@123456",
+      "admin": false,
+      "block": false,
+      "cart": []
     },
     {
       "id": "4bf0",
-      "input": {
-        "username": "afna",
-        "email": "afna@gmail.com",
-        "password": "Afna@123",
-        "cpassword": "Afna@123",
-        "admin": false,
-        "cart": [
-          {
-            "id": "1",
-            "name": "Men’s Black Running",
-            "type": "men",
-            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-005-400x400.jpg",
-            "price": 799,
-            "description": "Comfortable and durable black running shoes for men.",
-            "brand": "Recycled Shoes",
-            "rating": 4.5,
-            "reviews": 12,
-            "quantity": 1
-          },
-          {
-            "id": "19",
-            "name": "Women’s Tan Sneaker",
-            "type": "women",
-            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-011-600x600.jpg",
-            "price": 899,
-            "description": "Stylish tan sneakers for women.",
-            "brand": "Recycled Shoes",
-            "rating": 4.6,
-            "reviews": 12,
-            "quantity": 1
-          },
-          {
-            "id": "15",
-            "name": "Women’s Orange Sneaker",
-            "type": "women",
-            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-009-600x600.jpg",
-            "price": 899.9,
-            "description": "Vibrant orange sneakers for women.",
-            "brand": "Recycled Shoes",
-            "rating": 4.6,
-            "reviews": 9,
-            "quantity": 1
-          },
-          {
-            "id": "17",
-            "name": "Women’s Pink Suede",
-            "type": "women",
-            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-016-600x600.jpg",
-            "price": 599.9,
-            "description": "Soft pink suede shoes for a chic look.",
-            "brand": "Recycled Shoes",
-            "rating": 4.4,
-            "reviews": 8,
-            "quantity": 1
-          }
-        ]
-      }
+      "username": "afna",
+      "email": "afna@gmail.com",
+      "password": "Afna@123",
+      "cpassword": "Afna@123",
+      "admin": false,
+      "block": false,
+      "cart": [
+        {
+          "id": "1",
+          "name": "Men’s Black Running",
+          "type": "men",
+          "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-005-400x400.jpg",
+          "price": 799,
+          "description": "Comfortable and durable black running shoes for men.",
+          "brand": "Recycled Shoes",
+          "rating": 4.5,
+          "reviews": 12,
+          "quantity": 1
+        },
+        {
+          "id": "19",
+          "name": "Women’s Tan Sneaker",
+          "type": "women",
+          "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-011-600x600.jpg",
+          "price": 899,
+          "description": "Stylish tan sneakers for women.",
+          "brand": "Recycled Shoes",
+          "rating": 4.6,
+          "reviews": 12,
+          "quantity": 1
+        },
+        {
+          "id": "15",
+          "name": "Women’s Orange Sneaker",
+          "type": "women",
+          "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-009-600x600.jpg",
+          "price": 899.9,
+          "description": "Vibrant orange sneakers for women.",
+          "brand": "Recycled Shoes",
+          "rating": 4.6,
+          "reviews": 9,
+          "quantity": 1
+        },
+        {
+          "id": "17",
+          "name": "Women’s Pink Suede",
+          "type": "women",
+          "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-016-600x600.jpg",
+          "price": 599.9,
+          "description": "Soft pink suede shoes for a chic look.",
+          "brand": "Recycled Shoes",
+          "rating": 4.4,
+          "reviews": 8,
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": "eff4",
-      "input": {
-        "username": "shamil",
-        "email": "shamil@gmail.com",
-        "password": "Shamil@123",
-        "cpassword": "Shamil@123",
-        "admin": false,
-        "cart": []
-      }
+      "username": "shamil",
+      "email": "shamil@gmail.com",
+      "password": "Shamil@123",
+      "cpassword": "Shamil@123",
+      "admin": false,
+      "block": true,
+      "cart": []
     },
     {
       "id": "0c60",
-      "input": {
-        "username": "nihal",
-        "email": "muhammednihalk4@gmail",
-        "password": "Nihal@123",
-        "cpassword": "Nihal@123",
-        "admin": false,
-        "cart": [
-          {
-            "id": "3",
-            "name": "Men’s Classic Mint",
-            "type": "men",
-            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-020-600x600.jpg",
-            "price": "2000",
-            "description": "Mint-colored sneakers for a stylish look.",
-            "brand": "Recycled Shoes",
-            "rating": 4.6,
-            "reviews": 10,
-            "quantity": 1
-          },
-          {
-            "id": "20",
-            "name": "Women’s Tosca City Run",
-            "type": "women",
-            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-012-600x600.jpg",
-            "price": 649,
-            "description": "Tosca-colored city running shoes.",
-            "brand": "Recycled Shoes",
-            "rating": 4.4,
-            "reviews": 9,
-            "quantity": 1
-          },
-          {
-            "id": "1",
-            "name": "Men’s Black Running",
-            "type": "men",
-            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-005-400x400.jpg",
-            "price": 799,
-            "description": "Comfortable and durable black running shoes for men.",
-            "brand": "Recycled Shoes",
-            "rating": 4.5,
-            "reviews": 12,
-            "quantity": 1
-          }
-        ]
-      }
+      "username": "nihal",
+      "email": "muhammednihalk4@gmail",
+      "password": "Nihal@123",
+      "cpassword": "Nihal@123",
+      "admin": false,
+      "block": false,
+      "cart": [
+        {
+          "id": "3",
+          "name": "Men’s Classic Mint",
+          "type": "men",
+          "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-020-600x600.jpg",
+          "price": "2000",
+          "description": "Mint-colored sneakers for a stylish look.",
+          "brand": "Recycled Shoes",
+          "rating": 4.6,
+          "reviews": 10,
+          "quantity": 1
+        },
+        {
+          "id": "20",
+          "name": "Women’s Tosca City Run",
+          "type": "women",
+          "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-012-600x600.jpg",
+          "price": 649,
+          "description": "Tosca-colored city running shoes.",
+          "brand": "Recycled Shoes",
+          "rating": 4.4,
+          "reviews": 9,
+          "quantity": 1
+        },
+        {
+          "id": "1",
+          "name": "Men’s Black Running",
+          "type": "men",
+          "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-005-400x400.jpg",
+          "price": 799,
+          "description": "Comfortable and durable black running shoes for men.",
+          "brand": "Recycled Shoes",
+          "rating": 4.5,
+          "reviews": 12,
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": "a94d",
-      "input": {
-        "username": "lamhan",
-        "email": "lamhan@gmail.com",
-        "password": "Lamhan@123",
-        "cpassword": "Lamhan@123",
-        "admin": false,
-        "cart": []
-      }
+      "username": "lamhan",
+      "email": "lamhan@gmail.com",
+      "password": "Lamhan@123",
+      "cpassword": "Lamhan@123",
+      "admin": false,
+      "block": true,
+      "cart": []
     },
     {
       "id": "866d",
-      "input": {
-        "username": "ruvais",
-        "email": "ruvais@gmail.com",
-        "password": "Monu@123",
-        "cpassword": "Monu@123",
-        "admin": false,
-        "cart": [
-          {
-            "id": "3",
-            "name": "Men’s Classic Mint",
-            "type": "men",
-            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-020-600x600.jpg",
-            "price": "2000",
-            "description": "Mint-colored sneakers for a stylish look.",
-            "brand": "Recycled Shoes",
-            "rating": 4.6,
-            "reviews": 10,
-            "quantity": 1
-          },
-          {
-            "id": "6",
-            "name": "Men’s Moonstone Sneaker",
-            "type": "men",
-            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-018-600x600.jpg",
-            "price": 749,
-            "description": "Moonstone sneakers with a modern design.",
-            "brand": "Recycled Shoes",
-            "rating": 4.5,
-            "reviews": 11,
-            "quantity": 1
-          },
-          {
-            "id": "20",
-            "name": "Women’s Tosca City Run",
-            "type": "women",
-            "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-012-600x600.jpg",
-            "price": 649,
-            "description": "Tosca-colored city running shoes.",
-            "brand": "Recycled Shoes",
-            "rating": 4.4,
-            "reviews": 9,
-            "quantity": 1
-          }
-        ]
-      }
+      "username": "ruvais",
+      "email": "ruvais@gmail.com",
+      "password": "Monu@123",
+      "cpassword": "Monu@123",
+      "admin": false,
+      "block": false,
+      "cart": [
+        {
+          "id": "20",
+          "name": "Women’s Tosca City Run",
+          "type": "women",
+          "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-012-600x600.jpg",
+          "price": 649,
+          "description": "Tosca-colored city running shoes.",
+          "brand": "Recycled Shoes",
+          "rating": 4.4,
+          "reviews": 9,
+          "quantity": 2
+        },
+        {
+          "id": "10",
+          "name": "Women’s Candy City Run",
+          "type": "women",
+          "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-014-600x600.jpg",
+          "price": 549,
+          "description": "Colorful running shoes perfect for urban environments.",
+          "brand": "Recycled Shoes",
+          "rating": 4.3,
+          "reviews": 12,
+          "quantity": 7
+        },
+        {
+          "id": "9",
+          "name": "Women’s Blue Training",
+          "type": "women",
+          "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-003-600x600.jpg",
+          "price": 660,
+          "description": "Blue training shoes designed for women.",
+          "brand": "Recycled Shoes",
+          "rating": 4.2,
+          "reviews": 14,
+          "quantity": 2
+        }
+      ]
     },
     {
       "id": "87a6",
-      "input": {
-        "username": "KKK",
-        "email": "KKK@GMAIL.COM",
-        "password": "Kk@12345",
-        "cpassword": "Kk@12345",
-        "admin": false,
-        "cart": []
-      }
+      "username": "KKK",
+      "email": "KKK@GMAIL.COM",
+      "password": "Kk@12345",
+      "cpassword": "Kk@12345",
+      "admin": false,
+      "block": false,
+      "cart": []
+    },
+    {
+      "updatecart": [
+        {
+          "id": "10",
+          "name": "Women’s Candy City Run",
+          "type": "women",
+          "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-014-600x600.jpg",
+          "price": 549,
+          "description": "Colorful running shoes perfect for urban environments.",
+          "brand": "Recycled Shoes",
+          "rating": 4.3,
+          "reviews": 12,
+          "quantity": 1
+        }
+      ],
+      "id": "6fed"
+    },
+    {
+      "id": "0bd2",
+      "username": "manu",
+      "email": "manu@1",
+      "password": "Manu@123",
+      "cpassword": "Manu@123",
+      "admin": false,
+      "cart": [
+        {
+          "id": "10",
+          "name": "Women’s Candy City Run",
+          "type": "women",
+          "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-014-600x600.jpg",
+          "price": 549,
+          "description": "Colorful running shoes perfect for urban environments.",
+          "brand": "Recycled Shoes",
+          "rating": 4.3,
+          "reviews": 12,
+          "quantity": 1
+        }
+      ],
+      "block": false
     }
   ],
   "ProductData": [
     {
       "id": "1",
-      "name": "Men’s Black Runnings",
+      "name": "Men’s Black Running",
       "type": "men",
       "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-005-400x400.jpg",
       "price": 799,

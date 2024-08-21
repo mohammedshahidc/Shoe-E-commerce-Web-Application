@@ -21,7 +21,7 @@ const Register = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const todb = { input };
+        const todb = {...input,block:false };
 
         fetch("http://localhost:3000/users", {
             method: "post",

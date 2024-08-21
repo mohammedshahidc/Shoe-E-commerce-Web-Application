@@ -8,8 +8,8 @@ import { Link } from 'react-router-dom';
 const User = () => {
 
   const { curuser, handlelogout } = useContext(Usercont)
-  const username = curuser?.input?.username
-  const userid = curuser?.id
+  const username = curuser?.username
+ 
 
   if (!curuser) {
     return (
@@ -41,7 +41,7 @@ const User = () => {
                 <p className="text-gray-700">
                   is an user
                 </p>
-                <h1>user id : {userid}</h1>
+                <h1>user id : {curuser?.id}</h1>
                 <div>
 
 

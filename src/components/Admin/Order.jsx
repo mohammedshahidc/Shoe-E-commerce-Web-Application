@@ -15,7 +15,7 @@ const Order = () => {
     }
     fetch()
   }, [])
-  const filter = user.filter(user => user.input.cart.length >= 1);
+  const filter = user.filter(user => user.cart.length >= 1);
   return (
     <div className='relative right-[-250px] justify-center justify-items-center bg-white w-[800px] h-screen'>
       <div>
@@ -33,12 +33,12 @@ const Order = () => {
             <React.Fragment key={user.id}>
               <tr>
                 <td className="border border-gray-300 px-4 py-2">
-                  {user.input.username}
+                  {user.username}
                 </td>
                 <td colSpan="3">
                   <table className="w-full">
                     <tbody>
-                      {user.input.cart.map((item, index) => (
+                      {user.cart.map((item, index) => (
                         <tr key={index}>
                           <td className="border border-gray-300 px-4 py-2 w-[500px]">
                             {item.name}<br />

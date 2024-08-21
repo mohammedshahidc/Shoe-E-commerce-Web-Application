@@ -7,13 +7,14 @@ const Userdta = () => {
   const { id } = useParams();
   const [userdt, setUserdt] = useState([]);
   const [filt, setFilt] = useState([]);
+  const [Block,setBlock]=useState(false)
 
   useEffect(() => {
     const userfetch = async () => {
       try {
         const resp = await axios.get("http://localhost:3000/users");
         setUserdt(resp.data);
-        console.log(resp.data);
+        
       } catch (error) {
         console.error("fetching error: " + error);
       }
@@ -22,10 +23,30 @@ const Userdta = () => {
   }, []);
 
   useEffect(() => {
-    setFilt(userdt.filter((user) => user.id == id));
-  }, [userdt, id]);
+   const user1=userdt.find((user) => user.id === id);
+    if(user1){
+      setFilt([user1])
+      setBlock(user1?.block)
+    }
+  }, [userdt,id]);
 
   
+  const blockstatus=async ()=>{
+      // if (id) {
+      const blocked=!Block
+      try {
+         const response= await axios.patch(`http://localhost:3000/users/${id}`,{
+         block:blocked
+        })
+        
+      } catch (error) {
+        console.error(error);
+      }
+    // }
+  }
+  
+    
+      
 
   return (
     <div className='w-screen h-screen'>
@@ -39,11 +60,11 @@ const Userdta = () => {
 
               </div>
               <div className='p-4 text-black'>
-                Name : {user.input.username}<br />
-                Email : {user.input.email}<br />
+                Name : {user.username}<br />
+                Email : {user.email}<br />
                 id : {user.id}
               </div>
-              <button class='btn' >Block</button>
+              <button class='btn' onClick={blockstatus}> { Block ? 'Unblock' : 'Block' }</button>
             </div>
 
             <div className="p-6 overflow-scroll w-[480px]">
@@ -52,7 +73,7 @@ const Userdta = () => {
               </h6>
 
               <p className="mb-8 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
-                {user.input.cart.map((item) => (
+                {user.cart.map((item) => (
                   <div>
                     Product : {item.name}<br />
                     price : {item.price}<br />

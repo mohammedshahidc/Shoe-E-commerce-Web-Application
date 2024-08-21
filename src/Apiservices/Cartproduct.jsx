@@ -12,49 +12,40 @@ const Cartproduct = ({ children }) => {
 
 
   useEffect(() => {
-    const func = async () => {
-      if (curuser && curuser.id) {
-        try {
-          const response = await axios.get(`http://localhost:3000/users/${curuser.id}`);
-          setCart(response.data.input.cart);
-        } catch (error) {
-          console.error('Error fetching user data:', error);
-        }
-      } else {
-        console.warn('curuser or curuser.id is not available');
-      }
-    };
-    func();
-  }, [curuser]); 
- 
+    if (curuser) {
+      
+      const func = async () => {
+        const response = await axios.get(`http://localhost:3000/users/${curuser.id}`);
+        setCart(response.data.cart);
+      };
+      func();
+    }
+  }, [curuser]);
 
 
-  
-
-  const addtoCart = async (items) => {
+   const addtoCart = async (items) => {
     if (curuser) {
       try {
         const itemquantity = { ...items, quantity: 1 }
         const response = await axios.get(`http://localhost:3000/users/${curuser.id}`)
         const activeuser = response.data
-        const cartproducts = activeuser.input.cart.find((product) => product.id === items.id)
+        const cartproducts = activeuser.cart.find((product) => product.id === items.id)
         if (cartproducts) {
           alert("this product is already added in your cart")
         }
         else {
-          const updatecart = [...activeuser.input.cart, itemquantity]
-           await axios.put(`http://localhost:3000/users/${curuser.id}`, {
-            ...activeuser, input: { ...activeuser.input, cart: updatecart }
+          const updatecart = [...activeuser.cart, itemquantity]
+          console.log(curuser);
+          await axios.put(`http://localhost:3000/users/${curuser.id}`, {
+            ...activeuser, cart: updatecart
           })
           setCart(updatecart)
-          
-            setNotificationCount(cart.length +1);
-       
-          
+          setNotificationCount(cart.length + 1);
         }
 
       } catch (error) {
         alert("item not added to cart")
+        console.error(error)
       }
 
     } else {
@@ -66,22 +57,21 @@ const Cartproduct = ({ children }) => {
   const handledeleet = async (items, index) => {
     try {
       const itemid = items.id
-      const respons = await axios.get(`http://localhost:3000/users/${userID}`);
+      const respons = await axios.get(`http://localhost:3000/users/${curuser.id}`);
 
       const curentuserdata = respons.data
-      const updatedcart = curentuserdata.input.cart.filter((sreveritem) => sreveritem.id !== itemid)
-      await axios.patch(`http://localhost:3000/users/${userID}`, {
-        input: {
-          ...curentuserdata.input, cart: updatedcart
-        }
+      const updatedcart = curentuserdata.cart.filter((sreveritem) => sreveritem.id !== itemid)
+      await axios.patch(`http://localhost:3000/users/${curuser.id}`, {
+
+        ...curentuserdata, cart: updatedcart
       })
       const newcartitem = [...cart]
       newcartitem.splice(index, 1)
       setCart(newcartitem)
-    
-        setNotificationCount(cart.length -1);
-      
-      
+
+      setNotificationCount(cart.length - 1);
+
+
     } catch (error) {
 
     }

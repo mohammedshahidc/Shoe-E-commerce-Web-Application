@@ -21,7 +21,7 @@ const UserA = () => {
     }, []);
 
 
-    const filteredUsers = users.filter(user => user.input.admin === false);
+    const filteredUsers = users.filter(user => user.admin === false);
 
     return (
         <div className='bg-gray-50 h-screen overflow-scroll'>
@@ -37,14 +37,14 @@ const UserA = () => {
                 </thead>
                 <tbody>
                     {filteredUsers.map(user => (
-                        <tr key={user.id}>
-                            <td className="border border-gray-300 border-solid border-1 px-4 py-2">{user.id}</td>
-                            <td className="border border-gray-300 px-4 py-2">{user.input.username}</td>
-                            <td className="border border-gray-300 px-4 py-2">{user.input.email}</td>
+                        <tr key={user?.id}>
+                            <td className="border border-gray-300 border-solid border-1 px-4 py-2">{user?.id}</td>
+                            <td className="border border-gray-300 px-4 py-2">{user?.username}</td>
+                            <td className="border border-gray-300 px-4 py-2">{user?.email}</td>
                             {/* <td className="border border-gray-300 px-4 py-2">{user.input.password}</td> */}
                             <td className="border border-gray-300 px-4 py-2">
                                 <div>
-                                    <Link to={`/admin/usera/${user.id}`}>
+                                    <Link to={`/admin/usera/${user?.id}`}>
                                         <button class='btn' id='bt'>
                                             Details
                                         </button>
