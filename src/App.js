@@ -120,6 +120,7 @@ function App() {
   const { admin } = useContext(Usercont);
 
   return (
+    <>
     <div className="App">
       {!admin ? (
         <div>
@@ -160,6 +161,7 @@ function App() {
         </div>
       )}
     </div>
+    </>
   );
 }
 

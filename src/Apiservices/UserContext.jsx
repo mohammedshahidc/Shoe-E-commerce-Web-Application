@@ -1,6 +1,6 @@
-import React, { createContext,useState } from 'react'
+import React, { createContext,useEffect,useState } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { json, useNavigate } from 'react-router-dom'
 import Dashboard from '../components/Admin/Adminhome'
 
 
@@ -9,13 +9,23 @@ export const Usercont=createContext()
 
 
 const UserContext = ({children}) => {
+    const [curuser,setCuruser]=useState(null)
+    const[admin,setAdmin]=useState(null)
 
+  useEffect(()=>{
+    const curentUser=localStorage.getItem("logindt")
+    const storedAdmin=localStorage.getItem("admindt")
+
+   setCuruser(JSON.parse(curentUser))
+   setAdmin(JSON.parse(storedAdmin))
+
+  },[])
     
     const curentUser=localStorage.getItem("logindt")
-    const[curuser,setCuruser]=useState(curentUser? JSON.parse(curentUser):null)
+   
 
-    const storedAdmin=localStorage.getItem("admindt")
-    const[admin,setAdmin]=useState(storedAdmin?JSON.parse(storedAdmin):null)
+
+   
 
     
    const handleLogout=()=>{

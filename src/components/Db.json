@@ -29,18 +29,6 @@
       "block": false,
       "cart": [
         {
-          "id": "1",
-          "name": "Men’s Black Running",
-          "type": "men",
-          "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-005-400x400.jpg",
-          "price": 799,
-          "description": "Comfortable and durable black running shoes for men.",
-          "brand": "Recycled Shoes",
-          "rating": 4.5,
-          "reviews": 12,
-          "quantity": 1
-        },
-        {
           "id": "19",
           "name": "Women’s Tan Sneaker",
           "type": "women",
@@ -246,7 +234,7 @@
   "ProductData": [
     {
       "id": "1",
-      "name": "Men’s Black Running",
+      "name": "Men’s Black Runnings",
       "type": "men",
       "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-005-400x400.jpg",
       "price": 799,
