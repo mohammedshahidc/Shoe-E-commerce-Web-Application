@@ -12,7 +12,7 @@ const Userdta = () => {
   useEffect(() => {
     const userfetch = async () => {
       try {
-        const resp = await axios.get("http://localhost:3000/users");
+        const resp = await axios.get("http://localhost:5000/users");
         setUserdt(resp.data);
         
       } catch (error) {
@@ -35,7 +35,7 @@ const Userdta = () => {
       // if (id) {
       const blocked=!Block
       try {
-         const response= await axios.patch(`http://localhost:3000/users/${id}`,{
+         const response= await axios.patch(`http://localhost:5000/users/${id}`,{
          block:blocked
         })
         

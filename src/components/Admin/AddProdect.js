@@ -17,7 +17,7 @@ const AddProdect = () => {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:3000/ProductData', product)
+    axios.post('http://localhost:5000/ProductData', product)
       .then(() => {
         alert('Product added successfully!');
 

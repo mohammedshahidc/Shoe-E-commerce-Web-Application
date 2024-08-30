@@ -23,7 +23,7 @@ const Register = () => {
         e.preventDefault();
         const todb = {...input,block:false };
 
-        fetch("http://localhost:3000/users", {
+        fetch("http://localhost:5000/users", {
             method: "post",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(todb)

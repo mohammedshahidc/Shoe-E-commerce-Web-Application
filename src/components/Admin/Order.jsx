@@ -7,7 +7,7 @@ const Order = () => {
   useEffect(() => {
     const fetch = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/users")
+        const response = await axios.get("http://localhost:5000/users")
         setUser(response.data)
       } catch (error) {
         console.error("fetching error" + error);

@@ -50,7 +50,7 @@ const UserContext = ({children}) => {
     const handlelogSubmit =async (e) => {
         e.preventDefault();
         try{
-            const response=await axios.get('http://localhost:3000/users')
+            const response=await axios.get('http://localhost:5000/users')
             const users=response.data
            const user=users.find((user)=>(user?.username===login?.userName && user?.password===login?.userPassword && user ?.admin==false && user.block==false))
             const admin=users.find((admin)=>(admin?.username===login?.userName && admin ?.password===login?.userPassword && admin ?.admin==true))    

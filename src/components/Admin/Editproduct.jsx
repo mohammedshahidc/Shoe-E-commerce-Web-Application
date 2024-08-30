@@ -18,7 +18,7 @@ const Editproduct = () => {
     useEffect(() => {
         const fetch = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/ProductData/${id}`)
+                const response = await axios.get(`http://localhost:5000/ProductData/${id}`)
                 setProduct(response.data)
             } catch (error) {
                 console.error(error);
@@ -35,7 +35,7 @@ const Editproduct = () => {
         e.preventDefault()
         const put = async () => {
             try {
-                await axios.patch(`http://localhost:3000/ProductData/${id}`, product)
+                await axios.patch(`http://localhost:5000/ProductData/${id}`, product)
                 alert("update successfully")
 
             } catch (error) {

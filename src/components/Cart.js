@@ -36,12 +36,12 @@ const Cart = () => {
         const newCount = (quantities[item.id] || 1) + 1;
         setQuantities({ ...quantities, [item.id]: newCount });
         try {
-            const resp = await axios.get(`http://localhost:3000/users/${userID}`);
+            const resp = await axios.get(`http://localhost:5000/users/${userID}`);
             const activeuser = resp.data
             const cart = resp.data.cart;
             const index = cart.findIndex((cartItem) => cartItem.id === item.id);
             cart[index].quantity += 1;
-            await axios.patch(`http://localhost:3000/users/${userID}`, {
+            await axios.patch(`http://localhost:5000/users/${userID}`, {
                 ...activeuser,cart: activeuser.cart 
             });
         } catch (error) {
@@ -55,12 +55,12 @@ const Cart = () => {
             const newCount = currentCount - 1;
             setQuantities({ ...quantities, [item.id]: newCount });
             try {
-                const resp = await axios.get(`http://localhost:3000/users/${userID}`);
+                const resp = await axios.get(`http://localhost:5000/users/${userID}`);
                 const activeuser = resp.data
                 const cart = resp.data.cart;
                 const index = cart.findIndex((cartItem) => cartItem.id === item.id);
                 cart[index].quantity -= 1;
-                await axios.patch(`http://localhost:3000/users/${curuser?.id}`, {
+                await axios.patch(`http://localhost:5000/users/${curuser?.id}`, {
                     ...activeuser,cart: activeuser.cart 
                 });
             } catch (error) {

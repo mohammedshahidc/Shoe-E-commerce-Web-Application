@@ -14,11 +14,11 @@ const Payment = () => {
     const paymentconformation = window.confirm("Confirm your payment");
     if (paymentconformation) {
       try {
-        const res = await axios.get(`http://localhost:3000/users/${curuser.id}`);
+        const res = await axios.get(`http://localhost:5000/users/${curuser.id}`);
         console.log("User data before update:", res.data);
         const user = res.data;
 
-        await axios.put(`http://localhost:3000/users/${curuser.id}`, {
+        await axios.put(`http://localhost:5000/users/${curuser.id}`, {
           ...user, input: { ...user.input, cart: [] }
         });
 

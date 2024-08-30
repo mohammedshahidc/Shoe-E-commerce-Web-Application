@@ -11,7 +11,7 @@ const UserA = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await axios.get("http://localhost:3000/users");
+                const response = await axios.get("http://localhost:5000/users");
                 setUsers(response.data);
             } catch (error) {
                 console.error("Fetching error: " + error);

@@ -13,17 +13,17 @@ const ProductdtA = () => {
         setFilt(products.filter((product) => (product.id == id)))
     }, [products])
     const navigate = useNavigate()
-    const deleetproduct =  (item) => {
-        
-           
-             axios.delete(`http://localhost:3000/ProductData/${item.id}`)
-            alert("product successfully deleted")
+    const deleetproduct = (item) => {
 
-            navigate("/admin/productsa")
-       
+
+        axios.delete(`http://localhost:5000/ProductData/${item.id}`)
+        alert("product successfully deleted")
+
+        navigate("/admin/productsa")
+
 
     }
-    
+
     return (
         <div className='flex flex-col items-center bg-neutral-300 p-4 mt-8 sm:mt-16 ml-[330px] '>
             {filt.map((product) => (
@@ -48,9 +48,9 @@ const ProductdtA = () => {
                                 Reviews: {product.reviews}
                             </p>
                             <div className='flex p-5'>
-                               <Link to={`/admin/productsa/${product.id}/editproduct`}>
-                               <button class='btn' id='edit'>Edit</button>
-                               </Link>
+                                <Link to={`/admin/productsa/${product.id}/editproduct`}>
+                                    <button class='btn' id='edit'>Edit</button>
+                                </Link>
                                 <button class='btn' id='dlt' type='button' onClick={() => deleetproduct(product)}>Delete</button>
                             </div>
                         </div>
