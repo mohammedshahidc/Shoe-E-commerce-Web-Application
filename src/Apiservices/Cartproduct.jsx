@@ -41,6 +41,7 @@ const Cartproduct = ({ children }) => {
             ...activeuser, cart: updatecart
           })
           setCart(updatecart)
+          
           setNotificationCount(cart.length + 1);
         }
 

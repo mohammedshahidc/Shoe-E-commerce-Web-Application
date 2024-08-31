@@ -27,7 +27,10 @@
       "cpassword": "Afna@123",
       "admin": false,
       "block": false,
-      "cart": []
+      "cart": [],
+      "input": {
+        "cart": []
+      }
     },
     {
       "id": "eff4",
