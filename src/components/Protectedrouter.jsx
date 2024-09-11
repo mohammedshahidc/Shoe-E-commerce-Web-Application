@@ -2,8 +2,6 @@ import React, { useContext } from 'react'
 import { Navigate } from 'react-router-dom'
 import { Usercont } from '../Apiservices/UserContext'
 
-
-
 const Protectedrouter = ({ children }) => {
 
     const { curuser } = useContext(Usercont)
@@ -12,9 +10,7 @@ const Protectedrouter = ({ children }) => {
 
     }
 
-
     return (
-
         children
 
     )

@@ -55,12 +55,7 @@ const Adminhome = () => {
               </div>
             </div>
           </Link>
-
-
-
         </div>
-
-
       </div>
     </div>
 

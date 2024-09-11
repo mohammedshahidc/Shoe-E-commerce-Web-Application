@@ -7,14 +7,14 @@ const Userdta = () => {
   const { id } = useParams();
   const [userdt, setUserdt] = useState([]);
   const [filt, setFilt] = useState([]);
-  const [Block,setBlock]=useState(false)
+  const [Block, setBlock] = useState(false)
 
   useEffect(() => {
     const userfetch = async () => {
       try {
         const resp = await axios.get("http://localhost:5000/users");
         setUserdt(resp.data);
-        
+
       } catch (error) {
         console.error("fetching error: " + error);
       }
@@ -23,30 +23,27 @@ const Userdta = () => {
   }, []);
 
   useEffect(() => {
-   const user1=userdt.find((user) => user.id === id);
-    if(user1){
+    const user1 = userdt.find((user) => user.id === id);
+    if (user1) {
       setFilt([user1])
       setBlock(user1?.block)
     }
-  }, [userdt,id]);
+  }, [userdt, id]);
 
-  
-  const blockstatus=async ()=>{
-      // if (id) {
-      const blocked=!Block
-      try {
-         const response= await axios.patch(`http://localhost:5000/users/${id}`,{
-         block:blocked
-        })
-        
-      } catch (error) {
-        console.error(error);
-      }
+
+  const blockstatus = async () => {
+    // if (id) {
+    const blocked = !Block
+    try {
+      const response = await axios.patch(`http://localhost:5000/users/${id}`, {
+        block: blocked
+      })
+
+    } catch (error) {
+      console.error(error);
+    }
     // }
   }
-  
-    
-      
 
   return (
     <div className='w-screen h-screen'>
@@ -64,7 +61,7 @@ const Userdta = () => {
                 Email : {user.email}<br />
                 id : {user.id}
               </div>
-              <button class='btn' onClick={blockstatus}> { Block ? 'Unblock' : 'Block' }</button>
+              <button class='btn' onClick={blockstatus}> {Block ? 'Unblock' : 'Block'}</button>
             </div>
 
             <div className="p-6 overflow-scroll w-[480px]">

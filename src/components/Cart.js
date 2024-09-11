@@ -11,7 +11,7 @@ const Cart = () => {
 
     const [quantities, setQuantities] = useState({});
     const [totalprice, setTotalprice] = useState(0);
-    
+
 
     useEffect(() => {
         const initialQuantities = cart.reduce((acc, item) => {
@@ -42,7 +42,7 @@ const Cart = () => {
             const index = cart.findIndex((cartItem) => cartItem.id === item.id);
             cart[index].quantity += 1;
             await axios.patch(`http://localhost:5000/users/${userID}`, {
-                ...activeuser,cart: activeuser.cart 
+                ...activeuser, cart: activeuser.cart
             });
         } catch (error) {
             console.error('Error updating quantity:', error);
@@ -61,7 +61,7 @@ const Cart = () => {
                 const index = cart.findIndex((cartItem) => cartItem.id === item.id);
                 cart[index].quantity -= 1;
                 await axios.patch(`http://localhost:5000/users/${curuser?.id}`, {
-                    ...activeuser,cart: activeuser.cart 
+                    ...activeuser, cart: activeuser.cart
                 });
             } catch (error) {
                 console.error('Error updating quantity:', error);

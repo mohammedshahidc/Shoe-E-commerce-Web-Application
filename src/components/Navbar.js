@@ -6,7 +6,6 @@ import { cartcontext } from '../Apiservices/Cartproduct';
 
 const Header = () => {
     const [open, setOpen] = useState(false);
-
     const { notificationCount } = useContext(cartcontext)
 
     return (
@@ -18,7 +17,6 @@ const Header = () => {
                     >
                         <Link to="/">E-commerce</Link>
                     </div>
-
                     <div
                         className={`flex flex-col w-full h-auto md:hidden transition ease-in-out duration-300 ${open ? '' : 'hidden'}`}
                     >
@@ -27,21 +25,14 @@ const Header = () => {
                             <NavLink to="/mens" className={({ isActive }) => isActive ? "text-blue-600" : ""}>Men</NavLink>
                             <NavLink to="/women" className={({ isActive }) => isActive ? "text-blue-600" : ""}>Women</NavLink>
                             <NavLink to="/contact" className={({ isActive }) => isActive ? "text-blue-600" : ""}>Contact</NavLink>
-
-
                             <div className="relative">
                                 <FaShoppingCart />
                                 {notificationCount > 0 && (
                                     <span className="absolute top-0 right-0 w-5 h-5 flex items-center justify-center text-white bg-red-500 rounded-full text-xs">
                                         {notificationCount}
-
-
                                     </span>
                                 )}
                             </div>
-
-
-
                             <NavLink to="/user" className={({ isActive }) => isActive ? "text-blue-600" : ""}><button><FaUser className="w-5 h-32 mx-auto rounded pt-3 aspect-square" /></button></NavLink>
                         </div>
                     </div>
@@ -65,10 +56,7 @@ const Header = () => {
                         <NavLink to="/user" className={({ isActive }) => isActive ? "text-blue-600" : ""}><button><FaUser className="w-5 h-32 mx-auto rounded pt-3 aspect-square" /></button></NavLink></div>
 
                     <div className="hidden w-1/5 items-center justify-evenly font-semibold md:flex">
-
-
                     </div>
-
                     <button
                         className="text-gray-500 w-10 h-10 relative focus:outline-none bg-white md:hidden"
                         onClick={() => setOpen(!open)}

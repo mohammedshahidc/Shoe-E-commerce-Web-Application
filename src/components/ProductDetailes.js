@@ -7,19 +7,20 @@ import { Link } from 'react-router-dom'
 
 
 const ProductDetailes = () => {
-    const {id}=useParams()
- const {products}=useContext(context)
- const {addtoCart}=useContext(cartcontext)
- const [filt,setFilt]=useState([])
- useEffect(()=>{
-    setFilt(products.filter((product)=>(product.id==id)))
- },[products])
+    const { id } = useParams()
+    const { products } = useContext(context)
+    const { addtoCart } = useContext(cartcontext)
+    const [filt, setFilt] = useState([])
+    
+    useEffect(() => {
+        setFilt(products.filter((product) => (product.id == id)))
+    }, [products])
 
- const handlecart=(produt)=>{
-    addtoCart(produt)
- }
-  return (
-    <div className='flex flex-col items-center bg-neutral-300 p-4 mt-8 md:mt-16'>
+    const handlecart = (produt) => {
+        addtoCart(produt)
+    }
+    return (
+        <div className='flex flex-col items-center bg-neutral-300 p-4 mt-8 md:mt-16'>
             {filt.map((product) => (
                 <div key={product.id} className='flex flex-col md:flex-row items-center bg-white rounded-lg shadow-md mb-4 p-4 w-full max-w-4xl'>
                     <img
@@ -37,17 +38,17 @@ const ProductDetailes = () => {
                             Reviews: {product.reviews}
                         </p>
                         <div className='flex'>
-                        <button className='bg-blue-950 text-white rounded-md py-2 px-4 hover:bg-black' onClick={()=>{handlecart(product)}}>
-                            Add to cart
-                        </button>
-                        <Link to="/"> <button className='bg-blue-950 text-white rounded-md py-2 px-4 hover:bg-black ml-3 w-28'>Back</button> </Link>
+                            <button className='bg-blue-950 text-white rounded-md py-2 px-4 hover:bg-black' onClick={() => { handlecart(product) }}>
+                                Add to cart
+                            </button>
+                            <Link to="/"> <button className='bg-blue-950 text-white rounded-md py-2 px-4 hover:bg-black ml-3 w-28'>Back</button> </Link>
                         </div>
-                        
+
                     </div>
                 </div>
             ))}
         </div>
-  )
+    )
 }
 
 export default ProductDetailes

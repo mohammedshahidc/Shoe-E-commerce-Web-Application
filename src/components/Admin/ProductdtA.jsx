@@ -54,8 +54,6 @@ const ProductdtA = () => {
                                 <button class='btn' id='dlt' type='button' onClick={() => deleetproduct(product)}>Delete</button>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             ))}

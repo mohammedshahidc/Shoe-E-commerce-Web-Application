@@ -9,7 +9,7 @@ const User = () => {
 
   const { curuser, handlelogout } = useContext(Usercont)
   const username = curuser?.username
- 
+
 
   if (!curuser) {
     return (

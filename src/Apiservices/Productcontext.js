@@ -1,7 +1,6 @@
 
 import React, { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
-
 export const context = createContext();
 
 const ProductContext = ({ children }) => {
@@ -11,7 +10,7 @@ const ProductContext = ({ children }) => {
         const fetch = async () => {
             try {
                 const respons = await axios.get("http://localhost:5000/ProductData");
-                setProducts(respons.data); 
+                setProducts(respons.data);
             } catch (error) {
                 console.error("Fetching error", error);
             }
@@ -20,16 +19,16 @@ const ProductContext = ({ children }) => {
         fetch();
     }, []);
 
-   
+
 
     return (
         <div>
-        <context.Provider value={{products,setProducts}}>
-            {children}
-        </context.Provider>
+            <context.Provider value={{ products, setProducts }}>
+                {children}
+            </context.Provider>
 
         </div>
-       
+
     );
 };
 

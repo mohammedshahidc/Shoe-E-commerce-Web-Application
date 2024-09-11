@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const ProductsA = () => {
     const { products } = useContext(context);
-    
+
     return (
         <div className='relative right-[-250px] justify-center justify-items-center bg-white'>
             <Link to={'/admin/productsa/AddProduct'}><button className='w-[120px] h-[30px] bg-blue-700 text-white rounded-md hover:bg-black cursor-pointer mt-10' >Add Product</button></Link>
@@ -12,7 +12,6 @@ const ProductsA = () => {
             <table className="mt-5 table-auto w-[1050px] border-collapse border-solid border-2 border border-gray-900">
                 <thead>
                     <tr>
-                       
                         <th className="border border-gray-300 px-4 py-2">Image</th>
                         <th className="border border-gray-300 px-4 py-2">Product Name</th>
                         <th className="border border-gray-300 px-4 py-2">Product category</th>

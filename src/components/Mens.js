@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 const Mens = () => {
   const { products } = useContext(context);
 
-  
+
   const filter = products.filter((product) => product.type === "men");
 
   return (
@@ -27,7 +27,7 @@ const Mens = () => {
                 <h5 className="text-xl font-semibold text-gray-900 mb-2">{product.title}</h5>
                 <h5 className="text-xl font-semibold text-gray-900 mb-2">₹ {product.price}</h5>
                 <p className="text-gray-700 mb-4">{product.description}</p>
-               
+
               </div>
             </Link>
           </div>

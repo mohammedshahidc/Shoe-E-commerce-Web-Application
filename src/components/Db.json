@@ -27,7 +27,44 @@
       "cpassword": "Afna@123",
       "admin": false,
       "block": false,
-      "cart": [],
+      "cart": [
+        {
+          "id": "1",
+          "name": "Men’s Black Runnings",
+          "type": "men",
+          "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-005-400x400.jpg",
+          "price": 799,
+          "description": "Comfortable and durable black running shoes for men.",
+          "brand": "Recycled Shoes",
+          "rating": 4.5,
+          "reviews": 12,
+          "quantity": 1
+        },
+        {
+          "id": "19",
+          "name": "Women’s Tan Sneaker",
+          "type": "women",
+          "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-011-600x600.jpg",
+          "price": 899,
+          "description": "Stylish tan sneakers for women.",
+          "brand": "Recycled Shoes",
+          "rating": 4.6,
+          "reviews": 12,
+          "quantity": 1
+        },
+        {
+          "id": "4",
+          "name": "Men’s Earth-Tone Sneaker",
+          "type": "men",
+          "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-017-600x600.jpg",
+          "price": 749,
+          "description": "Earth-tone sneakers with excellent comfort.",
+          "brand": "Recycled Shoes",
+          "rating": 4.3,
+          "reviews": 15,
+          "quantity": 1
+        }
+      ],
       "input": {
         "cart": []
       }
@@ -207,14 +244,14 @@
       "description": "Comfortable and durable black running shoes for men.",
       "brand": "Recycled Shoes",
       "rating": 4.5,
-      "reviews": 12
+      "reviews": "20"
     },
     {
       "id": "2",
       "name": "Men’s Classic Blue",
       "type": "men",
       "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-019-600x600.jpg",
-      "price": 1699,
+      "price": "1670",
       "description": "Classic blue sneakers perfect for everyday wear.",
       "brand": "Recycled Shoes",
       "rating": 4.7,

@@ -19,7 +19,7 @@ const Payment = () => {
         const user = res.data;
 
         await axios.put(`http://localhost:5000/users/${curuser.id}`, {
-            ...user, cart: [] 
+          ...user, cart: []
         });
 
 
@@ -29,8 +29,6 @@ const Payment = () => {
       }
     }
   };
-
-
 
   return (
     <div>
