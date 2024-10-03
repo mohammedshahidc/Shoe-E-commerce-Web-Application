@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { context } from '../Apiservices/Productcontext'
+import { context } from '../../context/Productcontext'
 import { useParams } from 'react-router-dom'
-import { cartcontext } from '../Apiservices/Cartproduct'
+import { cartcontext } from '../../context/Cartproduct'
 import { Link } from 'react-router-dom'
 
 

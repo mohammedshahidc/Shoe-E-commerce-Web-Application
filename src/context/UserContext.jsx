@@ -1,7 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { json, useNavigate } from 'react-router-dom'
-import Dashboard from '../components/Admin/Adminhome'
 
 export const Usercont = createContext()
 

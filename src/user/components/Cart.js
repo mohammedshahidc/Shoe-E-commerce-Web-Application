@@ -1,7 +1,7 @@
 
 import React, { useContext, useState, useEffect } from 'react';
-import { cartcontext } from '../Apiservices/Cartproduct';
-import { Usercont } from '../Apiservices/UserContext';
+import { cartcontext } from '../../context/Cartproduct';
+import { Usercont } from '../../context/UserContext';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 

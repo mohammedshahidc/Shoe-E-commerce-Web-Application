@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { GetAllproducts } from '../Apiservices/Productcontext'
-import { context } from '../Apiservices/Productcontext'
+import { GetAllproducts } from '../../../context/Productcontext'
+import { context } from '../../../context/Productcontext'
 import { Link } from 'react-router-dom'
-import ProductDetailes from './ProductDetailes'
+
 
 const Women = () => {
     const { products } = useContext(context)

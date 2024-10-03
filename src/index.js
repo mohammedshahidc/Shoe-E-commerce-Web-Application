@@ -4,9 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
-import ProductContext from './Apiservices/Productcontext';
-import Cartproduct from './Apiservices/Cartproduct';
-import UserContext from './Apiservices/UserContext';
+import ProductContext from './context/Productcontext'
+import Cartproduct from './context/Cartproduct';
+import UserContext from './context/UserContext';
 // import {ReactDOM} from 'react-dom'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

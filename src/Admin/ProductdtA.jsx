@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { context } from '../../Apiservices/Productcontext'
+import { context } from '../context/Productcontext';
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { HiX } from 'react-icons/hi';
 import axios from 'axios';

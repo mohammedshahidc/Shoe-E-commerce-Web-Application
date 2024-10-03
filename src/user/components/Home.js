@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import image from './image.png';
-import { context } from '../Apiservices/Productcontext';
+import { context } from '../../context/Productcontext';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Home = () => {

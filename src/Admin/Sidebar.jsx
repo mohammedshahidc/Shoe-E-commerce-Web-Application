@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { FaSignOutAlt } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router-dom';
-import { Usercont } from '../../Apiservices/UserContext';
+import { Usercont } from '../context/UserContext';
 
 const Sidebar = () => {
   const [sidenav, setSidenav] = useState(true);
