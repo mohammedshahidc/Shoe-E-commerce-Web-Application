@@ -11,7 +11,7 @@ const Women = () => {
             <div className='flex flex-wrap justify-center gap-6 p-6'>
 
                 {products.filter((item) => (item.type === "women")).map((item) => (
-                    <div className="w-[300px] bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden gap-6 p-6 hover:transition-transform transform scale-100 hover:scale-110" key={item.id}>
+                    <div className="w-[300px] bg-gray-200 border border-gray-200 rounded-lg shadow-md overflow-hidden hover:transition-transform transform scale-100 hover:scale-110" key={item.id}>
                         <Link to={item.id}>
                             <img
                                 src={item.image}

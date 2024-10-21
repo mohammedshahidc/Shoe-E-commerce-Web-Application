@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import image from './image.png';
 import { context } from '../../context/Productcontext';
 import { Link, useNavigate } from 'react-router-dom';
+import Shouecollection from '../Shouecollection';
 
 const Home = () => {
   const { products, error, isLoading } = useContext(context);
@@ -16,8 +17,9 @@ const Home = () => {
   }
 
   return (
-    <div className="bg-cover bg-center h-full w-full bg-white">
-      <img src={image} alt="Background" className="w-full h-[400px] mt-10" />
+    <div className="bg-cover bg-center h-full w-full bg-white mt-[-28px]">
+     
+      <Shouecollection/>
       <div className="flex flex-wrap justify-center gap-6 p-6">
         {products.map((product) => (
           <div>

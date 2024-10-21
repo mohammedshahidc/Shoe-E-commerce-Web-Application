@@ -28,6 +28,7 @@ import Userdta from './Admin/Userdta';
 import AddProdect from './Admin/AddProdect';
 import Editproduct from './Admin/Editproduct';
 import Notfound from './user/components/Notfound';
+import shouecollection from './user/Shouecollection';
 
 function App() {
   const { admin } = useContext(Usercont);
@@ -51,7 +52,7 @@ function App() {
               <Route path='/cart' element={<Cart />} />
               <Route path='/user' element={<User />} />
               <Route path='/payment' element={<Payment />} />
-
+              
               <Route path='*' element={<Notfound />} />
             </Routes>
             <Footer />

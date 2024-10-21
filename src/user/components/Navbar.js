@@ -9,8 +9,8 @@ const Header = () => {
     const { notificationCount } = useContext(cartcontext)
 
     return (
-        <header className='sticky top-0'>
-            <nav className="flex h-auto w-auto bg-gray-100 shadow-lg rounded-lg justify-between md:h-16">
+        <header className='sticky top-0 h-[100px] z-50 '>
+            <nav className="flex h-auto w-auto bg-gray-100 shadow-lg justify-between h-[68px] text-black">
                 <div className="flex w-full justify-between">
                     <div
                         className={`flex px-6 w-1/2 items-center font-semibold md:w-1/5 md:px-1 md:flex md:items-center md:justify-center transition ease-out duration-300 ${open ? 'hidden' : ''}`}
@@ -21,10 +21,10 @@ const Header = () => {
                         className={`flex flex-col w-full h-auto md:hidden transition ease-in-out duration-300 ${open ? '' : 'hidden'}`}
                     >
                         <div className="flex flex-col items-center justify-center gap-2">
-                            <NavLink to="/" className={({ isActive }) => isActive ? "text-blue-600" : ""}>Home</NavLink>
-                            <NavLink to="/mens" className={({ isActive }) => isActive ? "text-blue-600" : ""}>Men</NavLink>
-                            <NavLink to="/women" className={({ isActive }) => isActive ? "text-blue-600" : ""}>Women</NavLink>
-                            <NavLink to="/contact" className={({ isActive }) => isActive ? "text-blue-600" : ""}>Contact</NavLink>
+                            <NavLink to="/" className={({ isActive }) => isActive ? "text-blue-600" :" "}>Home</NavLink>
+                            <NavLink to="/mens" className={({ isActive }) => isActive ? "text-blue-600" : " "}>Men</NavLink>
+                            <NavLink to="/women" className={({ isActive }) => isActive ? "text-blue-600" : ''}>Women</NavLink>
+                            <NavLink to="/contact" className={({ isActive }) => isActive ? "text-blue-600" : " "}>Contact</NavLink>
                             <div className="relative">
                                 <FaShoppingCart />
                                 {notificationCount > 0 && (
@@ -84,3 +84,7 @@ const Header = () => {
 };
 
 export default Header;
+
+
+
+
