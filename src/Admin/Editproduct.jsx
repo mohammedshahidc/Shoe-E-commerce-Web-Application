@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 
 const Editproduct = () => {
     const { id } = useParams()
-    const navigate = useNavigate()
+    
     const [product, setProduct] = useState({
         name: '',
         type: '',

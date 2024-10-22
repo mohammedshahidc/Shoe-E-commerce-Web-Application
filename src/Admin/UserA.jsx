@@ -2,11 +2,11 @@
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 const UserA = () => {
     const [users, setUsers] = useState([]);
-    const navigate = useNavigate();
+   
 
     useEffect(() => {
         const fetchUsers = async () => {

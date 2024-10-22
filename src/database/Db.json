@@ -29,15 +29,27 @@
       "block": false,
       "cart": [
         {
-          "id": "19",
-          "name": "Women’s Tan Sneaker",
-          "type": "women",
-          "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-011-600x600.jpg",
-          "price": 899,
-          "description": "Stylish tan sneakers for women.",
+          "id": "7",
+          "name": "Men’s Navy Running",
+          "type": "men",
+          "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-008-600x600.jpg",
+          "price": 1049.9,
+          "description": "Navy running shoes with superior cushioning.",
           "brand": "Recycled Shoes",
           "rating": 4.6,
-          "reviews": 12,
+          "reviews": 10,
+          "quantity": 1
+        },
+        {
+          "id": "3",
+          "name": "Men’s Classic Mint",
+          "type": "men",
+          "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-020-600x600.jpg",
+          "price": "2000",
+          "description": "Mint-colored sneakers for a stylish look.",
+          "brand": "Recycled Shoes",
+          "rating": 4.6,
+          "reviews": 10,
           "quantity": 1
         }
       ],

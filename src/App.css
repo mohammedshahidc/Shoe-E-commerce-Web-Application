@@ -92,6 +92,11 @@ input:invalid~span{
 #edit{
   width: 130px;
 }
+#not{
+position: absolute;
+top: -20px;
+left: 10px
+}
 
 /* .mainlog{
   background-color: aqua;

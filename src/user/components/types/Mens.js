@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { context } from '../../../context/Productcontext';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 const Mens = () => {
   const { products } = useContext(context);
@@ -9,7 +9,7 @@ const Mens = () => {
   const filter = products.filter((product) => product.type === "men");
 
   return (
-    <div className='bg-cover bg-center h-full w-full bg-white'>
+    <div className='bg-cover bg-center h-full w-full bg-gray-200'>
       <div className='flex flex-wrap justify-center gap-6 p-6'>
         {filter.map((product) => (
           <div

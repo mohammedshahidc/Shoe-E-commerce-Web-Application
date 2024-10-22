@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 const Women = () => {
     const { products } = useContext(context)
     return (
-        <div className='bg-cover bg-center h-full w-full bg-white'>
+        <div className='bg-cover bg-center h-full w-full bg-gray-200'>
             <div className='flex flex-wrap justify-center gap-6 p-6'>
 
                 {products.filter((item) => (item.type === "women")).map((item) => (
