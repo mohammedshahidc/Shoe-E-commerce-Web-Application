@@ -30,11 +30,11 @@ const Home = () => {
             
               <div
                 className="w-[300px] bg-gray-200 border border-gray-200 rounded-lg shadow-md overflow-hidden hover:transition-transform transform scale-100 hover:scale-110"
-                key={product.id}
+                key={product._id}
 
               >
                 <FaHeart color="red" className='ml-[270px] mt-3 size-5'/>
-                <Link to={product.id}>
+                <Link to={product._id}>
                 <img
                 
                   src={product.image}

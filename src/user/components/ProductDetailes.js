@@ -13,7 +13,8 @@ const ProductDetailes = () => {
     const [filt, setFilt] = useState([])
     
     useEffect(() => {
-        setFilt(products.filter((product) => (product.id == id)))
+        console.log("products :",products);
+        setFilt(products.filter((product) => (product._id ===id)))
     }, [products])
 
     const handlecart = (produt) => {
@@ -22,7 +23,7 @@ const ProductDetailes = () => {
     return (
         <div className='flex flex-col items-center bg-neutral-300 p-4 mt-8 md:mt-16'>
             {filt.map((product) => (
-                <div key={product.id} className='flex flex-col md:flex-row items-center bg-white rounded-lg shadow-md mb-4 p-4 w-full max-w-4xl'>
+                <div key={product._id} className='flex flex-col md:flex-row items-center bg-white rounded-lg shadow-md mb-4 p-4 w-full max-w-4xl'>
                     <img
                         src={product.image}
                         alt={product.name}

@@ -8,7 +8,10 @@ export const Usercont = createContext()
 const UserContext = ({ children }) => {
     const [curuser, setCuruser] = useState(null)
     const [admin, setAdmin] = useState(null)
-
+    const [login, setLogin] = useState({
+        username: '',
+        password: ''
+    })
     useEffect(() => {
         const curentUser = localStorage.getItem("logindt")
         const storedAdmin = localStorage.getItem("admindt")
@@ -18,9 +21,9 @@ const UserContext = ({ children }) => {
 
     }, [])
 
-    const curentUser = localStorage.getItem("logindt")
+    
 
-//
+
     const handleLogout = () => {
         localStorage.removeItem("admindt")
         setAdmin(null)
@@ -28,11 +31,9 @@ const UserContext = ({ children }) => {
 
     }
 
-//
-    const [login, setLogin] = useState({
-        userName: '',
-        userPassword: ''
-    });
+
+    
+   
     const navigate = useNavigate()
 
     const handlelogChange = (e) => {
@@ -43,24 +44,25 @@ const UserContext = ({ children }) => {
     const handlelogSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.get('http://localhost:5000/users')
-            const users = response.data
-            const user = users.find((user) => (user?.username === login?.userName && user?.password === login?.userPassword && user?.admin == false && user.block == false))
-            const admin = users.find((admin) => (admin?.username === login?.userName && admin?.password === login?.userPassword && admin?.admin == true))
+            const response = await axios.post('http://localhost:4004/api/user/login',{
+                username:login.username,
+                password:login.password
 
-            if (user) {
-                localStorage.setItem("logindt", JSON.stringify(user));
-                setCuruser(user)
-                navigate('/')
-
-            } if (admin) {
-                localStorage.setItem("admindt", JSON.stringify(admin))
-                setAdmin(admin)
-                navigate("/admin")
-
-            } else {
-                console.error('invalid', Error)
+            },{withCredentials:true})
+            if(response.status===200){
+                const data=response.data.data
+                console.log("eftfyde8iw8 :",data);
+                if(data.isAdmin===true){
+                    setAdmin(data)
+                    localStorage.setItem("admindt", JSON.stringify(data))
+                    navigate("/admin")
+                }else{
+                    setCuruser(data)
+                    localStorage.setItem("logindt", JSON.stringify(data));
+                     navigate('/')
+                }
             }
+           
         }
 
         catch (error) {

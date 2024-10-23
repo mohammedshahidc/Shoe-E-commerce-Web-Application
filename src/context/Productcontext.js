@@ -9,7 +9,7 @@ const ProductContext = ({ children }) => {
     useEffect(() => {
         const fetch = async () => {
             try {
-                const respons = await axios.get("http://localhost:5000/ProductData");
+                const respons = await axios.get("http://localhost:4004/api//user/products");
                 setProducts(respons.data);
             } catch (error) {
                 console.error("Fetching error", error);

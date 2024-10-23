@@ -51,6 +51,18 @@
           "rating": 4.6,
           "reviews": 10,
           "quantity": 1
+        },
+        {
+          "_id": "6700c6b08cb2058f96e6efc3",
+          "name": "Men’s Classic Blue",
+          "type": "men",
+          "image": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-019-600x600.jpg",
+          "price": 1670,
+          "description": "Classic blue sneakers perfect for everyday wear.",
+          "brand": "Recycled Shoes",
+          "rating": 4.7,
+          "reviews": "8",
+          "quantity": 1
         }
       ],
       "input": {
@@ -219,6 +231,16 @@
           "quantity": 1
         }
       ],
+      "block": false
+    },
+    {
+      "id": "b667",
+      "username": "mohammed shahid",
+      "email": "dsu@gmail.com",
+      "password": "Anu@1234",
+      "cpassword": "Anu@1234",
+      "admin": false,
+      "cart": [],
       "block": false
     }
   ],

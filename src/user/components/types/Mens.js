@@ -14,9 +14,9 @@ const Mens = () => {
         {filter.map((product) => (
           <div
             className="w-[300px] bg-gray-200 border border-gray-200 rounded-lg shadow-md overflow-hidden hover:transition-transform transform scale-100 hover:scale-110"
-            key={product.id}
+            key={product._id}
           >
-            <Link to={product.id} className="block">
+            <Link to={product._id} className="block">
               <img
                 src={product.image}
                 alt='product image'
