@@ -20,6 +20,10 @@ const ProductDetailes = () => {
     const handlecart = (produt) => {
         addtoCart(produt)
     }
+   
+    const map=filt.map((product)=>product)
+    
+    console.log("filt",filt);
     return (
         <div className='flex flex-col items-center bg-neutral-300 p-4 mt-8 md:mt-16'>
             {filt.map((product) => (
@@ -39,7 +43,7 @@ const ProductDetailes = () => {
                             Reviews: {product.reviews}
                         </p>
                         <div className='flex'>
-                            <button className='bg-blue-950 text-white rounded-md py-2 px-4 hover:bg-black' onClick={() => { handlecart(product) }}>
+                            <button className='bg-blue-950 text-white rounded-md py-2 px-4 hover:bg-black' onClick={() =>  handlecart(product._id) }>
                                 Add to cart
                             </button>
                             <Link to="/"> <button className='bg-blue-950 text-white rounded-md py-2 px-4 hover:bg-black ml-3 w-28'>Back</button> </Link>

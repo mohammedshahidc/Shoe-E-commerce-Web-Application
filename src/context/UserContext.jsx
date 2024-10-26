@@ -49,9 +49,10 @@ const UserContext = ({ children }) => {
                 password:login.password
 
             },{withCredentials:true})
+            console.log("response  ",response);
             if(response.status===200){
-                const data=response.data.data
-                console.log("eftfyde8iw8 :",data);
+                const data=response.data.token
+               
                 if(data.isAdmin===true){
                     setAdmin(data)
                     localStorage.setItem("admindt", JSON.stringify(data))
@@ -87,7 +88,7 @@ const UserContext = ({ children }) => {
 
     return (
         <div>
-            <Usercont.Provider value={{ login, handlelogChange, handlelogSubmit, curuser, handlelogout, userID: curuser?.id, admin, handleLogout }}>
+            <Usercont.Provider value={{ login, handlelogChange, handlelogSubmit, curuser, handlelogout, userID: curuser?._id, admin, handleLogout }}>
                 {children}
             </Usercont.Provider>
 

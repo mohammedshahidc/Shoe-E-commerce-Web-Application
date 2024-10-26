@@ -1,12 +1,12 @@
 import React, { useContext} from 'react'
 import { Usercont } from '../../context/UserContext'
-
+import { cartcontext } from '../../context/Cartproduct'
 import axios from 'axios'
 
 const Payment = () => {
   const { curuser } = useContext(Usercont)
 
-
+const {setCart,setNotificationCount}=useContext(cartcontext)
   const username = curuser?.input?.username
   const totalpayment = async (event) => {
     event.preventDefault();
@@ -14,16 +14,16 @@ const Payment = () => {
     const paymentconformation = window.confirm("Confirm your payment");
     if (paymentconformation) {
       try {
-        const res = await axios.get(`http://localhost:5000/users/${curuser.id}`);
-        console.log("User data before update:", res.data);
-        const user = res.data;
-
-        await axios.put(`http://localhost:5000/users/${curuser.id}`, {
-          ...user, cart: []
-        });
-
-
-        alert("Payment successful");
+         await axios.delete(`http://localhost:4004/api/user/clearecart`,{
+          headers:{
+            Authorization:`Bearer ${curuser}`
+          }
+         });
+         setCart([])
+         setNotificationCount(0)
+         
+         
+         alert("Payment successful");
       } catch (error) {
         console.error("Error during payment:", error);
       }
