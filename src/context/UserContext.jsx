@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { json, useNavigate } from 'react-router-dom'
-
+import { toast } from 'react-toastify'
 export const Usercont = createContext()
 
 
@@ -57,10 +57,16 @@ const UserContext = ({ children }) => {
                     setAdmin(data)
                     localStorage.setItem("admindt", JSON.stringify(data))
                     navigate("/admin")
+                    // toast("admin login successfully")
+                    
+                    toast.success("Admin login successfully")
                 }else{
                     setCuruser(data)
                     localStorage.setItem("logindt", JSON.stringify(data));
+                    toast.success("User login successfully")
                      navigate('/')
+                    //  toast("user login successfully")
+                   
                 }
             }
            
@@ -68,6 +74,7 @@ const UserContext = ({ children }) => {
 
         catch (error) {
             console.error(error, 'err');
+            toast.error("Invalid username or password")
         }
     };
 

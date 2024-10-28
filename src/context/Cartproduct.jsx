@@ -3,6 +3,7 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 import { Usercont } from './UserContext';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export const cartcontext = createContext();
 const Cartproduct = ({ children }) => {
@@ -47,6 +48,7 @@ const Cartproduct = ({ children }) => {
           }
         );
         await fetchCartData();
+        toast.success(`${items.name} added to cart`)
       } catch (error) {
         alert("Item not added to cart");
         console.error(error);

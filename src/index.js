@@ -7,19 +7,39 @@ import { BrowserRouter } from 'react-router-dom'
 import ProductContext from './context/Productcontext'
 import Cartproduct from './context/Cartproduct';
 import UserContext from './context/UserContext';
-// import {ReactDOM} from 'react-dom'
+import WshlistContext from './context/WshlistContext';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
   <BrowserRouter>
+
     <UserContext>
       <ProductContext>
         <Cartproduct>
-          <App />
+          <WshlistContext>
+            <App />
+            <ToastContainer
+              position="top-right"
+              autoClose={1000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="colored"
+              transition= "Bounce"
+              />
+
+          </WshlistContext>
         </Cartproduct>
       </ProductContext>
     </UserContext>
+
   </BrowserRouter>
 
 )

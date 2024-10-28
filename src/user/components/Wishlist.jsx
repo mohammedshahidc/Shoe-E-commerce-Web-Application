@@ -1,27 +1,38 @@
-import React from 'react'
-import shoue from "../components/images/shoue.png"
+import React, { useContext } from 'react';
+import { wishcontext } from '../../context/WshlistContext';
+import { cartcontext } from '../../context/Cartproduct';
 const Wishlist = () => {
-
+    const { wish,removeFromWishlist } = useContext(wishcontext);
     
-  return (
-    <div className="flex flex-row justify-between items-center p-2 gray-300 mt-4 px-3 rounded">
-    <div className="mr-1">
-        <img className="rounded w-[70px]" src={shoue} alt={"image"} />
-    </div>
-    <div className="flex flex-col items-center">
-        <p className="font-bold">name</p>
-    </div>
-    <div className="flex flex-row items-center">
-    <p className="font-bold">price</p>
-    </div>
-    <div>
-        
-    </div>
-    <div className="flex items-center">
-        <button className="text-white bg-red-500 rounded-sm p-1">Delete</button>
-    </div>
-</div>
-  )
+    const handleDelete=(productId)=>{
+      removeFromWishlist(productId)
+    }
+    const {addtoCart}=useContext(cartcontext)
+
+    const handleAddtocart=(productId)=>{
+      addtoCart(productId)
+    }
+    return (
+        <div className="flex flex-col items-center p-4">
+            {wish.map((item) => (
+                <div key={item._id} className="flex flex-row justify-between items-center p-4 bg-gray-200 mt-4 rounded w-full max-w-[850px] shadow-md transition-all duration-300 ease-in-out">
+                    <div className="mr-4 flex-shrink-0">
+                        <img className="rounded w-[70px] h-[70px] object-cover" src={item.image} alt={item.name} />
+                    </div>
+                    <div className="flex flex-col flex-1">
+                        <p className="font-bold text-lg">{item.name}</p>
+                    </div>
+                    <div className="flex-grow flex justify-center">
+                        <p className="font-bold text-lg">₹{item.price}</p>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                        <button className="text-white bg-red-500 rounded-sm p-2 hover:bg-red-600 transition duration-200 ease-in-out" onClick={()=>handleDelete(item._id)}>Delete</button>
+                        <button className="text-white bg-blue-500 rounded-sm p-2 hover:bg-blue-600 transition duration-200 ease-in-out" onClick={()=>handleAddtocart(item._id)}>Add to cart</button>
+                    </div>
+                </div>
+            ))}
+        </div>
+    );
 }
 
-export default Wishlist
+export default Wishlist;
