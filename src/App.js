@@ -14,7 +14,7 @@ import Footer from './user/components/Footer';
 import Contact from './user/components/Contact';
 import Cart from './user/components/Cart';
 import User from './user/components/User';
-import Payment from './user/components/Payment';
+import CheckoutForm from './user/components/CheckoutForm';
 import Protectedrouter from './user/components/Protectedrouter';
 import { Usercont } from './context/UserContext';
 import { useContext } from 'react';
@@ -30,7 +30,10 @@ import Editproduct from './Admin/Editproduct';
 import Notfound from './user/components/Notfound';
 import shouecollection from './user/Shouecollection';
 import Wishlist from './user/components/Wishlist';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 
+const stripePromise = loadStripe('your-publishable-key')
 function App() {
   const { admin } = useContext(Usercont);
 
@@ -52,7 +55,7 @@ function App() {
               <Route path='/contact' element={<Contact />} />
               <Route path='/cart' element={<Cart />} />
               <Route path='/user' element={<User />} />
-              <Route path='/payment' element={<Payment />} />
+              <Route path='/CheckoutForm' element={<CheckoutForm />} />
               <Route path='/wishlist' element={<Wishlist/>} />
               <Route path='*' element={<Notfound />} />
             </Routes>
