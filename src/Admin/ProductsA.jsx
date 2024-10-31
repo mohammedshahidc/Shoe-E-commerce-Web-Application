@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import { context } from '../context/Productcontext';
+import { Admincontext } from './Admin context/AdminContext';
 import { Link } from 'react-router-dom';
 
 const ProductsA = () => {
-    const { products } = useContext(context);
+    const { adproduct } = useContext(Admincontext);
 
     return (
         <div className='relative right-[-250px] justify-center justify-items-center bg-white'>
@@ -20,8 +20,8 @@ const ProductsA = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {products.map((product) => (
-                        <tr key={product.id}>
+                    {adproduct.map((product) => (
+                        <tr key={product._id}>
                             <td className="border border-gray-300 border-solid border-1 px-4 py-2">
                                 <img src={product.image} alt={product.name} className='h-[100px]' />
                             </td>

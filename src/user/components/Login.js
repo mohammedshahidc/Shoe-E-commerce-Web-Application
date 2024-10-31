@@ -5,8 +5,8 @@ import { Usercont } from '../../context/UserContext';
 import { toast } from 'react-toastify';
 const Login = () => {
 
-    const { login, handlelogChange, handlelogSubmit } = useContext(Usercont)
-
+    const { login, handlelogChange, handlelogSubmit,admin } = useContext(Usercont)
+console.log("admin tk :",admin);
 
 
     return (

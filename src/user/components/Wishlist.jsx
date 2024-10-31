@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { wishcontext } from '../../context/WshlistContext';
 import { cartcontext } from '../../context/Cartproduct';
+import { toast } from 'react-toastify';
 const Wishlist = () => {
     const { wish,removeFromWishlist } = useContext(wishcontext);
     

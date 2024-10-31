@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Shouecollection from '../Shouecollection';
 import { FaHeart } from 'react-icons/fa';
 import { wishcontext } from '../../context/WshlistContext';
+import { toast } from 'react-toastify';
 
 const Home = () => {
   const { products, error, isLoading } = useContext(context);
@@ -33,6 +34,7 @@ const Home = () => {
 
   const handleaddTowishlist = (productId) => {
     addToWishlist(productId)
+    toast.success("item added to wishlist")
   }
   return (
     <div className="bg-cover bg-center h-full w-full bg-gray-300 mt-[-28px]">

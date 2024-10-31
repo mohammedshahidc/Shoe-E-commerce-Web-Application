@@ -10,10 +10,12 @@ import UserContext from './context/UserContext';
 import WshlistContext from './context/WshlistContext';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import  Admincontext  from './Admin/Admin context/AdminContext';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 
-const stripePromise = loadStripe('your-publishable-key')
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,28 +26,27 @@ root.render(
       <ProductContext>
         <Cartproduct>
           <WshlistContext>
-          <Elements stripe={stripePromise}>
-            <App />
-            <ToastContainer
-              position="top-right"
-              autoClose={1000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-              theme="colored"
-              transition="Bounce"
-            />
-            </Elements>
+            <Admincontext>
+              <App />
+                <ToastContainer
+                position="top-right"
+                autoClose={1000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"
+                transition="Bounce"
+              />
+            </Admincontext>
           </WshlistContext>
         </Cartproduct>
       </ProductContext>
     </UserContext>
-
-  </BrowserRouter>
+ </BrowserRouter>
 
 )
 

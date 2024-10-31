@@ -7,6 +7,7 @@ export const Usercont = createContext()
 
 const UserContext = ({ children }) => {
     const [curuser, setCuruser] = useState(null)
+    const [username,setUsername]=useState("")
     const [admin, setAdmin] = useState(null)
     const [login, setLogin] = useState({
         username: '',
@@ -15,7 +16,7 @@ const UserContext = ({ children }) => {
     useEffect(() => {
         const curentUser = localStorage.getItem("logindt")
         const storedAdmin = localStorage.getItem("admindt")
-
+       setAdmin(storedAdmin)
         setCuruser(JSON.parse(curentUser))
         setAdmin(JSON.parse(storedAdmin))
 
@@ -49,23 +50,24 @@ const UserContext = ({ children }) => {
                 password:login.password
 
             },{withCredentials:true})
-            console.log("response  ",response);
+            console.log("response cntx :",response);
             if(response.status===200){
-                const data=response.data.token
-               
-                if(data.isAdmin===true){
-                    setAdmin(data)
-                    localStorage.setItem("admindt", JSON.stringify(data))
+                const data=response.data.data
+               console.log("cntxt data :",data.name);
+                if(response.data.data.isAdmin===true){
+                    setAdmin(response.data.data.token)
+                    setUsername(data.name)
+                    localStorage.setItem("admindt", JSON.stringify(data.token))
+
                     navigate("/admin")
-                    // toast("admin login successfully")
-                    
-                    toast.success("Admin login successfully")
+                   toast.success("Admin login successfully")
                 }else{
-                    setCuruser(data)
-                    localStorage.setItem("logindt", JSON.stringify(data));
+                    setCuruser(data.token)
+                    setUsername(data.name)
+                    localStorage.setItem("logindt", JSON.stringify(data.token));
                     toast.success("User login successfully")
                      navigate('/')
-                    //  toast("user login successfully")
+                   toast.success("user login successfully")
                    
                 }
             }
@@ -88,14 +90,23 @@ const UserContext = ({ children }) => {
             setCuruser(null)
 
         } catch (error) {
-
+console.log(error);
         }
     }
 
 
     return (
         <div>
-            <Usercont.Provider value={{ login, handlelogChange, handlelogSubmit, curuser, handlelogout, userID: curuser?._id, admin, handleLogout }}>
+            <Usercont.Provider value={{ login,
+                 handlelogChange,
+                 handlelogSubmit,
+                  curuser, 
+                  handlelogout, 
+                  userID: curuser?._id, 
+                  admin, 
+                  handleLogout,
+                  username 
+                  }}>
                 {children}
             </Usercont.Provider>
 

@@ -26,72 +26,70 @@ const Header = () => {
                         <div className="block w-5 relative">
                             <span
                                 aria-hidden="true"
-                                className={`block h-0.5 w-full bg-current transition-transform duration-500 ease-in-out ${open ? 'rotate-45 translate-y-2' : ''
-                                    }`}
+                                className={`block h-0.5 w-full bg-current transition-transform duration-500 ease-in-out ${open ? 'rotate-45 translate-y-2' : ''}`}
                             ></span>
                             <span
                                 aria-hidden="true"
-                                className={`block h-0.5 w-full bg-current mt-1 transition-opacity duration-500 ease-in-out ${open ? 'opacity-0' : ''
-                                    }`}
+                                className={`block h-0.5 w-full bg-current mt-1 transition-opacity duration-500 ease-in-out ${open ? 'opacity-0' : ''}`}
                             ></span>
                             <span
                                 aria-hidden="true"
-                                className={`block h-0.5 w-full bg-current mt-1 transition-transform duration-500 ease-in-out ${open ? '-rotate-45 -translate-y-2' : ''
-                                    }`}
+                                className={`block h-0.5 w-full bg-current mt-1 transition-transform duration-500 ease-in-out ${open ? '-rotate-45 -translate-y-2' : ''}`}
                             ></span>
                         </div>
                     </button>
 
                     {/* Mobile Menu */}
                     <div
-                        className={`${open ? 'flex' : 'hidden'
-                            } absolute top-[65px] left-0 w-full flex-col items-center bg-gray-100 md:hidden`}
+                        className={`${open ? 'flex' : 'hidden'} absolute top-[65px] left-0 w-full flex-col items-center bg-gray-100 md:hidden space-y-2 py-4`}
                     >
-                        <NavLink to="/" className={({ isActive }) => isActive ? "text-blue-600" : ""}>Home</NavLink>
-                        <NavLink to="/mens" className={({ isActive }) => isActive ? "text-blue-600" : ""}>Men</NavLink>
-                        <NavLink to="/women" className={({ isActive }) => isActive ? "text-blue-600" : ""}>Women</NavLink>
-                        <NavLink to="/contact" className={({ isActive }) => isActive ? "text-blue-600" : ""}>Contact</NavLink>
+                        <NavLink to="/" className={({ isActive }) => (isActive ? "text-blue-600" : "")}>Home</NavLink>
+                        <NavLink to="/mens" className={({ isActive }) => (isActive ? "text-blue-600" : "")}>Men</NavLink>
+                        <NavLink to="/women" className={({ isActive }) => (isActive ? "text-blue-600" : "")}>Women</NavLink>
+                        <NavLink to="/contact" className={({ isActive }) => (isActive ? "text-blue-600" : "")}>Contact</NavLink>
 
-                        {/* Show icons and notification count only if the user is logged in */}
                         {curuser && (
                             <>
                                 <div className="relative">
-                                    <FaShoppingCart />
-                                    {notificationCount > 0 && (
-                                        <span className="absolute top-0 right-0 w-5 h-5 flex items-center justify-center text-white bg-red-500 rounded-full text-xs">
-                                            {notificationCount}
-                                        </span>
-                                    )}
+                                    <NavLink to="/cart" className={({ isActive }) => (isActive ? "text-blue-600" : "")}>
+                                        <FaShoppingCart />
+                                        {notificationCount > 0 && (
+                                            <span className="absolute -top-2 -right-2 w-5 h-5 flex items-center justify-center text-white bg-red-500 rounded-full text-xs">
+                                                {notificationCount}
+                                            </span>
+                                        )}
+                                    </NavLink>
                                 </div>
                                 <div className="relative">
-                                    <FaHeart />
+                                    <NavLink to="/wishlist" className={({ isActive }) => (isActive ? "text-blue-600" : "")}>
+                                        <FaHeart />
+                                    </NavLink>
                                 </div>
                             </>
                         )}
                         {/* Always show FaUser */}
-                        <NavLink to="/user" className={({ isActive }) => isActive ? "text-blue-600" : ""}>
+                        <NavLink to="/user" className={({ isActive }) => (isActive ? "text-blue-600" : "")}>
                             <FaUser className="w-5 h-5" />
                         </NavLink>
                     </div>
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-10">
-                        <NavLink to="/" className={({ isActive }) => isActive ? "text-blue-600" : ""}>Home</NavLink>
-                        <NavLink to="/mens" className={({ isActive }) => isActive ? "text-blue-600" : ""}>Men</NavLink>
-                        <NavLink to="/women" className={({ isActive }) => isActive ? "text-blue-600" : ""}>Women</NavLink>
-                        <NavLink to="/contact" className={({ isActive }) => isActive ? "text-blue-600" : ""}>Contact</NavLink>
+                        <NavLink to="/" className={({ isActive }) => (isActive ? "text-blue-600" : "")}>Home</NavLink>
+                        <NavLink to="/mens" className={({ isActive }) => (isActive ? "text-blue-600" : "")}>Men</NavLink>
+                        <NavLink to="/women" className={({ isActive }) => (isActive ? "text-blue-600" : "")}>Women</NavLink>
+                        <NavLink to="/contact" className={({ isActive }) => (isActive ? "text-blue-600" : "")}>Contact</NavLink>
 
-                        {/* Show icons and notification count only if the user is logged in */}
                         {curuser && (
                             <>
                                 <div className="relative">
-                                    <NavLink to="/wishlist" className={({ isActive }) => isActive ? "text-blue-600" : ""}>
+                                    <NavLink to="/wishlist" className={({ isActive }) => (isActive ? "text-blue-600" : "")}>
                                         <FaHeart />
                                     </NavLink>
                                 </div>
 
                                 <div className="relative">
-                                    <NavLink to="/cart" className={({ isActive }) => isActive ? "text-blue-600" : ""}>
+                                    <NavLink to="/cart" className={({ isActive }) => (isActive ? "text-blue-600" : "")}>
                                         <FaShoppingCart />
                                         {notificationCount > 0 && (
                                             <span id='not' className="absolute top-0 right-0 w-5 h-5 flex items-center justify-center text-white bg-red-500 rounded-full text-xs">
@@ -102,7 +100,6 @@ const Header = () => {
                                 </div>
                             </>
                         )}
-                        {/* Always show FaUser */}
                         {curuser ? (
                             <NavLink to="/user" className={({ isActive }) => (isActive ? "text-blue-600" : "")}>
                                 <FaUser className="w-5 h-5" />

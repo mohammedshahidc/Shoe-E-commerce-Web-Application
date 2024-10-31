@@ -3,15 +3,16 @@ import { context } from '../context/Productcontext';
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { HiX } from 'react-icons/hi';
 import axios from 'axios';
+import { Admincontext } from './Admin context/AdminContext';
 
 const ProductdtA = () => {
 
-    const { products } = useContext(context)
+    const { adproduct } = useContext(Admincontext)
     const { id } = useParams()
     const [filt, setFilt] = useState([])
     useEffect(() => {
-        setFilt(products.filter((product) => (product.id == id)))
-    }, [products])
+        setFilt(adproduct.filter((product) => (product._id === id)))
+    }, [adproduct])
     const navigate = useNavigate()
     const deleetproduct = (item) => {
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -15,7 +16,7 @@ const Register = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (input.password !== input.cpassword) {
-            alert("Passwords do not match");
+            toast.error("Passwords do not match");
             return;
         }
         const todb = { ...input, block: false };
@@ -27,7 +28,7 @@ const Register = () => {
             
         })
             .then((res) => {
-                alert("Registered successfully");
+                toast.success("Registered successfully");
                 navigate('/login');
             })
             .catch((err) => {

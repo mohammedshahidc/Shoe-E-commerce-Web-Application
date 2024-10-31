@@ -14,7 +14,6 @@ import Footer from './user/components/Footer';
 import Contact from './user/components/Contact';
 import Cart from './user/components/Cart';
 import User from './user/components/User';
-import CheckoutForm from './user/components/CheckoutForm';
 import Protectedrouter from './user/components/Protectedrouter';
 import { Usercont } from './context/UserContext';
 import { useContext } from 'react';
@@ -32,6 +31,11 @@ import shouecollection from './user/Shouecollection';
 import Wishlist from './user/components/Wishlist';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
+import CheckoutForm from './user/components/Payment';
+import Payment from '../src/user/components/Payment'
+import CheckoutSuccess from './user/components/CheckoutSuccess';
+import Addressform from './user/components/Addresform';
+import Orders from './user/components/Orders';
 
 const stripePromise = loadStripe('your-publishable-key')
 function App() {
@@ -55,9 +59,13 @@ function App() {
               <Route path='/contact' element={<Contact />} />
               <Route path='/cart' element={<Cart />} />
               <Route path='/user' element={<User />} />
-              <Route path='/CheckoutForm' element={<CheckoutForm />} />
               <Route path='/wishlist' element={<Wishlist/>} />
+              <Route path='/payment' element={<Payment/>} />
+              <Route path='/CheckoutSuccess/:sessionId' element={<CheckoutSuccess/>} />
               <Route path='*' element={<Notfound />} />
+            <Route path='/cart/checkoutform' element={<CheckoutForm/>}/>
+            <Route path='/adressform' element={<Addressform/>}/>
+            <Route path='/orders' element={<Orders/>}/>
             </Routes>
             <Footer />
           </div>

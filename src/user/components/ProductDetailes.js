@@ -3,52 +3,54 @@ import { context } from '../../context/Productcontext'
 import { useParams } from 'react-router-dom'
 import { cartcontext } from '../../context/Cartproduct'
 import { Link } from 'react-router-dom'
-
-
+import { toast } from 'react-toastify'
 
 const ProductDetailes = () => {
     const { id } = useParams()
     const { products } = useContext(context)
     const { addtoCart } = useContext(cartcontext)
     const [filt, setFilt] = useState([])
-    
-    useEffect(() => {
-        console.log("products :",products);
-        setFilt(products.filter((product) => (product._id ===id)))
-    }, [products])
 
-    const handlecart = (produt) => {
-        addtoCart(produt)
+    useEffect(() => {
+        setFilt(products.filter((product) => product._id === id))
+    }, [products, id])
+
+    const handlecart = (product) => {
+        addtoCart(product)
+        toast.success("item added to cart")
     }
-   
-    const map=filt.map((product)=>product)
-    
-    console.log("filt",filt);
+
     return (
-        <div className='flex flex-col items-center bg-neutral-300 p-4 mt-8 md:mt-16'>
+        <div className='flex items-center justify-center min-h-screen bg-gray-300'>
             {filt.map((product) => (
                 <div key={product._id} className='flex flex-col md:flex-row items-center bg-white rounded-lg shadow-md mb-4 p-4 w-full max-w-4xl'>
                     <img
                         src={product.image}
                         alt={product.name}
-                        className='w-full h-auto md:w-1/2 md:h-[450px] object-cover mb-4 md:mb-0 md:mr-4'
+                        className='w-full h-auto md:w-1/2 md:h-[450px] object-cover mb-4 md:mb-0 md:mr-4 rounded-md'
                     />
                     <div className='flex flex-col items-center md:items-start text-center md:text-left'>
                         <h1 className='font-bold text-xl md:text-3xl mb-2'>{product.name}</h1>
-                        <h2 className='font-bold text-lg md:text-2xl mb-2'>{product.type}'s classic shoe</h2>
-                        <h3 className='font-bold text-lg md:text-xl mb-2'>₹ {product.price} & free shipping</h3>
+                        <h2 className='font-bold text-lg md:text-2xl mb-2'>{product.type}'s Classic Shoe</h2>
+                        <h3 className='font-bold text-lg md:text-xl mb-2'>₹ {product.price} & Free Shipping</h3>
                         <p className='text-base mb-4'>
                             {product.description} <br />
-                            Brand: {product.brand} <br />
-                            Reviews: {product.reviews}
+                            <span className='font-semibold'>Brand:</span> {product.brand} <br />
+                            <span className='font-semibold'>Reviews:</span> {product.reviews}
                         </p>
-                        <div className='flex'>
-                            <button className='bg-blue-950 text-white rounded-md py-2 px-4 hover:bg-black' onClick={() =>  handlecart(product._id) }>
-                                Add to cart
+                        <div className='flex flex-col md:flex-row gap-3'>
+                            <button 
+                                className='bg-blue-950 text-white rounded-md py-2 px-4 hover:bg-black'
+                                onClick={() => handlecart(product)}
+                            >
+                                Add to Cart
                             </button>
-                            <Link to="/"> <button className='bg-blue-950 text-white rounded-md py-2 px-4 hover:bg-black ml-3 w-28'>Back</button> </Link>
+                            <Link to="/">
+                                <button className='bg-blue-950 text-white rounded-md py-2 px-4 hover:bg-black'>
+                                    Back
+                                </button>
+                            </Link>
                         </div>
-
                     </div>
                 </div>
             ))}
