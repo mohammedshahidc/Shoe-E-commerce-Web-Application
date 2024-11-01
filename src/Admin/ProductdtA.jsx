@@ -6,30 +6,27 @@ import axios from 'axios';
 import { Admincontext } from './Admin context/AdminContext';
 
 const ProductdtA = () => {
-
-    const { adproduct } = useContext(Admincontext)
-    const { id } = useParams()
-    const [filt, setFilt] = useState([])
-    useEffect(() => {
-        setFilt(adproduct.filter((product) => (product._id === id)))
-    }, [adproduct])
-    const navigate = useNavigate()
-    const deleetproduct = (item) => {
-
-
-        axios.delete(`http://localhost:5000/ProductData/${item.id}`)
-        alert("product successfully deleted")
-
-        navigate("/admin/productsa")
-
-
+const navigate=useNavigate()
+    const { adproduct,productByid,ProductByid,deleteproduct,getAllproducts} = useContext(Admincontext)
+   
+   console.log("pBYID",ProductByid);
+   const handledelete=async(productId)=>{
+    try {
+       await deleteproduct(productId)
+       navigate("/admin/productsa")
+       await   getAllproducts()
+    } catch (error) {
+      console.log(error);  
     }
+   }
 
+   
+    
     return (
         <div className='flex flex-col items-center bg-neutral-300 p-4 mt-8 sm:mt-16 ml-[330px] '>
-            {filt.map((product) => (
+            {ProductByid.map((product) => (
 
-                <div key={product.id} className='flex flex-col sm:flex-row items-center bg-white rounded-lg shadow-md mb-4 p-4 w-full max-w-4xl'>
+                <div key={product._id} className='flex flex-col sm:flex-row items-center bg-white rounded-lg shadow-md mb-4 p-4 w-full max-w-4xl'>
                     <div className='flex'>
                         <div> <Link to={("/admin/productsa")}><button className=' rounded-full bg-black text-white transition duration-300 ease-in-out transform hover:scale-110' >
                             <HiX />
@@ -49,10 +46,10 @@ const ProductdtA = () => {
                                 Reviews: {product.reviews}
                             </p>
                             <div className='flex p-5'>
-                                <Link to={`/admin/productsa/${product.id}/editproduct`}>
+                                <Link to={`/admin/productsa/${product._id}/editproduct`}>
                                     <button class='btn' id='edit'>Edit</button>
                                 </Link>
-                                <button class='btn' id='dlt' type='button' onClick={() => deleetproduct(product)}>Delete</button>
+                                <button class='btn' id='dlt' type='button' onClick={() => handledelete(product._id)}>Delete</button>
                             </div>
                         </div>
                     </div>

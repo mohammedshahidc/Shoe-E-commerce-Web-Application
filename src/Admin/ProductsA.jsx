@@ -3,8 +3,10 @@ import { Admincontext } from './Admin context/AdminContext';
 import { Link } from 'react-router-dom';
 
 const ProductsA = () => {
-    const { adproduct } = useContext(Admincontext);
-
+    const { adproduct,productByid } = useContext(Admincontext);
+    const getproductById=async(productId)=>{
+        await productByid(productId)
+         }
     return (
         <div className='relative right-[-250px] justify-center justify-items-center bg-white'>
             <Link to={'/admin/productsa/AddProduct'}><button className='w-[120px] h-[30px] bg-blue-700 text-white rounded-md hover:bg-black cursor-pointer mt-10' >Add Product</button></Link>
@@ -31,8 +33,8 @@ const ProductsA = () => {
                             </td>
                             <td className="border border-gray-300 px-4 py-2">{product.price}</td>
                             <td className="border border-gray-300 px-4 py-2">
-                                <Link to={`/admin/productsa/${product.id}`}>
-                                    <button className='bg-blue-700 rounded-md w-[100px] h-[30px] text-white hover:bg-black cursor-pointer'>Details</button>
+                                <Link to={`/admin/productsa/${product._id}`}>
+                                    <button className='bg-blue-700 rounded-md w-[100px] h-[30px] text-white hover:bg-black cursor-pointer' onClick={() => getproductById(product._id)}>Details</button>
                                 </Link>
                             </td>
                         </tr>
