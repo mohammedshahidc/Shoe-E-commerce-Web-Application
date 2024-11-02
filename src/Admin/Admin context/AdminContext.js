@@ -54,8 +54,8 @@ const Admin_allcontext = ({ children }) => {
                     Authorization: `Bearer ${admin}`,
                 },
             });
-            setOrders(resp.data);
-            console.log("order:", resp.data);
+            setOrders(resp.data.data);
+            console.log("order:", resp.data.data);
         } catch (error) {
             console.error("Error fetching orders:", error);
         }
@@ -119,7 +119,7 @@ const getuserbyid=async(userId)=>{
 
 
     return (
-        <Admincontext.Provider value={{ adproduct,productByid,ProductByid,getAllproducts,orders,deleteproduct,getallusers,users,userbyId,getuserbyid}}>
+        <Admincontext.Provider value={{ adproduct,productByid,ProductByid,getAllproducts,orders,deleteproduct,getallusers,users,userbyId,getuserbyid,getAllOrders,adproduct}}>
             {children}
         </Admincontext.Provider>
 

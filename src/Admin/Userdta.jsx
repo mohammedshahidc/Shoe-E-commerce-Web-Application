@@ -7,81 +7,101 @@ import { Usercont } from '../context/UserContext';
 
 const Userdta = () => {
     const { id } = useParams();
-    const navigate=useNavigate()
-    const [Block, setBlock] = useState(false);
+    const navigate = useNavigate();
+    const [block, setBlock] = useState(false);
     const { userbyId } = useContext(Admincontext); 
-    const { admin,getallusers } = useContext(Usercont);
+    const { admin, getallusers } = useContext(Usercont);
+    const [orderById, setOrderById] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    console.log("User details in context:", userbyId);
-
-    
     useEffect(() => {
         if (userbyId) {
             setBlock(userbyId.block); 
+            
         }
     }, [userbyId]);
 
-    const blockstatus = async (userID) => {
+    const blockStatus = async (userID) => {
         try {
-            const response = await axios.put(`http://localhost:4004/api/admin/blockuser/${userID}`, {}, {
+            await axios.put(`http://localhost:4004/api/admin/blockuser/${userID}`, {}, {
                 headers: {
                     Authorization: `Bearer ${admin}`
                 }
             });
-          
             setBlock(prevBlock => !prevBlock); 
-            console.log("Block status updated:", response.data); 
         } catch (error) {
             console.error(error);
         }
     };
 
-    const deleteuser = async (userID) => {
+    const deleteUser = async (userID) => {
         try {
-            const response = await axios.delete(`http://localhost:4004/api/admin/deleteuser/${userID}`, {
+            await axios.delete(`http://localhost:4004/api/admin/deleteuser/${userID}`, {
                 headers: {
                     Authorization: `Bearer ${admin}`
                 }
             });
-             
-            navigate("/admin/usera")
-            getallusers()
-            
+            navigate("/admin/usera");
+            getallusers();
         } catch (error) {
             console.error("Error deleting user:", error);
         }
     };
 
+    useEffect(() => {
+        const getOrdersById = async () => {
+            try {
+                const response = await axios.get(`http://localhost:4004/api/admin/getorderbyid/${id}`, {
+                    headers: {
+                        Authorization: `Bearer ${admin}`
+                    }
+                });
+                setOrderById(response.data.data.products);
+                setLoading(false);
+            } catch (error) {
+                console.error("Error fetching orders:", error);
+                setLoading(false);
+            }
+        };
+        getOrdersById();
+    }, [id, admin]);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+    
+
     return (
         <div className='w-screen h-screen'>
             {userbyId ? (
                 <div className="flex min-h-screen items-center justify-center ml-[230px]">
-                    <div className="relative flex w-full max-w-[48rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md h-[350px]">
-                        <div className="relative m-0 w-2/5 shrink-0 overflow-hidden rounded-xl rounded-r-none bg-gray-300 bg-clip-border text-gray-700">
-                            <div className="pb-6 ml-[10px] mt-8 rounded-full border-2 border-black inline-flex items-center justify-center p-4">
+                    <div className="relative flex w-full max-w-[48rem] flex-row rounded-xl bg-white text-gray-700 shadow-md h-[350px]">
+                        <div className="relative w-2/5 bg-gray-300 rounded-l-xl flex flex-col items-center p-6">
+                            <div className="mb-4 rounded-full border-2 border-black inline-flex items-center justify-center p-4">
                                 <FaUser size={60} />
                             </div>
-                            <div className='p-4 text-black'>
-                                Name: {userbyId.username}<br />
-                                Email: {userbyId.email}<br />
+                            <div className='text-black text-center'>
+                                <p>Name: {userbyId.username}</p>
+                                <p>Email: {userbyId.email}</p>
                             </div>
-                            <button className='btn' onClick={() => blockstatus(userbyId._id)}>
-                                {Block ? 'Unblock' : 'Block'}
+                            <button className='btn mt-4' onClick={() => blockStatus(userbyId._id)}>
+                                {block ? 'Unblock' : 'Block'}
                             </button>
-                            <button className='btn' onClick={() => deleteuser(userbyId._id)}>Delete</button>
+                            <button className='btn mt-2' onClick={() => deleteUser(userbyId._id)}>Delete</button>
                         </div>
-                        <div className="p-6 overflow-scroll w-[480px]">
-                            <h6 className="mb-4 block font-sans text-base font-semibold uppercase leading-relaxed tracking-normal text-pink-500 antialiased">
-                                Cart
-                            </h6>
-                            {/* Uncomment and modify this section if needed */}
-                            {/* {userbyId.cart.map((item) => (
-                                <div key={item.id}> // Ensure each item has a unique key
-                                    Product: {item.name}<br />
-                                    Price: {item.price}<br />
-                                    Quantity: {item.quantity}<br />
-                                </div>
-                            ))} */}
+                        <div className="p-6 w-[480px] overflow-y-scroll">
+                            <h6 className="mb-4 text-base font-semibold uppercase text-pink-500">Orders</h6>
+                            {orderById.length > 0 ? (
+                                orderById.map((product) => (
+                                    <div key={product._id} className="mb-4 border-b pb-4">
+                                        <p><strong>Product Name:</strong> {product.productId.name}</p>
+                                        <p><strong>Price:</strong> ₹{product.productId.price}</p>
+                                        <p><strong>Quantity:</strong> {product.quantity}</p>
+                                    </div>
+                                ))
+                            ) : (
+                                <p>No products found for this user.</p>
+                            )}
                         </div>
                     </div>
                 </div>

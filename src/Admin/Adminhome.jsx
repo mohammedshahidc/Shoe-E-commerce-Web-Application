@@ -1,35 +1,56 @@
-import React from 'react'
-import { FaBoxOpen } from 'react-icons/fa';
-import { FaUsers } from 'react-icons/fa';
-import { FaShoppingCart } from 'react-icons/fa';
+import axios from 'axios';
+import React, { useContext, useEffect, useState } from 'react';
+import { FaBoxOpen, FaUsers, FaShoppingCart, FaRupeeSign } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-
-
-
+import { Usercont } from '../context/UserContext';
+import { Admincontext } from './Admin context/AdminContext';
 const Adminhome = () => {
+  const [totalRevenue,setTotalRevanue]=useState('')
+  const {users,orders,adproduct}=useContext(Admincontext)
+const {admin}=useContext(Usercont)
+ 
+  useEffect(()=>{
+    const totalincome=async()=>{
+      try {
+        const resp=await axios.get("http://localhost:4004/api/admin/calculateincome",{
+          headers:{
+            Authorization:`Bearer ${admin}`
+          }
+        })
+        setTotalRevanue(resp.data.toalRevanue)
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    totalincome()
+  },[totalRevenue])
+  console.log("rev",totalRevenue);
   return (
-    <div className='ml-[300px] mt-[230px]'>
-      <div className=' justify-items-center mr-32 '>
-        <div className='flex justify-center justify-items-center h-[330px] ml-[50px]  '>
+    // product cards
+    <div className='ml-[300px] mt-[80px] h-screen'>
+      <div className='justify-items-center mr-32'>
+        <div className='flex justify-center justify-items-center h-[330px] ml-[50px]'>
           <Link to={'/admin/productsa'}>
-            <div className='bg-stone-400 w-[400px] h-[180px] mr-14 mt-[-120px] rounded-md shadow-2xl hover:transition-transform transform scale-100 hover:scale-110 '>
+            <div className='bg-stone-400 w-[400px] h-[180px] mr-14 rounded-md shadow-2xl hover:transition-transform transform scale-100 hover:scale-110'>
               <div className='flex'>
                 <div>
-                  <h1 className='text-gray-700 text-3xl font-bold mr-64 mt-2 '>Products</h1><br />
-                  {/* <h1 className='text-gray-700 font-bold text-4xl mr-52'>20</h1> */}
+                  <h1 className='text-gray-700 text-3xl font-bold mr-64 mt-2'>Products</h1>
+                  <h2 className='text-gray-700 font-bold mt-6 ml-[-200px] text-xl'>total products:{adproduct.length}</h2>
                 </div>
                 <div className='ml-[-200px] mt-14'>
-                  <h1 className="text-gray-700 font-bold "><FaBoxOpen size={150} /></h1>
+                  <h1 className="text-gray-700 font-bold"><FaBoxOpen size={150} /></h1>
                 </div>
               </div>
             </div>
           </Link>
+
+          {/* //users card */}
           <Link to={'/admin/usera'}>
-            <div className='bg-stone-400 w-[400px] h-[180px] mt-[-120px] rounded-md hover:transition-transform transform scale-100 hover:scale-110 shadow-2xl'>
+            <div className='bg-stone-400 w-[400px] h-[180px] rounded-md hover:transition-transform transform scale-100 hover:scale-110 shadow-2xl'>
               <div className='flex'>
                 <div>
-                  <h1 className='text-gray-700 text-3xl font-bold mr-64 mt-2 '>Users</h1><br />
-                  {/* <h1 className='text-gray-700 font-bold text-4xl mr-52'>20</h1> */}
+                  <h1 className='text-gray-700 text-3xl font-bold mr-64 mt-2'>Users</h1>
+                  <h2 className='text-gray-700 font-bold mt-6 ml-[-150px] text-xl'>total users:{users.length}</h2>
                 </div>
                 <div className='relative mt-10'>
                   <div className='absolute -left-[160px]'>
@@ -41,25 +62,45 @@ const Adminhome = () => {
           </Link>
         </div>
 
-        <div className='flex justify-center justify-items-center pt-10'>
-          <Link to={'/admin/order'}>
-            <div className='bg-stone-400 w-[400px] h-[180px] pt-4 mt-[-250px] rounded-md tran hover:transition-transform transform scale-100 hover:scale-110 shadow-2xl'>
-              <div className='flex'>
-                <div>
-                  <h1 className='text-gray-700 text-3xl font-bold mr-64 mt-2 '>Orders</h1><br />
-                  {/* <h1 className='text-gray-700 font-bold text-4xl mr-52'>20</h1> */}
-                </div>
-                <div className='ml-[-150px] mt-5'>
-                  <h1 className="text-gray-700 font-bold "> <FaShoppingCart size={150} /></h1>
+        <div className='flex mt-[-50px]'> 
+          {/* orders card */}
+          <div className='flex justify-center justify-items-center'>
+            <Link to={'/admin/order'}>
+              <div className='bg-stone-400 w-[400px] pt-[1px] h-[180px] ml-[50px] rounded-md transition-transform transform scale-100 hover:scale-110 shadow-2xl'>
+                <div className='flex'>
+                  <div>
+                    <h1 className='text-gray-700 text-3xl font-bold mr-64 mt-2'>Orders</h1>
+                    <h2 className='text-gray-700 font-bold mt-6 ml-[-150px] text-xl'>total orders:{orders.length}</h2>
+                  </div>
+                  <div className='ml-[-150px] mt-5'>
+                    <h1 className="text-gray-700 font-bold"><FaShoppingCart size={150} /></h1>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Link>
+            </Link>
+          </div>
+
+          {/* total revenue card */}
+          <div className='flex ml-4'> {/* Added margin-left here */}
+           
+              <div className='bg-stone-400 w-[400px] h-[180px] rounded-md transition-transform transform scale-100 hover:scale-110 shadow-2xl'>
+                <div className='flex h-full'>
+                  <h1 className='text-gray-700 mt-6 text-[17px] font-bold '>Total Revenue:</h1>
+                  <div>
+                  <h2 className='text-gray-700 font-bold mt-16 text-3xl'>₹{totalRevenue}</h2>
+                  </div>
+                  <div className='mt-4'>
+                  <h1 className="text-gray-700 font-bold"><FaRupeeSign size={150} /></h1>
+                    
+                  </div>
+                </div>
+              </div>
+            
+          </div>
         </div>
       </div>
     </div>
-
-  )
+  );
 };
 
 export default Adminhome;
