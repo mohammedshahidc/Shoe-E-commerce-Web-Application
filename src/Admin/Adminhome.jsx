@@ -5,33 +5,18 @@ import { Link } from 'react-router-dom';
 import { Usercont } from '../context/UserContext';
 import { Admincontext } from './Admin context/AdminContext';
 const Adminhome = () => {
-  const [totalRevenue,setTotalRevanue]=useState('')
-  const {users,orders,adproduct}=useContext(Admincontext)
-const {admin}=useContext(Usercont)
- 
-  useEffect(()=>{
-    const totalincome=async()=>{
-      try {
-        const resp=await axios.get("http://localhost:4004/api/admin/calculateincome",{
-          headers:{
-            Authorization:`Bearer ${admin}`
-          }
-        })
-        setTotalRevanue(resp.data.toalRevanue)
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    totalincome()
-  },[totalRevenue])
-  console.log("rev",totalRevenue);
+
+  const { users, orders, adproduct, totalRevenue } = useContext(Admincontext)
+  const { admin } = useContext(Usercont)
+
+
   return (
     // product cards
     <div className='ml-[300px] mt-[80px] h-screen'>
       <div className='justify-items-center mr-32'>
         <div className='flex justify-center justify-items-center h-[330px] ml-[50px]'>
           <Link to={'/admin/productsa'}>
-            <div className='bg-stone-400 w-[400px] h-[180px] mr-14 rounded-md shadow-2xl hover:transition-transform transform scale-100 hover:scale-110'>
+            <div className='bg-teal-50 w-[400px] h-[180px] mr-14 rounded-md shadow-2xl hover:transition-transform transform scale-100 hover:scale-110'>
               <div className='flex'>
                 <div>
                   <h1 className='text-gray-700 text-3xl font-bold mr-64 mt-2'>Products</h1>
@@ -46,7 +31,7 @@ const {admin}=useContext(Usercont)
 
           {/* //users card */}
           <Link to={'/admin/usera'}>
-            <div className='bg-stone-400 w-[400px] h-[180px] rounded-md hover:transition-transform transform scale-100 hover:scale-110 shadow-2xl'>
+            <div className='bg-teal-50 w-[400px] h-[180px] rounded-md hover:transition-transform transform scale-100 hover:scale-110 shadow-2xl'>
               <div className='flex'>
                 <div>
                   <h1 className='text-gray-700 text-3xl font-bold mr-64 mt-2'>Users</h1>
@@ -62,11 +47,11 @@ const {admin}=useContext(Usercont)
           </Link>
         </div>
 
-        <div className='flex mt-[-50px]'> 
+        <div className='flex mt-[-50px]'>
           {/* orders card */}
           <div className='flex justify-center justify-items-center'>
             <Link to={'/admin/order'}>
-              <div className='bg-stone-400 w-[400px] pt-[1px] h-[180px] ml-[50px] rounded-md transition-transform transform scale-100 hover:scale-110 shadow-2xl'>
+              <div className='bg-teal-50 w-[400px] pt-[1px] h-[180px] ml-[50px] rounded-md transition-transform transform scale-100 hover:scale-110 shadow-2xl'>
                 <div className='flex'>
                   <div>
                     <h1 className='text-gray-700 text-3xl font-bold mr-64 mt-2'>Orders</h1>
@@ -82,20 +67,20 @@ const {admin}=useContext(Usercont)
 
           {/* total revenue card */}
           <div className='flex ml-4'> {/* Added margin-left here */}
-           
-              <div className='bg-stone-400 w-[400px] h-[180px] rounded-md transition-transform transform scale-100 hover:scale-110 shadow-2xl'>
-                <div className='flex h-full'>
-                  <h1 className='text-gray-700 mt-6 text-[17px] font-bold '>Total Revenue:</h1>
-                  <div>
+
+            <div className='bg-teal-50 w-[400px] h-[180px] rounded-md transition-transform transform scale-100 hover:scale-110 shadow-2xl'>
+              <div className='flex h-full'>
+                <h1 className='text-gray-700 mt-6 text-[17px] font-bold '>Total Revenue:</h1>
+                <div>
                   <h2 className='text-gray-700 font-bold mt-16 text-3xl'>₹{totalRevenue}</h2>
-                  </div>
-                  <div className='mt-4'>
+                </div>
+                <div className='mt-4'>
                   <h1 className="text-gray-700 font-bold"><FaRupeeSign size={150} /></h1>
-                    
-                  </div>
+
                 </div>
               </div>
-            
+            </div>
+
           </div>
         </div>
       </div>

@@ -6,8 +6,8 @@ import { Admincontext } from './Admin context/AdminContext';
 const EditProduct = () => {
     const { id } = useParams();
     const { admin } = useContext(Usercont);
-    const {getAllproducts}=useContext(Admincontext)
-const navigate=useNavigate()
+    const { getAllproducts } = useContext(Admincontext)
+    const navigate = useNavigate()
     const [product, setProduct] = useState({
         name: '',
         type: '',
@@ -19,7 +19,7 @@ const navigate=useNavigate()
         reviews: ''
     });
 
-    const [loading, setLoading] = useState(true); 
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchProduct = async () => {
@@ -34,7 +34,7 @@ const navigate=useNavigate()
             } catch (error) {
                 console.error("Error fetching product:", error);
             } finally {
-                setLoading(false); 
+                setLoading(false);
             }
         };
 
@@ -57,7 +57,7 @@ const navigate=useNavigate()
                 formData.append(key, product[key]);
             }
 
-           
+
             console.log("FormData being sent:", {
                 name: formData.get("name"),
                 type: formData.get("type"),
@@ -81,11 +81,11 @@ const navigate=useNavigate()
             console.error("Error updating product:", error);
             alert("Error updating product");
         }
-navigate("/admin/productsa")
-getAllproducts()
+        navigate("/admin/productsa")
+        getAllproducts()
     };
 
-    
+
     if (loading) {
         return <div>Loading...</div>;
     }
@@ -117,13 +117,22 @@ getAllproducts()
                         />
                     </div>
                     <div>
-                        <label className='label'>Image:</label>
                         <input
                             type="file"
                             name="image"
                             onChange={handleChange}
                             className='inp'
                         />
+
+                        {product.image && (
+                            <div className="mt-2">
+                                <img
+                                    src={product.image}
+                                    alt="Current Product"
+                                    className="h-32 w-32 object-cover"
+                                />
+                            </div>
+                        )}
                     </div>
                     <div>
                         <label className='label'>Price:</label>

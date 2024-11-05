@@ -60,14 +60,15 @@ const UserContext = ({ children }) => {
                     localStorage.setItem("admindt", JSON.stringify(data.token))
 
                     navigate("/admin")
-                   toast.success("Admin login successfully")
+                  toast.success("admin login successfully")
                 }else{
                     setCuruser(data.token)
                     setUsername(data.name)
                     localStorage.setItem("logindt", JSON.stringify(data.token));
                     toast.success("User login successfully")
                      navigate('/')
-                   toast.success("user login successfully")
+                  
+                  toast.success('user login successfully')
                    
                 }
             }

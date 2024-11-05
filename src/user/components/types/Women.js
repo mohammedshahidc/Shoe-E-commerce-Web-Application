@@ -4,11 +4,12 @@ import { context } from '../../../context/Productcontext';
 import { Link } from 'react-router-dom';
 import { FaHeart } from 'react-icons/fa';
 import { wishcontext } from '../../../context/WshlistContext';
+import { toast } from 'react-toastify';
 
 const Women = () => {
     const { products } = useContext(context);
    
-    const {addToWishlist}=useContext(wishcontext)
+    const {addToWishlist, removeFromWishlist}=useContext(wishcontext)
 
     const [likedProducts, setLikedProducts] = useState({});
 
@@ -23,22 +24,32 @@ const Women = () => {
         const handleaddTowishlist=(productId)=>{
             addToWishlist(productId)
         }
+        const handleRemoveFromWishlist = (productId) => {
+            removeFromWishlist(productId);
+            toast.info("Item removed from wishlist");
+          };
 
     return (
-        <div className='bg-cover bg-center h-full w-full bg-gray-200'>
+        <div className='bg-cover bg-center h-full w-full bg-teal-50'>
+            <h1 className='fonts pt-6'>Feel the Fit, Love the Look – Shoes That Capture Attention.</h1>
             <div className='flex flex-wrap justify-center gap-6 p-6'>
                 {products.filter((item) => (item.type === "women")).map((item) => (
                     <div key={item._id}>
-                        <div className="w-[300px] h-[400px] bg-gray-200 border border-gray-200 rounded-lg shadow-md overflow-hidden group transition-transform transform hover:scale-105 hover:shadow-xl duration-300 ease-in-out">
+                        <div className="w-[300px] h-[400px] bg-teal-50 border border-gray-200 rounded-lg shadow-md overflow-hidden group transition-transform transform hover:scale-105 hover:shadow-xl duration-300 ease-in-out">
                             
-                            <FaHeart
-                                color={likedProducts[item._id] ? "red" : "white"}
-                                onClick={() => {toggleHeart(item._id)
-                                    handleaddTowishlist(item._id)
-                                }}
-                                className='absolute top-3 right-3 cursor-pointer z-10'
-                                size={20}
-                            />
+                        <FaHeart
+                color={likedProducts[item._id] ? "red" : "light-teal"}
+                onClick={() => {
+                  toggleHeart(item._id); 
+                  if (likedProducts[item._id]) {
+                    removeFromWishlist(item._id);
+                  } else {
+                    handleaddTowishlist(item._id);
+                  }
+                }}
+                className='ml-[270px] mt-3 cursor-pointer'
+                size={20}
+              />
                             <Link to={item._id} className="relative block">
                                 <img
                                     src={item.image}

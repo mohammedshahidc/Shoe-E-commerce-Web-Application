@@ -31,7 +31,7 @@ const User = () => {
               <h5 className="mt-2 mb-0 text-lg font-semibold">{username}</h5>
               <span className="text-gray-600">UI/UX Designer</span>
               <div className="mt-4">
-                <p className="text-gray-700">User Details</p>
+                {/* <p className="text-gray-700">User Details</p> */}
                 <div className="flex justify-center space-x-2 mt-4">
                   <button
                     onClick={handlelogout}

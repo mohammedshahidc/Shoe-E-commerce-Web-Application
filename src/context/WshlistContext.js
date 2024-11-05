@@ -5,34 +5,34 @@ import { Usercont } from './UserContext'
 
 
 
-export const wishcontext=createContext()
-const WshlistContext = ({children}) => {
+export const wishcontext = createContext()
+const WshlistContext = ({ children }) => {
 
-    
-    
-    const {curuser}=useContext(Usercont)
-    
-    console.log("cur :",curuser);
-    const [wish,setWish]=useState([])
 
-    const fetchWishlist=async ()=>{
+
+    const { curuser } = useContext(Usercont)
+
+    console.log("cur :", curuser);
+    const [wish, setWish] = useState([])
+
+    const fetchWishlist = async () => {
         try {
             const resp = await axios.get("http://localhost:4004/api/user/getwishlist", {
                 headers: {
                     Authorization: `Bearer ${curuser}`
                 }
             })
-            const data= resp.data.data.products
+            const data = resp.data.data.products
             console.log("data :", data);
             setWish(data)
         } catch (error) {
             console.log(error);
         }
     }
-    useEffect(()=>{
+    useEffect(() => {
         fetchWishlist()
-    },[curuser])
-  
+    }, [curuser])
+
 
     const addToWishlist = async (productId) => {
         try {
@@ -50,7 +50,7 @@ const WshlistContext = ({children}) => {
             console.log("Error adding to wishlist:", error);
         }
     };
-    
+
 
     const removeFromWishlist = async (productId) => {
         try {
@@ -63,21 +63,27 @@ const WshlistContext = ({children}) => {
                 },
             });
             fetchWishlist()
-            
+
         } catch (error) {
             console.log("Error removing from wishlist:", error);
         }
     };
-    
-  return (
-    <div>
-      <wishcontext.Provider value={{fetchWishlist,wish,setWish,addToWishlist,removeFromWishlist}} >
 
-      {children}
+    return (
+        <div>
+            <wishcontext.Provider value={{
+                fetchWishlist,
+                wish,
+                setWish,
+                addToWishlist,
+                removeFromWishlist
+            }}>
 
-      </wishcontext.Provider>
-    </div>
-  )
+                {children}
+
+            </wishcontext.Provider>
+        </div>
+    )
 }
 
 export default WshlistContext

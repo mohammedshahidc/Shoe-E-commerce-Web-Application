@@ -10,6 +10,7 @@ const Admin_allcontext = ({ children }) => {
     const [orders,setOrders]=useState([])
     const [users,setUsers]=useState([])
     const [userbyId,setUserbyId]=useState([])
+    const [totalRevenue,setTotalRevanue]=useState('')
     console.log("admin in admcntx :", admin);
     const getAllproducts = async () => {
         try {
@@ -117,9 +118,40 @@ const getuserbyid=async(userId)=>{
     }
 }
 
+useEffect(()=>{
+    const totalincome=async()=>{
+      try {
+        const resp=await axios.get("http://localhost:4004/api/admin/calculateincome",{
+          headers:{
+            Authorization:`Bearer ${admin}`
+          }
+        })
+        setTotalRevanue(resp.data.toalRevanue)
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    totalincome()
+    console.log("rev",totalRevenue);
+  },[totalRevenue,admin])
+  
 
     return (
-        <Admincontext.Provider value={{ adproduct,productByid,ProductByid,getAllproducts,orders,deleteproduct,getallusers,users,userbyId,getuserbyid,getAllOrders,adproduct}}>
+        <Admincontext.Provider value={{ 
+        adproduct,
+        productByid,
+        ProductByid,
+        getAllproducts,
+        orders,
+        deleteproduct,
+        getallusers,
+        users,
+        userbyId,
+        getuserbyid,
+        getAllOrders,
+        adproduct,
+        totalRevenue
+        }}>
             {children}
         </Admincontext.Provider>
 

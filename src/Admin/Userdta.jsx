@@ -9,15 +9,15 @@ const Userdta = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [block, setBlock] = useState(false);
-    const { userbyId } = useContext(Admincontext); 
+    const { userbyId } = useContext(Admincontext);
     const { admin, getallusers } = useContext(Usercont);
     const [orderById, setOrderById] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         if (userbyId) {
-            setBlock(userbyId.block); 
-            
+            setBlock(userbyId.block);
+
         }
     }, [userbyId]);
 
@@ -28,7 +28,7 @@ const Userdta = () => {
                     Authorization: `Bearer ${admin}`
                 }
             });
-            setBlock(prevBlock => !prevBlock); 
+            setBlock(prevBlock => !prevBlock);
         } catch (error) {
             console.error(error);
         }
@@ -69,7 +69,7 @@ const Userdta = () => {
     if (loading) {
         return <div>Loading...</div>;
     }
-    
+
 
     return (
         <div className='w-screen h-screen'>

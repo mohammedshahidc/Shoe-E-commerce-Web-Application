@@ -2,17 +2,17 @@ import React, { useContext } from 'react';
 import { cartcontext } from '../../context/Cartproduct';
 
 const Orders = () => {
-    const { orders, cancelorder , getOrder } = useContext(cartcontext);
+    const { orders, cancelorder, getOrder } = useContext(cartcontext);
     console.log("orders in ord:", orders);
 
-    const handleorder=async(orderId)=>{
+    const handleOrder = async (orderId) => {
         try {
-          await  cancelorder(orderId)
-          await getOrder()
+            await cancelorder(orderId);
+            await getOrder();
         } catch (error) {
             console.log(error);
         }
-    }
+    };
 
     return (
         <div className="container mx-auto p-4">
@@ -47,12 +47,14 @@ const Orders = () => {
                             ))}
                         </div>
                         <div className="flex justify-center mt-4">
-                            <button
-                                onClick={() => handleorder(order._id)}  
-                                className="text-white bg-red-500 rounded-md px-4 py-2 hover:bg-red-600 transition duration-200 ease-in-out shadow-lg"
-                            >
-                                Cancel Order
-                            </button>
+                            {order.paymentStatus !== 'cancelled' && (
+                                <button
+                                    onClick={() => handleOrder(order._id)}
+                                    className="text-white bg-red-500 rounded-md px-4 py-2 hover:bg-red-600 transition duration-200 ease-in-out shadow-lg"
+                                >
+                                    Cancel Order
+                                </button>
+                            )}
                         </div>
                     </div>
                 ))}

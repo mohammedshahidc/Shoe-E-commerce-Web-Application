@@ -8,11 +8,10 @@ import ProductContext from './context/Productcontext'
 import Cartproduct from './context/Cartproduct';
 import UserContext from './context/UserContext';
 import WshlistContext from './context/WshlistContext';
-import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import  Admincontext  from './Admin/Admin context/AdminContext';
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
+import Admincontext from './Admin/Admin context/AdminContext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -28,7 +27,7 @@ root.render(
           <WshlistContext>
             <Admincontext>
               <App />
-                <ToastContainer
+              <ToastContainer
                 position="top-right"
                 autoClose={1000}
                 hideProgressBar={false}
@@ -39,14 +38,13 @@ root.render(
                 draggable
                 pauseOnHover
                 theme="colored"
-                transition="Bounce"
               />
             </Admincontext>
           </WshlistContext>
         </Cartproduct>
       </ProductContext>
     </UserContext>
- </BrowserRouter>
+  </BrowserRouter>
 
 )
 

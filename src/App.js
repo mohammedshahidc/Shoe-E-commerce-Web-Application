@@ -36,6 +36,8 @@ import Payment from '../src/user/components/Payment'
 import CheckoutSuccess from './user/components/CheckoutSuccess';
 import Addressform from './user/components/Addresform';
 import Orders from './user/components/Orders';
+import Chart from './Admin/Chart';
+
 
 const stripePromise = loadStripe('your-publishable-key')
 function App() {
@@ -81,7 +83,7 @@ function App() {
               <Route path='/admin/usera/:id' element={<Userdta />} />
               <Route path='/admin/productsa/AddProduct' element={<AddProdect />} />
               <Route path='/admin/productsa/:id/editproduct' element={<Editproduct />} />
-
+              <Route path='/admin/chart' element={<Chart />} />
               <Route path='*' element={<Notfound />} />
             </Routes>
           </div>

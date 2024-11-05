@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { FaSignOutAlt } from 'react-icons/fa';
+import { FaSignOutAlt,FaBusinessTime } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router-dom';
 import { Usercont } from '../context/UserContext';
 
@@ -8,7 +8,7 @@ const Sidebar = () => {
   const { handleLogout } = useContext(Usercont)
 
   return (
-    <div className="font-poppins antialiased  w-screen flex flex-row  top-0 fixed">
+    <div className="font-poppins antialiased  w-[200px] flex flex-row  top-0 fixed">
 
       <button
         onClick={() => setSidenav(!sidenav)}
@@ -98,6 +98,13 @@ const Sidebar = () => {
                   />
                 </svg>
                 <h1>Users</h1>
+              </div>
+            </NavLink>
+
+            <NavLink to={'/admin/chart'}>
+              <div className="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out">
+               <button><FaBusinessTime size={20}/></button>
+                <h1>Status</h1>
               </div>
             </NavLink>
 

@@ -4,8 +4,9 @@ import axios from 'axios';
 import { Usercont } from '../context/UserContext';
 
 const Order = () => {
-    const { orders, loading,getAllOrders } = useContext(Admincontext);
-const{admin}=useContext(Usercont)
+    const { orders, loading, getAllOrders } = useContext(Admincontext);
+    const { admin } = useContext(Usercont);
+
     if (loading) {
         return <div>Loading...</div>;
     }
@@ -14,18 +15,18 @@ const{admin}=useContext(Usercont)
         return <div>No orders found.</div>;
     }
 
-    const ordercancelation=async(orderId)=>{
-        await axios.delete(`http://localhost:4004/api/admin/cancelorder/${orderId}`,{
-            headers:{
-                Authorization:`Bearer ${admin}`
-            }
-        })
-        alert("order cancelled")
-        getAllOrders()
-    }
+    const ordercancelation = async (orderId) => {
+        await axios.delete(`http://localhost:4004/api/admin/cancelorder/${orderId}`, {
+            headers: {
+                Authorization: `Bearer ${admin}`,
+            },
+        });
+        alert("Order cancelled");
+        getAllOrders();
+    };
 
     return (
-        <div className="flex justify-center bg-white w-full max-w-[1100px] h-screen p-4 ml-[250px]">
+        <div className="flex justify-center bg-white w-full max-w-[1200px] h-screen p-4 ml-[200px]">
             <div className="overflow-auto w-full">
                 <table className="mt-5 table-auto w-full border border-gray-300 text-left text-sm">
                     <thead className="bg-gray-200">
@@ -62,7 +63,15 @@ const{admin}=useContext(Usercont)
                                 <td className="border border-gray-300 px-3 py-2 capitalize text-center">{order.paymentStatus}</td>
                                 <td className="border border-gray-300 px-3 py-2 capitalize text-center">{order.shoppingStatus}</td>
                                 <td className="border border-gray-300 px-3 py-2 text-center">
-                                    <button className="bg-blue-500 text-white px-2 py-1 rounded text-xs hover:bg-blue-600" onClick={()=>ordercancelation(order._id)} >Cancel</button>
+
+                                    {order.paymentStatus !== 'cancelled' && (
+                                        <button
+                                            className="bg-blue-500 text-white px-2 py-1 rounded text-xs hover:bg-blue-600"
+                                            onClick={() => ordercancelation(order._id)}
+                                        >
+                                            Cancel
+                                        </button>
+                                    )}
                                 </td>
                             </tr>
                         ))}

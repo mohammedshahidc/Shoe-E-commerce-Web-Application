@@ -4,7 +4,7 @@ import shoue from "./components/images/Nike.png";
 const Shouecollection = () => {
   return (
     
-    <div className="bg-gradient-to-r from-gray-100 to-gray-500 h-screen flex flex-col justify-center items-start relative px-4 ">
+    <div className="bg-gradient-to-r from-gray-100 to-teal-100 h-screen flex flex-col justify-center items-start relative px-4 ">
       <div className="text-left mb-12 ml-8"> 
         <h1 className="text-4xl md:text-5xl font-bold text-black tracking-wider">Shoe Club</h1>
         <p className="mt-4 text-lg text-black">"FIND YOUR FIT: SHOES MADE FOR COMFORT AND STYLE!"</p>

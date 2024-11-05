@@ -97,6 +97,14 @@ position: absolute;
 top: -20px;
 left: 10px
 }
+.fonts {
+  font-family: "Satisfy", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+  
+
 
 /* .mainlog{
   background-color: aqua;

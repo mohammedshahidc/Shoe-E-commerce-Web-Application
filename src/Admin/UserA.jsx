@@ -2,21 +2,21 @@
 
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Admincontext } from './Admin context/AdminContext';
 const UserA = () => {
-    const{users,getuserbyid}=useContext(Admincontext)
-const navigate=useNavigate()
-    console.log("users :",users);
-const getuserdt=async(userId)=>{
-    try {
-        await getuserbyid(userId)
-        navigate(`/admin/usera/${userId}`)
-    } catch (error) {
-        console.log(error);
+    const { users, getuserbyid } = useContext(Admincontext)
+    const navigate = useNavigate()
+    console.log("users :", users);
+    const getuserdt = async (userId) => {
+        try {
+            await getuserbyid(userId)
+            navigate(`/admin/usera/${userId}`)
+        } catch (error) {
+            console.log(error);
+        }
     }
-}
-    
+
 
     return (
         <div className='bg-gray-50 h-screen overflow-scroll'>
@@ -39,11 +39,11 @@ const getuserdt=async(userId)=>{
                             {/* <td className="border border-gray-300 px-4 py-2">{user.input.password}</td> */}
                             <td className="border border-gray-300 px-4 py-2">
                                 <div>
-                                    
-                                        <button class='btn' id='bt'onClick={()=>getuserdt(user._id)}>
-                                            Details
-                                        </button>
-                                   
+
+                                    <button class='btn' id='bt' onClick={() => getuserdt(user._id)}>
+                                        Details
+                                    </button>
+
                                 </div>
                             </td>
 

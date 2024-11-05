@@ -1,8 +1,11 @@
 import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { Usercont } from '../context/UserContext';
-
+import { Admincontext } from './Admin context/AdminContext';
+import { useNavigate } from 'react-router-dom';
 const AddProduct = () => {
+  const navigate=useNavigate()
+  const{getAllproducts}=useContext(Admincontext)
   const { admin } = useContext(Usercont);
   const [product, setProduct] = useState({
     name: '',
@@ -45,6 +48,8 @@ const AddProduct = () => {
         },
       });
       alert('Product added successfully!');
+      getAllproducts()
+      navigate("/admin/productsa")
       setProduct({
         name: '',
         type: '',

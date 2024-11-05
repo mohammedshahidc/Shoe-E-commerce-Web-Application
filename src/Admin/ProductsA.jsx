@@ -7,18 +7,18 @@ const ProductsA = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 5;
 
-   
+
     const currentProducts = () => {
         const startIndex = (currentPage - 1) * itemsPerPage;
         return adproduct.slice(startIndex, startIndex + itemsPerPage);
     };
 
-  
+
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
 
-   
+
     const totalPages = Math.ceil(adproduct.length / itemsPerPage);
 
     const getproductById = async (productId) => {
@@ -60,7 +60,7 @@ const ProductsA = () => {
                 </tbody>
             </table>
 
-        
+
             <div className="flex justify-center mt-4">
                 {Array.from({ length: totalPages }, (_, index) => (
                     <button

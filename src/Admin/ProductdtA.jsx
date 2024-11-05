@@ -6,22 +6,22 @@ import axios from 'axios';
 import { Admincontext } from './Admin context/AdminContext';
 
 const ProductdtA = () => {
-const navigate=useNavigate()
-    const { adproduct,productByid,ProductByid,deleteproduct,getAllproducts} = useContext(Admincontext)
-   
-   console.log("pBYID",ProductByid);
-   const handledelete=async(productId)=>{
-    try {
-       await deleteproduct(productId)
-       navigate("/admin/productsa")
-       await   getAllproducts()
-    } catch (error) {
-      console.log(error);  
-    }
-   }
+    const navigate = useNavigate()
+    const { adproduct, productByid, ProductByid, deleteproduct, getAllproducts } = useContext(Admincontext)
 
-   
-    
+    console.log("pBYID", ProductByid);
+    const handledelete = async (productId) => {
+        try {
+            await deleteproduct(productId)
+            navigate("/admin/productsa")
+            await getAllproducts()
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+
+
     return (
         <div className='flex flex-col items-center bg-neutral-300 p-4 mt-8 sm:mt-16 ml-[330px] '>
             {ProductByid.map((product) => (
