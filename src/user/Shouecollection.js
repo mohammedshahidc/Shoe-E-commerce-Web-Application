@@ -3,7 +3,7 @@ import shoue from "./components/images/Nike.png";
 
 const Shouecollection = () => {
   return (
-    <div className="bg-gradient-to-r from-gray-100 to-teal-100 h-[80vh] md:h-screen flex items-center justify-center px-4 md:px-12 lg:px-24">
+    <div className="bg-gradient-to-r from-gray-100 to-teal-100 h-[60vh] md:h-screen flex items-center justify-center px-4 md:px-12 lg:px-24">
       
       {/* Flex Container to align text and image in a row on all screens */}
       <div className="flex flex-row items-center justify-between w-full max-w-4xl space-x-4 md:space-x-8 lg:space-x-16">
@@ -24,11 +24,11 @@ const Shouecollection = () => {
         </div>
         
         {/* Image Section */}
-        <div className="w-1/2 flex justify-center">
+        <div className="w-1/2 flex justify-center lg:justify-end"> {/* Align image to right on desktop */}
           <img
             src={shoue}
             alt="Shoe"
-            className="w-[200px] h-[250px] sm:w-[250px] sm:h-[300px] md:w-[350px] md:h-[450px] lg:w-[400px] lg:h-[500px] transition-transform transform hover:scale-105 duration-500 ease-in-out"
+            className="w-[200px] h-[250px] sm:w-[250px] sm:h-[300px] md:w-[350px] md:h-[450px] lg:w-[400px] lg:h-[500px] transition-transform hover:scale-105 duration-500 ease-in-out"
           />
         </div>
         
