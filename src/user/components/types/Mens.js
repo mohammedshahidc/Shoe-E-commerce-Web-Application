@@ -1,14 +1,16 @@
 
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { context } from '../../../context/Productcontext';
 import { Link } from 'react-router-dom';
+import { FaShoppingCart} from 'react-icons/fa';
 import { FaHeart } from 'react-icons/fa'; 
 import { wishcontext } from '../../../context/WshlistContext';
 import { toast } from 'react-toastify';
+import { cartcontext } from '../../../context/Cartproduct';
 const Mens = () => {
   const { products } = useContext(context);
-  
-  const {addToWishlist,removeFromWishlist}=useContext(wishcontext)
+  const{addtoCart,handledeleet,fetchCartData}=useContext(cartcontext)
+  const {addToWishlist,removeFromWishlist,wish}=useContext(wishcontext)
 
   const filter = products.filter((product) => product.type === "men");
 
@@ -20,18 +22,29 @@ const Mens = () => {
       [productId]: !prev[productId],
     }));
   };
-
+useEffect(()=>{
+const intialLikedproduct={}
+wish.forEach((item) => {
+  intialLikedproduct[item._id] = true
+});
+setLikedProducts(intialLikedproduct)
+},[wish])
 
   const handleaddTowishlist=(productId)=>{
     addToWishlist(productId)
+    setLikedProducts((prev) => ({ ...prev, [productId]: true }));
   }
 
   const handleRemoveFromWishlist = (productId) => {
     removeFromWishlist(productId);
+    setLikedProducts((prev) => ({ ...prev, [productId]: false }));
     toast.info("Item removed from wishlist");
   };
 
-
+  const hanleaddtocart=async(item)=>{
+    await addtoCart(item)
+    await fetchCartData()
+   }
 
   return (
     <div className='bg-cover bg-center h-full w-full bg-teal-50'>
@@ -42,7 +55,7 @@ const Mens = () => {
             <div className="w-[300px] h-[400px] bg-teal-50 border border-gray-200 rounded-lg shadow-md overflow-hidden group transition-transform transform hover:scale-105 hover:shadow-xl duration-300 ease-in-out">
               
             <FaHeart
-                color={likedProducts[product._id] ? "red" : "light-teal"}
+                
                 onClick={() => {
                   toggleHeart(product._id); 
                   if (likedProducts[product._id]) {
@@ -51,9 +64,18 @@ const Mens = () => {
                     handleaddTowishlist(product._id);
                   }
                 }}
-                className='ml-[270px] mt-3 cursor-pointer'
+                className={`ml-[270px] mt-3 cursor-pointer ${likedProducts[product._id] ? 'text-red-500' : 'text-black'}`}
                 size={20}
               />
+              <FaShoppingCart
+               
+               onClick={() => {
+                 toggleHeart(product._id);
+                 hanleaddtocart(product._id);
+                  }}
+               className='ml-[235px] mt-[-20px] cursor-pointer text-black'
+               size={20}
+             />
               <Link to={product._id} className="relative block">
                 <img
                   src={product.image}

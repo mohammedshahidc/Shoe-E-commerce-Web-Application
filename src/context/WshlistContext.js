@@ -36,38 +36,54 @@ const WshlistContext = ({ children }) => {
 
     const addToWishlist = async (productId) => {
         try {
-            const response = await axios.post(
-                "http://localhost:4004/api/user/addtowishlist",
-                { productId },
-                {
-                    headers: {
-                        Authorization: `Bearer ${curuser}`,
-                    },
-                }
-            );
-            fetchWishlist()
+            if(curuser){
+                const response = await axios.post(
+                    "http://localhost:4004/api/user/addtowishlist",
+                    { productId },
+                    {
+                        headers: {
+                            Authorization: `Bearer ${curuser}`,
+                        },
+                    }
+                );
+                fetchWishlist()
+            }else{
+                alert("please login")
+            }
+            
         } catch (error) {
             console.log("Error adding to wishlist:", error);
         }
     };
 
 
+    
+
+
     const removeFromWishlist = async (productId) => {
         try {
-            const response = await axios.delete("http://localhost:4004/api/user/removewishlist", {
-                headers: {
-                    Authorization: `Bearer ${curuser}`,
-                },
-                data: {
-                    productId,
-                },
-            });
-            fetchWishlist()
+            if(curuser){
+                const response = await axios.delete("http://localhost:4004/api/user/removewishlist", {
+                    headers: {
+                        Authorization: `Bearer ${curuser}`,
+                    },
+                    data: {
+                        productId,
+                    },
+                });
+                fetchWishlist()
+
+            }else{
+                alert("please login")
+            }
+           
 
         } catch (error) {
             console.log("Error removing from wishlist:", error);
         }
     };
+
+
 
     return (
         <div>
