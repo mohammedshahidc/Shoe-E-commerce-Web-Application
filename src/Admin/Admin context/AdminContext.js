@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { Usercont } from "../../context/UserContext";
+import axiosInstatnce from "../../Axiosinstance";
 export const Admincontext = createContext()
 
 const Admin_allcontext = ({ children }) => {
@@ -14,7 +15,7 @@ const Admin_allcontext = ({ children }) => {
     console.log("admin in admcntx :", admin);
     const getAllproducts = async () => {
         try {
-            const resp = axios.get("http://localhost:4004/api/admin/getallproducts", {
+            const resp = axiosInstatnce.get("/admin/getallproducts", {
                 headers: {
                     Authorization: `Bearer ${admin}`
                 }
@@ -32,7 +33,7 @@ const Admin_allcontext = ({ children }) => {
 
     const productByid = async (productId) => {
         try {
-            const resp = await axios.get(`http://localhost:4004/api/admin/getproductbyid/${productId}`, {
+            const resp = await axiosInstatnce.get(`/admin/getproductbyid/${productId}`, {
                 headers: {
                     Authorization: `Bearer ${admin}`
                 }
@@ -50,7 +51,7 @@ const Admin_allcontext = ({ children }) => {
 
     const getAllOrders = async () => {
         try {
-            const resp = await axios.get("http://localhost:4004/api/admin/getallorders", {
+            const resp = await axiosInstatnce.get("/admin/getallorders", {
                 headers: {
                     Authorization: `Bearer ${admin}`,
                 },
@@ -71,7 +72,7 @@ const Admin_allcontext = ({ children }) => {
    
     const deleteproduct=async(productId)=>{
         try {
-            const resp=await axios.delete(`http://localhost:4004/api/admin/deleteproduct/${productId}`,{
+            const resp=await axiosInstatnce.delete(`/admin/deleteproduct/${productId}`,{
                 headers:{
                     Authorization:`Bearer ${admin}`
                 }
@@ -87,7 +88,7 @@ const Admin_allcontext = ({ children }) => {
 
     const getallusers=async()=>{
         try {
-            const resp=await axios.get("http://localhost:4004/api/admin/getusers",{
+            const resp=await axiosInstatnce.get("/admin/getusers",{
                 headers:{
                     Authorization:`Bearer ${admin}`
                 }
@@ -105,7 +106,7 @@ const Admin_allcontext = ({ children }) => {
 
 const getuserbyid=async(userId)=>{
     try {
-        const resp=await axios.get(`http://localhost:4004/api/admin/userbyid/${userId}`,{
+        const resp=await axiosInstatnce.get(`/admin/userbyid/${userId}`,{
             headers:{
                 Authorization:`Bearer ${admin}`
             }
@@ -121,7 +122,7 @@ const getuserbyid=async(userId)=>{
 useEffect(()=>{
     const totalincome=async()=>{
       try {
-        const resp=await axios.get("http://localhost:4004/api/admin/calculateincome",{
+        const resp=await axiosInstatnce.get("/admin/calculateincome",{
           headers:{
             Authorization:`Bearer ${admin}`
           }

@@ -2,6 +2,7 @@ import React, { Children, useContext, useEffect, useState } from 'react'
 import { createContext } from 'react'
 import axios from "axios"
 import { Usercont } from './UserContext'
+import axiosInstatnce from '../Axiosinstance'
 
 
 
@@ -17,7 +18,7 @@ const WshlistContext = ({ children }) => {
 
     const fetchWishlist = async () => {
         try {
-            const resp = await axios.get("http://localhost:4004/api/user/getwishlist", {
+            const resp = await axiosInstatnce.get("/user/getwishlist", {
                 headers: {
                     Authorization: `Bearer ${curuser}`
                 }
@@ -37,8 +38,8 @@ const WshlistContext = ({ children }) => {
     const addToWishlist = async (productId) => {
         try {
             if(curuser){
-                const response = await axios.post(
-                    "http://localhost:4004/api/user/addtowishlist",
+                const response = await axiosInstatnce.post(
+                    "/user/addtowishlist",
                     { productId },
                     {
                         headers: {
@@ -63,7 +64,7 @@ const WshlistContext = ({ children }) => {
     const removeFromWishlist = async (productId) => {
         try {
             if(curuser){
-                const response = await axios.delete("http://localhost:4004/api/user/removewishlist", {
+                const response = await axiosInstatnce.delete("/user/removewishlist", {
                     headers: {
                         Authorization: `Bearer ${curuser}`,
                     },

@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { loadStripe } from '@stripe/stripe-js';
 import CheckoutPayment from './Payment';
+import axiosInstatnce from '../../Axiosinstance';
 
 const Cart = () => {
 
@@ -38,7 +39,7 @@ const navigate=useNavigate()
 
   const updateCart = async (item, action) => {
     try {
-      const res = await axios.put("http://localhost:4004/api/user/updatecart", {
+      const res = await axiosInstatnce.put("/user/updatecart", {
         productId: item._id,
         action: action
       }, {

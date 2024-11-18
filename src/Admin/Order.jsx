@@ -16,13 +16,18 @@ const Order = () => {
     }
 
     const ordercancelation = async (orderId) => {
-        await axios.delete(`http://localhost:4004/api/admin/cancelorder/${orderId}`, {
-            headers: {
-                Authorization: `Bearer ${admin}`,
-            },
-        });
-        alert("Order cancelled");
-        getAllOrders();
+        try {
+            await axios.delete(`http://localhost:4004/api/admin/cancelorder/${orderId}`, {
+                headers: {
+                    Authorization: `Bearer ${admin}`,
+                },
+            });
+            alert("Order cancelled");
+            getAllOrders();
+        } catch (error) {
+            alert("payment is completed")
+        }
+        
     };
 
     return (

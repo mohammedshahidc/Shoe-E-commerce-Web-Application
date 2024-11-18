@@ -1,6 +1,8 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import axiosInstatnce from '../../Axiosinstance';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -21,19 +23,14 @@ const Register = () => {
         }
         const todb = { ...input, block: false };
         console.log(todb);
-        fetch("http://localhost:4004/api/user/register", {
-            method: "post",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(todb)
-            
+        axiosInstatnce.post("/user/register", todb)
+        .then((res) => {
+            toast.success("Registered successfully");
+            navigate('/login');
         })
-            .then((res) => {
-                toast.success("Registered successfully");
-                navigate('/login');
-            })
-            .catch((err) => {
-                alert("Failed: " + err);
-            });
+        .catch((err) => {
+            alert("Failed: " + err.message);
+        });
     };
 
     const handleChange = (e) => {

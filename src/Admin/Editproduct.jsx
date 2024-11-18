@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Usercont } from '../context/UserContext';
 import { Admincontext } from './Admin context/AdminContext';
+import axiosInstatnce from '../Axiosinstance';
 const EditProduct = () => {
     const { id } = useParams();
     const { admin } = useContext(Usercont);
@@ -24,7 +25,7 @@ const EditProduct = () => {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const resp = await axios.get(`http://localhost:4004/api/admin/getproductbyid/${id}`, {
+                const resp = await axiosInstatnce.get(`/admin/getproductbyid/${id}`, {
                     headers: {
                         Authorization: `Bearer ${admin}`
                     }
@@ -69,7 +70,7 @@ const EditProduct = () => {
                 reviews: formData.get("reviews")
             });
 
-            await axios.put(`http://localhost:4004/api/admin/editproduct/${id}`, formData, {
+            await axiosInstatnce.put(`/admin/editproduct/${id}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `Bearer ${admin}`

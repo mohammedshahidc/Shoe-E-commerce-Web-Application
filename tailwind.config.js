@@ -17,7 +17,7 @@ module.exports = {
         },
       },
       animation: {
-        float: 'float 3s ease-in-out infinite',
+        float: 'float 10s ease-in-out infinite', // Reduced speed to 10s
       },
     },
   },

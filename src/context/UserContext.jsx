@@ -2,6 +2,7 @@ import React, { createContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { json, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import axiosInstatnce from '../Axiosinstance'
 export const Usercont = createContext()
 
 
@@ -45,7 +46,7 @@ const UserContext = ({ children }) => {
     const handlelogSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:4004/api/user/login',{
+            const response = await axiosInstatnce.post('/user/login',{
                 username:login.username,
                 password:login.password
 

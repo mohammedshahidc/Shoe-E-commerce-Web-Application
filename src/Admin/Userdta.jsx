@@ -4,6 +4,7 @@ import { FaUser } from 'react-icons/fa';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Admincontext } from './Admin context/AdminContext';
 import { Usercont } from '../context/UserContext';
+import axiosInstatnce from '../Axiosinstance';
 
 const Userdta = () => {
     const { id } = useParams();
@@ -23,7 +24,7 @@ const Userdta = () => {
 
     const blockStatus = async (userID) => {
         try {
-            await axios.put(`http://localhost:4004/api/admin/blockuser/${userID}`, {}, {
+            await axiosInstatnce.put(`/admin/blockuser/${userID}`, {}, {
                 headers: {
                     Authorization: `Bearer ${admin}`
                 }
@@ -36,7 +37,7 @@ const Userdta = () => {
 
     const deleteUser = async (userID) => {
         try {
-            await axios.delete(`http://localhost:4004/api/admin/deleteuser/${userID}`, {
+            await axiosInstatnce.delete(`/admin/deleteuser/${userID}`, {
                 headers: {
                     Authorization: `Bearer ${admin}`
                 }
@@ -51,7 +52,7 @@ const Userdta = () => {
     useEffect(() => {
         const getOrdersById = async () => {
             try {
-                const response = await axios.get(`http://localhost:4004/api/admin/getorderbyid/${id}`, {
+                const response = await axiosInstatnce.get(`/admin/getorderbyid/${id}`, {
                     headers: {
                         Authorization: `Bearer ${admin}`
                     }

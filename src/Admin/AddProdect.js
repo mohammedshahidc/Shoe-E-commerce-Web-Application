@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Usercont } from '../context/UserContext';
 import { Admincontext } from './Admin context/AdminContext';
 import { useNavigate } from 'react-router-dom';
+import axiosInstatnce from '../Axiosinstance';
 const AddProduct = () => {
   const navigate=useNavigate()
   const{getAllproducts}=useContext(Admincontext)
@@ -41,7 +42,7 @@ const AddProduct = () => {
     Object.keys(product).forEach(key => formData.append(key, product[key]));
 
     try {
-      await axios.post('http://localhost:4004/api/admin/addproduct', formData, {
+      await axiosInstatnce.post('/admin/addproduct', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${admin}`
