@@ -6,7 +6,7 @@ const adminToken = localStorage.getItem('admindt');
 
 // Create axios instance
 const axiosInstatnce = axios.create({
-    baseURL: 'http://localhost:4004/api',
+    baseURL: 'https://e-commerce-backend-io9l.onrender.com/api',
 });
 
 
