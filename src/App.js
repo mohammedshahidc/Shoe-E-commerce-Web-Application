@@ -27,7 +27,7 @@ import Userdta from './Admin/Userdta';
 import AddProdect from './Admin/AddProdect';
 import Editproduct from './Admin/Editproduct';
 import Notfound from './user/components/Notfound';
-import shouecollection from './user/Shouecollection';
+// import shouecollection from './user/Shouecollection';
 import Wishlist from './user/components/Wishlist';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
