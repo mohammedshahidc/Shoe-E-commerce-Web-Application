@@ -43,7 +43,10 @@ const navigate=useNavigate()
         productId: item._id,
         action: action
       }, {
-        withCredentials: true
+        withCredentials: true,
+        headers:{
+          Authorization:`Bearer ${curuser}`
+        }
       });
       const updatedcart = res.data?.products || [];
       const updatedQuantity = updatedcart.reduce((acc, product) => {
