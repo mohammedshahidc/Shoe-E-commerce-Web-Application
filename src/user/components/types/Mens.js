@@ -52,7 +52,6 @@ const Mens = () => {
     await addtoCart(item);
     await fetchCartData(); 
   };
-  console.log('loading',loading);
   if(loading){
     return <Spinner/>
   }

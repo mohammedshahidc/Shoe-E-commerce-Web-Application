@@ -5,9 +5,10 @@ import { FaHeart, FaShoppingCart } from 'react-icons/fa';
 import { cartcontext } from '../../../context/Cartproduct';
 import { wishcontext } from '../../../context/WshlistContext';
 import { toast } from 'react-toastify';
+import Spinner from '../../../context/Loader/Spinner';
 
 const Women = () => {
-    const { products } = useContext(context);
+    const { products,loading } = useContext(context);
     const { addtoCart, fetchCartData, cart } = useContext(cartcontext);
     const { addToWishlist, removeFromWishlist, wish } = useContext(wishcontext);
 
@@ -47,6 +48,10 @@ const Women = () => {
         await fetchCartData();
         toast.success("Item added to cart");
     };
+    if(loading){
+        return <Spinner/>
+      }
+    
 
     return (
         <div className="bg-cover bg-center h-full w-full bg-teal-50">

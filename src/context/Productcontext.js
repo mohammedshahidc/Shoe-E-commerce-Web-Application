@@ -12,7 +12,6 @@ const [loading,setLoading]=useState(false)
             try {
                 setLoading(true)
                 const respons = await axiosInstatnce.get("/user/products");
-                console.log('products:',respons);
                 setProducts(respons.data);
                setLoading(false)
             } catch (error) {
