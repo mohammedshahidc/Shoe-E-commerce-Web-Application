@@ -12,6 +12,7 @@ const [loading,setLoading]=useState(false)
             try {
                 setLoading(true)
                 const respons = await axiosInstatnce.get("/user/products");
+                console.log('products:',respons);
                 setProducts(respons.data);
                setLoading(false)
             } catch (error) {
@@ -27,7 +28,7 @@ const [loading,setLoading]=useState(false)
 
     return (
         <div>
-            <context.Provider value={{ products, setProducts }}>
+            <context.Provider value={{ products, setProducts,loading }}>
                 {children}
             </context.Provider>
 
