@@ -6,14 +6,16 @@ export const context = createContext();
 
 const ProductContext = ({ children }) => {
     const [products, setProducts] = useState([]);
-
+const [loading,setLoading]=useState(false)
     useEffect(() => {
         const fetch = async () => {
             try {
+                setLoading(true)
                 const respons = await axiosInstatnce.get("/user/products");
                 setProducts(respons.data);
-               
+               setLoading(false)
             } catch (error) {
+                setLoading(false)
                 console.error("Fetching error", error);
             }
         };

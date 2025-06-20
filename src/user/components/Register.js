@@ -29,6 +29,7 @@ const Register = () => {
             navigate('/login');
         })
         .catch((err) => {
+            toast.error(errors)
             alert("Failed: " + err.message);
         });
 

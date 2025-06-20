@@ -6,9 +6,10 @@ import { FaHeart } from 'react-icons/fa';
 import { wishcontext } from '../../../context/WshlistContext';
 import { toast } from 'react-toastify';
 import { cartcontext } from '../../../context/Cartproduct';
+import Spinner from '../../../context/Loader/Spinner';
 
 const Mens = () => {
-  const { products } = useContext(context);
+  const { products,loading } = useContext(context);
   const { addtoCart, handledeleet, fetchCartData, cart } = useContext(cartcontext);
   const { addToWishlist, removeFromWishlist, wish } = useContext(wishcontext);
 
@@ -51,6 +52,9 @@ const Mens = () => {
     await addtoCart(item);
     await fetchCartData(); 
   };
+  if(loading){
+    return <Spinner/>
+  }
 
   return (
     <div className="bg-cover bg-center h-full w-full bg-teal-50">
