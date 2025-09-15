@@ -3,7 +3,7 @@ import shoue from "./components/images/Nike.png";
 
 const Shouecollection = () => {
   return (
-    <div className="bg-gradient-to-r from-gray-100 to-teal-100 h-[60vh] md:h-screen flex items-center justify-center px-4 md:px-12 lg:px-24">
+    <div className="bg-gradient-to-r from-blue-400 to-purple-400 h-[60vh] md:h-screen flex items-center justify-center px-4 md:px-12 lg:px-24">
 
       {/* Flex Container to align text and image in a row on all screens */}
       <div className="flex flex-row items-center justify-between w-full max-w-4xl space-x-4 md:space-x-8 lg:space-x-16">
